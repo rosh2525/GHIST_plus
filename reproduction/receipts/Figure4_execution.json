@@ -1,0 +1,13 @@
+{
+  "figure": 4,
+  "upstream_commit": "c5c895174c19903cc27d2661934b9b726bdb9306",
+  "source_notebook_sha256": "29e182cd1ce2d70db0dd22a46911f2e36391bb0a90d8179f7f222e6517a36b12",
+  "started_utc": "2026-10-14T22:21:22.329427+00:00",
+  "modifications": [
+    "Append output persistence cell; no model predictions, thresholds or metric functions changed."
+  ],
+  "model_training_performed": false,
+  "new_model_inference_performed": false,
+  "status": "passed",
+  "elapsed_seconds": 27.48
+}

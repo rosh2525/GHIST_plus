@@ -1,0 +1,1347 @@
+{
+  "repository": "SydneyBioX/GHIST-Plus-bundle",
+  "revision": "37a937677c5a8ebe5c7b8fbd486fbc5bb50ce1de",
+  "upstream_files": [
+    {
+      "type": "directory",
+      "oid": "10a6c30f59b31c8a366751364b5e4d4d253fda71",
+      "size": 0,
+      "path": "GHIST_plus"
+    },
+    {
+      "type": "directory",
+      "oid": "7cff2c7e0a7684792c023e4b3b89a3f91d554403",
+      "size": 0,
+      "path": "GHIST_plus/models"
+    },
+    {
+      "type": "directory",
+      "oid": "9b3155130f543c2e74e4d9202df8940fb57bc865",
+      "size": 0,
+      "path": "GHIST_plus/models/breast_multi"
+    },
+    {
+      "type": "directory",
+      "oid": "18da52853e849c642007ec845374b093294206c9",
+      "size": 0,
+      "path": "GHIST_plus/models/breast_single"
+    },
+    {
+      "type": "directory",
+      "oid": "01026033f9ae6a93244e65a34183df6b049d1245",
+      "size": 0,
+      "path": "GHIST_plus/models/imputation"
+    },
+    {
+      "type": "directory",
+      "oid": "add8b0464476fd7f8f8e1d9eefea90ecdbe84545",
+      "size": 0,
+      "path": "GHIST_plus/models/pancancer"
+    },
+    {
+      "type": "directory",
+      "oid": "bba2f64f91f992d0b7cc8289a39ad1c730e9b4e6",
+      "size": 0,
+      "path": "GHIST_plus/predictions"
+    },
+    {
+      "type": "directory",
+      "oid": "7ac2c30a096da33153c0d8124e2ff7aa32af92d8",
+      "size": 0,
+      "path": "GHIST_plus/predictions/breast_multi"
+    },
+    {
+      "type": "directory",
+      "oid": "d883db80d251a7b06f8b42bbd2b4d432970e7c7a",
+      "size": 0,
+      "path": "GHIST_plus/predictions/breast_multi/atera"
+    },
+    {
+      "type": "directory",
+      "oid": "8c8e5b2427b22b79f38a11322578a25aae67107f",
+      "size": 0,
+      "path": "GHIST_plus/predictions/breast_multi/breast5k"
+    },
+    {
+      "type": "directory",
+      "oid": "8cca1b71b146bbb9a341256d9773d2c52292fa7d",
+      "size": 0,
+      "path": "GHIST_plus/predictions/breast_single"
+    },
+    {
+      "type": "directory",
+      "oid": "a84cc3079f379ec8d8e1c887a883a815ef7cd482",
+      "size": 0,
+      "path": "GHIST_plus/predictions/figure4_rrc"
+    },
+    {
+      "type": "directory",
+      "oid": "4f321fbc826db8e4fdc846dfa426ca4fac1df4c6",
+      "size": 0,
+      "path": "GHIST_plus/predictions/figure4_rrc/expression"
+    },
+    {
+      "type": "directory",
+      "oid": "0c03772ab5c90d44abd6c9a72d4a5d9d36ef981f",
+      "size": 0,
+      "path": "GHIST_plus/predictions/imputation"
+    },
+    {
+      "type": "directory",
+      "oid": "7d05f341cf904752dda8d00ea9aa48a07c2c0e14",
+      "size": 0,
+      "path": "GHIST_plus/predictions/pancancer"
+    },
+    {
+      "type": "directory",
+      "oid": "b81adb07d1abf89eafcfde614cd1f1e5c9ebaf2e",
+      "size": 0,
+      "path": "GHIST_plus/predictions/pancancer/breast_5k"
+    },
+    {
+      "type": "directory",
+      "oid": "871831b6c363255c863af0c20b09297256d1ed74",
+      "size": 0,
+      "path": "GHIST_plus/predictions/pancancer/lung_5k"
+    },
+    {
+      "type": "directory",
+      "oid": "8465448884d276d244ff41ae3f08f96fd131e76f",
+      "size": 0,
+      "path": "GHIST_plus/predictions/pancancer/pancreas3"
+    },
+    {
+      "type": "directory",
+      "oid": "81073ce37292bd7f73ef523f8b160f11791afd0c",
+      "size": 0,
+      "path": "GHIST_plus/predictions/vq_off"
+    },
+    {
+      "type": "directory",
+      "oid": "0b0261d9da159baf6de3e29bb4b859556d889b97",
+      "size": 0,
+      "path": "evaluation_data"
+    },
+    {
+      "type": "directory",
+      "oid": "76e6aee977ad1d347a01e27828251c5e94a4e73f",
+      "size": 0,
+      "path": "evaluation_data/atera"
+    },
+    {
+      "type": "directory",
+      "oid": "24502709566e3510fe8c7ea635229a3b9f11122f",
+      "size": 0,
+      "path": "evaluation_data/breast2"
+    },
+    {
+      "type": "directory",
+      "oid": "6902910c80bc8544328d23a6a86d373ee4aef600",
+      "size": 0,
+      "path": "evaluation_data/breast5k"
+    },
+    {
+      "type": "directory",
+      "oid": "889ca5a0c98b8e8645b84436d7407837b84a5e7b",
+      "size": 0,
+      "path": "evaluation_data/imputation"
+    },
+    {
+      "type": "directory",
+      "oid": "13795451837da1dccfe050581006cbecbb47d4f9",
+      "size": 0,
+      "path": "figure_data"
+    },
+    {
+      "type": "directory",
+      "oid": "2eb900d1a65fb3542550edf5e149ccda361a52bd",
+      "size": 0,
+      "path": "figure_data/figure5"
+    },
+    {
+      "type": "directory",
+      "oid": "3c9c7e0d91bc8b274caab04c56335e2fe7963f39",
+      "size": 0,
+      "path": "other_models"
+    },
+    {
+      "type": "directory",
+      "oid": "d86609880e8c1d0817fbb7383c2d830a0f70cedb",
+      "size": 0,
+      "path": "other_models/across_slide"
+    },
+    {
+      "type": "directory",
+      "oid": "bdcbf47169d130b7ccb8c7ddb769e79f86ae8b81",
+      "size": 0,
+      "path": "other_models/imputation"
+    },
+    {
+      "type": "directory",
+      "oid": "cf2a1469bb0ee0aafab76673bb84e4fb6945287f",
+      "size": 0,
+      "path": "other_models/imputation/pasta"
+    },
+    {
+      "type": "directory",
+      "oid": "f7ee04d598cfb2cd201425a7cf6c4b8260fd6649",
+      "size": 0,
+      "path": "other_models/imputation/spatialex_plus_uni2h"
+    },
+    {
+      "type": "directory",
+      "oid": "1da593ec0f7cdb0b6cef73c2413551adaba29622",
+      "size": 0,
+      "path": "other_models/imputation/spatialex_single_breast2_uni2h"
+    },
+    {
+      "type": "directory",
+      "oid": "4d7462f66080a8c2a731c0ae51c4c1f44a7d0477",
+      "size": 0,
+      "path": "other_models/within_slide"
+    },
+    {
+      "type": "file",
+      "oid": "af4d5db0fbcaf1f0bda32bb0be80eeedcd74e771",
+      "size": 5842,
+      "path": ".gitattributes"
+    },
+    {
+      "type": "file",
+      "oid": "60c10000ecd8279e9e9be0539991d713fcce53d4",
+      "size": 6354,
+      "path": "GHIST_plus/models/breast_multi/config_inference_atera_domain0.json"
+    },
+    {
+      "type": "file",
+      "oid": "dbfdc2df6f804e16d154505211ce6df2d6626521",
+      "size": 6319,
+      "path": "GHIST_plus/models/breast_multi/config_inference_breast5k_domain0.json"
+    },
+    {
+      "type": "file",
+      "oid": "02b487a04c0849b52ab298cee79d92ad5eccecef",
+      "size": 6775,
+      "path": "GHIST_plus/models/breast_multi/config_multi_breast.json"
+    },
+    {
+      "type": "file",
+      "oid": "5040892651e23cd4ca671edf7cb14b46511fc357",
+      "size": 2442,
+      "path": "GHIST_plus/models/breast_multi/genes.txt"
+    },
+    {
+      "type": "file",
+      "oid": "840447c2b0c3ba540deaa158a51a1973461e6320",
+      "size": 184217730,
+      "lfs": {
+        "oid": "b0194f6d6736c8c65cced7b65db0013d1ba61484345c3ea9855393a60018637e",
+        "size": 184217730,
+        "pointerSize": 134
+      },
+      "xetHash": "52257d326ba3372fc547882cdaa44cf0328aa868628396a07544279b842e0f54",
+      "path": "GHIST_plus/models/breast_multi/ghist_plus_breast_multi_checkpoint.pth"
+    },
+    {
+      "type": "file",
+      "oid": "d942121608a026220760e2c3fe1cdb6b10fc64f9",
+      "size": 173521230,
+      "lfs": {
+        "oid": "8500b17395a2d09546966dad1601d0e66dd1484f244e8d98255da969b8f1a50f",
+        "size": 173521230,
+        "pointerSize": 134
+      },
+      "xetHash": "796fe145915625a6ead7ae797fa47569c88d4eef9dfe003a9f6869e660fa75a5",
+      "path": "GHIST_plus/models/breast_multi/ghist_plus_breast_multi_optimizer.pth"
+    },
+    {
+      "type": "file",
+      "oid": "ba92a39ad64745d14f4654f18091d8515cf0b37b",
+      "size": 176,
+      "lfs": {
+        "oid": "3f172e9742c1ceb7783b1187e9900d8a51f67e2322a85ca441b0a9621dcf5e79",
+        "size": 176,
+        "pointerSize": 128
+      },
+      "xetHash": "0e90921cb50e0e1b87152247f62bd9508174d1c87023fd2dcfe49f9f3279ed20",
+      "path": "GHIST_plus/models/breast_multi/standardisation_hist_fold_1.npy"
+    },
+    {
+      "type": "file",
+      "oid": "d5d2c99894a848dd160e50fa1a42db9b28c7ed06",
+      "size": 3851,
+      "path": "GHIST_plus/models/breast_single/config.json"
+    },
+    {
+      "type": "file",
+      "oid": "80681b0ef8977d764975361d4d99468412cb6d02",
+      "size": 1675,
+      "path": "GHIST_plus/models/breast_single/genes.txt"
+    },
+    {
+      "type": "file",
+      "oid": "41acbbd72f68be12f3291676dbbab8bd574823fd",
+      "size": 166780546,
+      "lfs": {
+        "oid": "87a348609b99bd6abe6b07eaa8420da0913d4f1c26766aab9b4d1c923354b286",
+        "size": 166780546,
+        "pointerSize": 134
+      },
+      "xetHash": "c7cd2b80847b3665e1c9f1c1ecf78a0afd0c488fec6ec02c72d46dfa3fa4580b",
+      "path": "GHIST_plus/models/breast_single/ghist_plus_breast_single_checkpoint.pth"
+    },
+    {
+      "type": "file",
+      "oid": "92ee8a9cb4ed767545f88cdb1b7a1e0c7485292a",
+      "size": 161531214,
+      "lfs": {
+        "oid": "a7493ef38c514908e6db6e1f23e8b2ee8d15f517367f74c8c8b695163b16ce5d",
+        "size": 161531214,
+        "pointerSize": 134
+      },
+      "xetHash": "d19dae6e27ece87de7da9e61ff7fa90ff3cb21f066eb4f2fd851d15f1e3cf4cf",
+      "path": "GHIST_plus/models/breast_single/ghist_plus_breast_single_optimizer.pth"
+    },
+    {
+      "type": "file",
+      "oid": "ba92a39ad64745d14f4654f18091d8515cf0b37b",
+      "size": 176,
+      "lfs": {
+        "oid": "3f172e9742c1ceb7783b1187e9900d8a51f67e2322a85ca441b0a9621dcf5e79",
+        "size": 176,
+        "pointerSize": 128
+      },
+      "xetHash": "0e90921cb50e0e1b87152247f62bd9508174d1c87023fd2dcfe49f9f3279ed20",
+      "path": "GHIST_plus/models/breast_single/standardisation_hist_fold_1.npy"
+    },
+    {
+      "type": "file",
+      "oid": "9b5b1fe368939e7079c6f1607b6df9195aff2cd1",
+      "size": 7752,
+      "path": "GHIST_plus/models/imputation/config_gene_mask_imputer.json"
+    },
+    {
+      "type": "file",
+      "oid": "5040892651e23cd4ca671edf7cb14b46511fc357",
+      "size": 2442,
+      "path": "GHIST_plus/models/imputation/genes.txt"
+    },
+    {
+      "type": "file",
+      "oid": "429424fafb999fb303d884e49a6bfee4cbf69472",
+      "size": 185492386,
+      "lfs": {
+        "oid": "6b44ddf8516c70b1f1822a73de9716a152acae656625b64e38005eb54d2979f5",
+        "size": 185492386,
+        "pointerSize": 134
+      },
+      "xetHash": "658490c5a02af98e1964fdb7252ae779f6e189b29edba25ff394e008a5f20b2d",
+      "path": "GHIST_plus/models/imputation/ghist_plus_gene_imputation_checkpoint.pth"
+    },
+    {
+      "type": "file",
+      "oid": "b793822557f31f673217eaf6f85d0fe8fe05e163",
+      "size": 176071174,
+      "lfs": {
+        "oid": "027b7542f16517a6f8c7d2582dad8c7de8d496aa5c6fa5440531030511280cf0",
+        "size": 176071174,
+        "pointerSize": 134
+      },
+      "xetHash": "4add029200270eb3e8c33839ab303e1bda6fe8baad9cb3f30ac62a9a5478b1bc",
+      "path": "GHIST_plus/models/imputation/ghist_plus_gene_imputation_optimizer.pth"
+    },
+    {
+      "type": "file",
+      "oid": "77d838bd95060068917bf524842583bfc2649b64",
+      "size": 1044,
+      "path": "GHIST_plus/models/imputation/holdout_genes_by_slide.json"
+    },
+    {
+      "type": "file",
+      "oid": "ba92a39ad64745d14f4654f18091d8515cf0b37b",
+      "size": 176,
+      "lfs": {
+        "oid": "3f172e9742c1ceb7783b1187e9900d8a51f67e2322a85ca441b0a9621dcf5e79",
+        "size": 176,
+        "pointerSize": 128
+      },
+      "xetHash": "0e90921cb50e0e1b87152247f62bd9508174d1c87023fd2dcfe49f9f3279ed20",
+      "path": "GHIST_plus/models/imputation/standardisation_hist_fold_1.npy"
+    },
+    {
+      "type": "file",
+      "oid": "03738dd96429178beacdc03824a5a5006816d21a",
+      "size": 11622,
+      "path": "GHIST_plus/models/pancancer/config.json"
+    },
+    {
+      "type": "file",
+      "oid": "10f85f82f6ebc4bc58d481779d5df72a97ba140f",
+      "size": 7570,
+      "path": "GHIST_plus/models/pancancer/genes.txt"
+    },
+    {
+      "type": "file",
+      "oid": "27768daf797dc503fc56aaeecbedb069877155f6",
+      "size": 297232898,
+      "lfs": {
+        "oid": "d490f59a6f2821cdcc666937572d0fcc189149e56305265ecef51d754f3a7e19",
+        "size": 297232898,
+        "pointerSize": 134
+      },
+      "xetHash": "125c8ef1cf498c847acc85087e5fca550733a6ca5ad6f77ebb6aeb143609e172",
+      "path": "GHIST_plus/models/pancancer/ghist_plus_pancancer_checkpoint.pth"
+    },
+    {
+      "type": "file",
+      "oid": "22dc5d69bdc77a401c24d26a97586b734b2fb85a",
+      "size": 251232334,
+      "lfs": {
+        "oid": "de7026de89a9794b44f93c69a9146b87db5d976e5ff9a820516774373e11328a",
+        "size": 251232334,
+        "pointerSize": 134
+      },
+      "xetHash": "d8ebddc6c0570c09eb83b0b777219aa10cacf074070c6bfd775528113ef20fbd",
+      "path": "GHIST_plus/models/pancancer/ghist_plus_pancancer_optimizer.pth"
+    },
+    {
+      "type": "file",
+      "oid": "c2ab6bcee1f7b054709aae7a7394e6ed2092f46c",
+      "size": 176,
+      "lfs": {
+        "oid": "25783117bcb49c5dd30dfc3f2bf5055f490ff7179c2de7a231f7155fb5121a12",
+        "size": 176,
+        "pointerSize": 128
+      },
+      "xetHash": "79515db365ed5c0b3890f0ff73ab4fd9a67e16ad7a024872462181cfc9e7aaa1",
+      "path": "GHIST_plus/models/pancancer/standardisation_hist_fold_1.npy"
+    },
+    {
+      "type": "file",
+      "oid": "e425cd60811de8f4c08eb9d002b5a0e54da9744b",
+      "size": 4797774,
+      "path": "GHIST_plus/predictions/breast_multi/atera/test_slide9101_pred_celltype.csv"
+    },
+    {
+      "type": "file",
+      "oid": "e9badcaccc5708937cdcbd06cbcedf6adb28a724",
+      "size": 19759521,
+      "lfs": {
+        "oid": "1d518d9d9b6d2a3fc95e8349f5db6ce7eb5c7b0c7e4fabf948ad5b75a5dd37bc",
+        "size": 19759521,
+        "pointerSize": 133
+      },
+      "xetHash": "7883f496cb635a242d12ad297f3ded298a96849c527ddee45706dd5a81b84c6f",
+      "path": "GHIST_plus/predictions/breast_multi/atera/test_slide9101_pred_celltype_probs.csv"
+    },
+    {
+      "type": "file",
+      "oid": "64ae0e35d3ce09b82659fa701d2bf4d4ffa98713",
+      "size": 337925817,
+      "lfs": {
+        "oid": "4fd81183d4517fb8d2b019eac6c87f42f6ec0a8f58a366dded6b0c0a803567df",
+        "size": 337925817,
+        "pointerSize": 134
+      },
+      "xetHash": "9baff48f0166a559cf099db5dca4cb600c081b4f9ec2158683c9200d1fda46b4",
+      "path": "GHIST_plus/predictions/breast_multi/atera/test_slide9101_pred_expr_scaled.csv"
+    },
+    {
+      "type": "file",
+      "oid": "66e743c0d34eed294e318b305543c1213f22687f",
+      "size": 799684478,
+      "lfs": {
+        "oid": "f49f5c8a2d751d17892747c73dff81c6ad53d147424cac6516fd09af9d786282",
+        "size": 799684478,
+        "pointerSize": 134
+      },
+      "xetHash": "4690e79da946cb841d796baf34278160f149bf247a172b9e77d040b94c8d6533",
+      "path": "GHIST_plus/predictions/breast_multi/atera/test_slide9101_pred_expr_scaled.npz"
+    },
+    {
+      "type": "file",
+      "oid": "9f80a03b9402e3d1e9c937f4d984ffc79a57d532",
+      "size": 15382411,
+      "lfs": {
+        "oid": "666434dab881fc92ada5dfd5993ad2ae798baa28c61517970b159c3cdcc99ef6",
+        "size": 15382411,
+        "pointerSize": 133
+      },
+      "xetHash": "7ef235de18364b46d9019ea01506ed435fb05e843b66e97a041a260ed661742d",
+      "path": "GHIST_plus/predictions/breast_multi/breast5k/test_slide6_pred_celltype.csv"
+    },
+    {
+      "type": "file",
+      "oid": "b6aedb76c01efaffa3cd703f2c21884d13ca5084",
+      "size": 65632276,
+      "lfs": {
+        "oid": "4653573b92651f81df2e0d1265ea732be0a3fb1f25a3692d387009d001b2284b",
+        "size": 65632276,
+        "pointerSize": 133
+      },
+      "xetHash": "cbd66fe17360d26d0054e4fd0b0c4e327eaaaa8ac5342ff4f63e38807b939d5b",
+      "path": "GHIST_plus/predictions/breast_multi/breast5k/test_slide6_pred_celltype_probs.csv"
+    },
+    {
+      "type": "file",
+      "oid": "a2d04125f8c5d19452a9e5ab6490ff6679d028e1",
+      "size": 1146703052,
+      "lfs": {
+        "oid": "097e5be7b4fd9d70f4b87dcdf482cdbdd8529a3aa2338a211a48b25f17d8fd76",
+        "size": 1146703052,
+        "pointerSize": 135
+      },
+      "xetHash": "1f12e3c8da9c12e6467c88785c676d0fe2a09adade2b43255dcf8d118a031750",
+      "path": "GHIST_plus/predictions/breast_multi/breast5k/test_slide6_pred_expr_scaled.csv"
+    },
+    {
+      "type": "file",
+      "oid": "753e9379ab3574b32895a3ab0b92a7e2056c850e",
+      "size": 2692921031,
+      "lfs": {
+        "oid": "5e1e3e4b13b1c01698678613a45ce4100908af679535cef6049d213631b739e7",
+        "size": 2692921031,
+        "pointerSize": 135
+      },
+      "xetHash": "a13f80324ceb15fd21e009a2c62c3af32a59f729bf8c2bb67358987c6dcd5e80",
+      "path": "GHIST_plus/predictions/breast_multi/breast5k/test_slide6_pred_expr_scaled.npz"
+    },
+    {
+      "type": "file",
+      "oid": "2887240639e594f42411cee8fcb584b41056eea8",
+      "size": 163015652,
+      "lfs": {
+        "oid": "2304e3585719f1f1c03c9fbbdd449e9a65e194357cf78e71380ead22d44fc473",
+        "size": 163015652,
+        "pointerSize": 134
+      },
+      "xetHash": "b454087efd9d49f17a71526b41973b96174c443dbcd801d34c1558fa0878c46f",
+      "path": "GHIST_plus/predictions/breast_multi/test_slide3_pred_expr_scaled.csv"
+    },
+    {
+      "type": "file",
+      "oid": "8abeb429f7fe0828149db2b5a2d2529b8a8e1913",
+      "size": 18884189,
+      "lfs": {
+        "oid": "ded0d5f1006d95c19b6fcb6e0ebb6c038a82f21e575be189d8c3cf2154c508bf",
+        "size": 18884189,
+        "pointerSize": 133
+      },
+      "xetHash": "edd2c4fa9538b8650d6dbdff843bbecc36c9660dd9625bbddd1c5d065129fec6",
+      "path": "GHIST_plus/predictions/breast_single/trainval_slide3_pred_expr_scaled.csv"
+    },
+    {
+      "type": "file",
+      "oid": "9e55f605d0031f2ab47125e976eb8fc85ece915b",
+      "size": 90196321,
+      "lfs": {
+        "oid": "46446efa9d34ddfae96bb6be96a47f8a29582f0a7abbf29b611c21a04be423cc",
+        "size": 90196321,
+        "pointerSize": 133
+      },
+      "xetHash": "eeaf9b5c4a4127046e3425f23893eb11dfb217f69898ff87b2402d56556e4088",
+      "path": "GHIST_plus/predictions/figure4_rrc/expression/validation_predictions.h5"
+    },
+    {
+      "type": "file",
+      "oid": "c94426fe3025d96421c035255ed55418ee71dbc8",
+      "size": 501223,
+      "path": "GHIST_plus/predictions/imputation/slide0_imputed10_scaled.csv"
+    },
+    {
+      "type": "file",
+      "oid": "3ec3e565f0e865c5057cc0fe106aebf2125fc459",
+      "size": 7829402,
+      "path": "GHIST_plus/predictions/imputation/slide1_imputed10_scaled.csv"
+    },
+    {
+      "type": "file",
+      "oid": "2b18aa78a6f221a8f1aa724231119e64d42a21b4",
+      "size": 2077296,
+      "path": "GHIST_plus/predictions/imputation/slide2_imputed10_scaled.csv"
+    },
+    {
+      "type": "file",
+      "oid": "bc6d1de9ebf053a6100840de083e521d5d7cb997",
+      "size": 1786094,
+      "path": "GHIST_plus/predictions/imputation/slide4_imputed10_scaled.csv"
+    },
+    {
+      "type": "file",
+      "oid": "0279bbbc662eba777d630dd625817acc8d1bfb6b",
+      "size": 4858335,
+      "path": "GHIST_plus/predictions/imputation/slide5_imputed10_scaled.csv"
+    },
+    {
+      "type": "file",
+      "oid": "b1b17b3a492a08e91541192c0c3d4cc67637aa37",
+      "size": 15542799,
+      "lfs": {
+        "oid": "a3f61e4732d066e27e592de0efd7f04635bc2c5136ccb45322cb7690e05cac6f",
+        "size": 15542799,
+        "pointerSize": 133
+      },
+      "xetHash": "8e75806ac2540ba77159d7f4213bc82f15591aa97e9eda53961967e9b42da952",
+      "path": "GHIST_plus/predictions/pancancer/breast_5k/test_slide11_pred_celltype.csv"
+    },
+    {
+      "type": "file",
+      "oid": "f5d74757966eb70425640db25223da653531639e",
+      "size": 63941195,
+      "lfs": {
+        "oid": "d3673756bb4f1807babb96d67bffa87974f645a6e74c81ed296d947ccb2e3b88",
+        "size": 63941195,
+        "pointerSize": 133
+      },
+      "xetHash": "e99270e772fbc2da907ea30a5976552ea39496fbcfd2f0f1ad29c08d2d64f582",
+      "path": "GHIST_plus/predictions/pancancer/breast_5k/test_slide11_pred_celltype_probs.csv"
+    },
+    {
+      "type": "file",
+      "oid": "52c5b303ab39e475dcd3f45011a140b4f7d284a0",
+      "size": 3443912747,
+      "lfs": {
+        "oid": "103a6bea62b94f0e3c04a9cb701bc19770b2cafdfd6067bb0a0d90647cfe0632",
+        "size": 3443912747,
+        "pointerSize": 135
+      },
+      "xetHash": "293997f7e98979ca1a894112158a74bb4a6f442323baec6411f6040234ce405e",
+      "path": "GHIST_plus/predictions/pancancer/breast_5k/test_slide11_pred_expr_counts.csv"
+    },
+    {
+      "type": "file",
+      "oid": "8d5042c8b24099a0566741c57cc50d15fd1dd77d",
+      "size": 3442284130,
+      "lfs": {
+        "oid": "edda5af766a9b6a2a2fa4d6f9ca0bccfadcce1829ddebec4e61046da3a381006",
+        "size": 3442284130,
+        "pointerSize": 135
+      },
+      "xetHash": "e2f338b6b6a730068f309f11f4912202a37f30873eaaca63649ed7f14a9f274d",
+      "path": "GHIST_plus/predictions/pancancer/breast_5k/test_slide11_pred_expr_scaled.csv"
+    },
+    {
+      "type": "file",
+      "oid": "315b8777cf3ef72347a5502c4d4f22f182c0fb46",
+      "size": 8216068933,
+      "lfs": {
+        "oid": "cdaff33d30270aeff16063eb7c472216dbbaedc429dfc8c51a505eb9054b8578",
+        "size": 8216068933,
+        "pointerSize": 135
+      },
+      "xetHash": "b99a60f74264c62adbd70adfc7a190071cf79071029edb7a0c4bacbb2eb03bcc",
+      "path": "GHIST_plus/predictions/pancancer/breast_5k/test_slide11_pred_expr_scaled.npz"
+    },
+    {
+      "type": "file",
+      "oid": "151f54a080a9b748394f917939fb973610208ced",
+      "size": 7128848,
+      "path": "GHIST_plus/predictions/pancancer/lung_5k/test_slide16_pred_celltype.csv"
+    },
+    {
+      "type": "file",
+      "oid": "fd84d278bd6af8bf6c3eaf49d97e7163afafb815",
+      "size": 24981456,
+      "lfs": {
+        "oid": "11166705561d36ed3ae61a6ebf232610ea93a0a3af76dc333485129422a09d30",
+        "size": 24981456,
+        "pointerSize": 133
+      },
+      "xetHash": "95c9b1bef84382f4f7dd47411b1f9ff603d4a26cc4673cd6bf6ce5c73ed86609",
+      "path": "GHIST_plus/predictions/pancancer/lung_5k/test_slide16_pred_celltype_probs.csv"
+    },
+    {
+      "type": "file",
+      "oid": "28db96b0220d284a0ba6f3678bfc3654dc232767",
+      "size": 1339667147,
+      "lfs": {
+        "oid": "830139a4c34e6148a3919ec15750f46be7902f9c9f11699611336979420b2b54",
+        "size": 1339667147,
+        "pointerSize": 135
+      },
+      "xetHash": "c6338b5b6428e6445643187c07b4af29c1bc13b60d9e2af1cf4e802267a4bd51",
+      "path": "GHIST_plus/predictions/pancancer/lung_5k/test_slide16_pred_expr_counts.csv"
+    },
+    {
+      "type": "file",
+      "oid": "d63062449e5ca4de2d3fd1d25931072b1baa81aa",
+      "size": 1339193012,
+      "lfs": {
+        "oid": "abe9493a94830bd46d9cdc9d487f31e075ee08d6b42373fc1f79545548326228",
+        "size": 1339193012,
+        "pointerSize": 135
+      },
+      "xetHash": "ff4affc3450e12075d1f6b36380a939c91a85994aa05181f6ae865cca6f0da1d",
+      "path": "GHIST_plus/predictions/pancancer/lung_5k/test_slide16_pred_expr_scaled.csv"
+    },
+    {
+      "type": "file",
+      "oid": "f44cae10cb2cbac79e1ee6cdc7c042d00da992cc",
+      "size": 3211465741,
+      "lfs": {
+        "oid": "6c9483ebb0ba6a73fd1c060d0c04c5fb60555969582489d7adff49c82ebabe3b",
+        "size": 3211465741,
+        "pointerSize": 135
+      },
+      "xetHash": "206e3dba24d68dce101516b07599ba3c2de259745ca2bafc6b2516c8112030f7",
+      "path": "GHIST_plus/predictions/pancancer/lung_5k/test_slide16_pred_expr_scaled.npz"
+    },
+    {
+      "type": "file",
+      "oid": "fd716a4a8da4de2835b651965ce034e9b2408e59",
+      "size": 3357493,
+      "path": "GHIST_plus/predictions/pancancer/pancreas3/test_slide14_pred_celltype.csv"
+    },
+    {
+      "type": "file",
+      "oid": "8e808587b2b30057dd4f8d7220ec8775faeb9d82",
+      "size": 12371297,
+      "lfs": {
+        "oid": "83f03ad0a2f8762c9a05e0d5efebe0196ebbca694fa1f8e98a635371908c0320",
+        "size": 12371297,
+        "pointerSize": 133
+      },
+      "xetHash": "424fb1fe422c89878466ac50ba42d681e144e72e91c378451acac75cb4663ca1",
+      "path": "GHIST_plus/predictions/pancancer/pancreas3/test_slide14_pred_celltype_probs.csv"
+    },
+    {
+      "type": "file",
+      "oid": "969a0b1bd6e4cc181e79c98443456cfb2d711cd9",
+      "size": 671951108,
+      "lfs": {
+        "oid": "4a3aeba3193767b529cce1de61bf69dd04261c0ddf5a2e85a41dd93a6d96d4f4",
+        "size": 671951108,
+        "pointerSize": 134
+      },
+      "xetHash": "981c0366538eec4b2d7f00512892df6e0cb426b90666701d0239e88ab2676c55",
+      "path": "GHIST_plus/predictions/pancancer/pancreas3/test_slide14_pred_expr_counts.csv"
+    },
+    {
+      "type": "file",
+      "oid": "c0a7495690a6024a33f8110e0f5167278afd80d9",
+      "size": 671673017,
+      "lfs": {
+        "oid": "a1a5ecfc03096ca78673e49eb070975ee151673a089c64005ba09daeeaa801f7",
+        "size": 671673017,
+        "pointerSize": 134
+      },
+      "xetHash": "db4dc01fc98f47b27842cbed30d2fd284b3f4bd3c5d1d76b3e83214b54f0c77e",
+      "path": "GHIST_plus/predictions/pancancer/pancreas3/test_slide14_pred_expr_scaled.csv"
+    },
+    {
+      "type": "file",
+      "oid": "f3110753ea70a662347918ba7fcbd1e9a6ee8fa2",
+      "size": 1598632205,
+      "lfs": {
+        "oid": "723091bc4d441282b4c12a00c4f17e10a584b46c10571c44711d63cf9df37f04",
+        "size": 1598632205,
+        "pointerSize": 135
+      },
+      "xetHash": "73cb928fa8ca55f71b1b20a24eb2f022fa897e589250c775ab0edac2dd2c5723",
+      "path": "GHIST_plus/predictions/pancancer/pancreas3/test_slide14_pred_expr_scaled.npz"
+    },
+    {
+      "type": "file",
+      "oid": "4db9acc8aaad0803e71a9cf3b35851180276ecb2",
+      "size": 18899787,
+      "lfs": {
+        "oid": "21fffd483019307474fc095020824e1451e7ef806a29f711a8059a6b45e7e4d7",
+        "size": 18899787,
+        "pointerSize": 133
+      },
+      "xetHash": "c9bd29aad1e3df7801cc8fae4981507951ff33a3fbb2cd62c1eb3cc64ca0c394",
+      "path": "GHIST_plus/predictions/vq_off/randomized_vq_composition_trainval_slide3_pred_expr_scaled.csv"
+    },
+    {
+      "type": "file",
+      "oid": "d378bd5f7510ffc7d971317c99b2d29bb10f6ce4",
+      "size": 18890285,
+      "lfs": {
+        "oid": "83e31fa3cfedd748ad74390fffa1c2ce04ad943051e59a9c074722a817514a33",
+        "size": 18890285,
+        "pointerSize": 133
+      },
+      "xetHash": "e8bcb584041f29ed637deda323b1322176fef3bdb35a54959bd5ac717315fd40",
+      "path": "GHIST_plus/predictions/vq_off/trainval_slide3_pred_expr_scaled.csv"
+    },
+    {
+      "type": "file",
+      "oid": "e7a27430f5bc1b94bba38dd3d8fc4376e02bbca3",
+      "size": 18936436,
+      "lfs": {
+        "oid": "e16e3a9eccbd62f3005a4d7e1b11a90eb7ec50b9b8f5368c7c14c7184dab8966",
+        "size": 18936436,
+        "pointerSize": 133
+      },
+      "xetHash": "8e438ec74931ff05baa2584d2795b3a8253474a5c8c047ffc8d9e50fecd338c7",
+      "path": "GHIST_plus/predictions/vq_off/vq_composition_off_trainval_slide3_pred_expr_scaled.csv"
+    },
+    {
+      "type": "file",
+      "oid": "1925446f6609a04daa41cfa2ed91835bc55cd2a6",
+      "size": 3574,
+      "path": "README.md"
+    },
+    {
+      "type": "file",
+      "oid": "5cbcdd983f73480dbe9dd82d9ddddde878a0b2f4",
+      "size": 2203,
+      "path": "THIRD_PARTY_NOTICES.md"
+    },
+    {
+      "type": "file",
+      "oid": "6b824c5f8745c2654f4453f9f54205c60f1f6683",
+      "size": 7182587,
+      "path": "evaluation_data/atera/cell_coords.csv"
+    },
+    {
+      "type": "file",
+      "oid": "a287ab39102b22b727d47c89b5b9edc44790124e",
+      "size": 430845549,
+      "lfs": {
+        "oid": "67ec3b0a1bc236b13fff64fbe1a8e595fa8db5f9b8571209ad01c13e6049ef19",
+        "size": 430845549,
+        "pointerSize": 134
+      },
+      "xetHash": "8a44218fc261814c891b5bebc2453e190f38582193e0c12de31e46c3626099d7",
+      "path": "evaluation_data/atera/cell_gene_matrix_filtered.csv"
+    },
+    {
+      "type": "file",
+      "oid": "8aab66907f837b95709cfeedbd301a9958c3dc68",
+      "size": 3692760,
+      "path": "evaluation_data/breast2/cell_coords.csv"
+    },
+    {
+      "type": "file",
+      "oid": "3aedbec7c5f15128c24156cd63e061cc06884690",
+      "size": 49091912,
+      "lfs": {
+        "oid": "5f9d483f2fb6e4e7182628d93a3ef8bd9b843614dd7796fe3118f3aacd581682",
+        "size": 49091912,
+        "pointerSize": 133
+      },
+      "xetHash": "e5232e1a823d5f9f1d41916c26d12ba87d0001332593ad8151dea62d357bf1c9",
+      "path": "evaluation_data/breast2/cell_gene_matrix_filtered.csv"
+    },
+    {
+      "type": "file",
+      "oid": "b849d60787416ec5f9540192110f9de209f47e01",
+      "size": 1143494,
+      "path": "evaluation_data/breast2/cell_type_filtered.csv"
+    },
+    {
+      "type": "file",
+      "oid": "8cf2a3accdea5bfb4a844f8aa2d3876c4940ce58",
+      "size": 22167009,
+      "lfs": {
+        "oid": "9c9ac9fd16842ee57e93235f3f1253dd631c4a46175ef73c06d4bdb3bebd2ee0",
+        "size": 22167009,
+        "pointerSize": 133
+      },
+      "xetHash": "35c67837df8521db1deef6a036a4ad48539e3e0141049b245a98b1e310fc75c5",
+      "path": "evaluation_data/breast5k/cell_coords_histology_filtered.csv"
+    },
+    {
+      "type": "file",
+      "oid": "d80cbb60c39a7c5f02eab1845569d5bb6df93ace",
+      "size": 5763004701,
+      "lfs": {
+        "oid": "c848da599333be5edbbc66d14fb2051b51af317d87a790761fa8d0972f5cfa57",
+        "size": 5763004701,
+        "pointerSize": 135
+      },
+      "xetHash": "fe8f342a9292ace15bdc3d9f4fadcfb567bb1037dace8e4fcf3deae06355005a",
+      "path": "evaluation_data/breast5k/cell_gene_matrix_filtered.csv"
+    },
+    {
+      "type": "file",
+      "oid": "751fa51e6c87c92fd5f3df63ea10ff9b916c02d1",
+      "size": 2147784,
+      "lfs": {
+        "oid": "4686fbe33d9dc52e299e4812c0bd4f5915604413181da2542d18a906248c1253",
+        "size": 2147784,
+        "pointerSize": 132
+      },
+      "xetHash": "90af2c96bb575aaee816bc5d0cbf2688734775917d2c4f738ffc1ba0ac54901c",
+      "path": "evaluation_data/imputation/figure3_coordinates.csv.gz"
+    },
+    {
+      "type": "file",
+      "oid": "7ab5c530e6e67dd1ba9e084a83941c19b1085807",
+      "size": 1322255,
+      "lfs": {
+        "oid": "e7287b8706f332b395637a2dda91b15ed0d4708789b5057076c1051009a07e02",
+        "size": 1322255,
+        "pointerSize": 132
+      },
+      "xetHash": "b31ed6e78c502889f276ba76a7cad47796283093d8f8a1714190fbed06304835",
+      "path": "evaluation_data/imputation/figure3_ground_truth.csv.gz"
+    },
+    {
+      "type": "file",
+      "oid": "f00b82482821e238d2456065c562ec2f1d9d1232",
+      "size": 990,
+      "path": "figure_data/figure5/coverage_summary.csv"
+    },
+    {
+      "type": "file",
+      "oid": "e21be9137da4fde6dcd99a9abc73bc9b07564ff2",
+      "size": 3313,
+      "path": "figure_data/figure5/paired_gene_pcc.csv"
+    },
+    {
+      "type": "file",
+      "oid": "8734be004a533de819350c43b1aa977b61baca3a",
+      "size": 200664029,
+      "lfs": {
+        "oid": "8bcdb88bb609b4ce78f9c8310b304f136e2b520c2b76f4da1a71c5ff1494d533",
+        "size": 200664029,
+        "pointerSize": 134
+      },
+      "xetHash": "12127acb03f8d6b736edd2de0f57be358100dd1a9dcfc393e0caf4f6e0908db5",
+      "path": "other_models/across_slide/GHIST_pred_expr.csv"
+    },
+    {
+      "type": "file",
+      "oid": "52a065a975983b5515a75499d6dae4bc9d8c38a8",
+      "size": 294253470,
+      "lfs": {
+        "oid": "ff3417c70c22fd0cf3ecd073e8b82d2afdd7cb1c705d3ea7a7f3503d9d4d8557",
+        "size": 294253470,
+        "pointerSize": 134
+      },
+      "xetHash": "82bfd1c21172359d67c1fe6bdd4e6784c5de15dedfb214cebf617aef9b3aaaab",
+      "path": "other_models/across_slide/Phoenix_pred_expr.csv"
+    },
+    {
+      "type": "file",
+      "oid": "6f7aafcd23569c6d5521bf22011a1569ddf027a0",
+      "size": 279385517,
+      "lfs": {
+        "oid": "dd9c3e79f6778ea48ca3acaad1aee89f3cd1e63d04f793c4a9dd45c535b8e343",
+        "size": 279385517,
+        "pointerSize": 134
+      },
+      "xetHash": "48f2fbbf2121b30d2824ff3e5ac931aab562619ee933e4df442dbd41fdb48cbc",
+      "path": "other_models/across_slide/SpatialEx_UNI2H_pred_expr.csv"
+    },
+    {
+      "type": "file",
+      "oid": "efba75495fa0929aa2d9bcf303ddf1cdea77ac7a",
+      "size": 288349485,
+      "lfs": {
+        "oid": "8c270ae93f8d84cbb92955de03a143b00761f9a2f5bda4fc77b98ea492746524",
+        "size": 288349485,
+        "pointerSize": 134
+      },
+      "xetHash": "91e7d7a3c62838d18e8e5a822bc166cf0107548568dc988b767cd83f8c05fddb",
+      "path": "other_models/across_slide/SpatialEx_pred_expr.csv"
+    },
+    {
+      "type": "file",
+      "oid": "dcaff15ab40a557a4f3f144e25dfc4a920c94b94",
+      "size": 670361,
+      "path": "other_models/imputation/pasta/slide_0_pasta_holdout_pred.csv"
+    },
+    {
+      "type": "file",
+      "oid": "e8e0aac9846c74c2c04f75d319f18a56caad962b",
+      "size": 10738145,
+      "lfs": {
+        "oid": "69d9d09d5b5376952a319bcb350ecf40cf8cf0bbe867bdc12eda67a3a4c7a90a",
+        "size": 10738145,
+        "pointerSize": 133
+      },
+      "xetHash": "b31e9c8fd39b87a2a5d4ffd3d8fb78f4c5cc923de168d156a5f3448b95c6fc9a",
+      "path": "other_models/imputation/pasta/slide_1_pasta_holdout_pred.csv"
+    },
+    {
+      "type": "file",
+      "oid": "c56aff9799c56f353e5e59d6014798f852a0b5c9",
+      "size": 2846322,
+      "path": "other_models/imputation/pasta/slide_2_pasta_holdout_pred.csv"
+    },
+    {
+      "type": "file",
+      "oid": "544085aba053f5e4543f8e928cce1097b74a5bf4",
+      "size": 2429089,
+      "path": "other_models/imputation/pasta/slide_4_pasta_holdout_pred.csv"
+    },
+    {
+      "type": "file",
+      "oid": "9affa53815b0cabaebb067c9560f2aacafadec6b",
+      "size": 6661815,
+      "path": "other_models/imputation/pasta/slide_5_pasta_holdout_pred.csv"
+    },
+    {
+      "type": "file",
+      "oid": "c1a5314204915aba9432b3fc55426c8f1bb64dcd",
+      "size": 445572,
+      "path": "other_models/imputation/spatialex_plus_uni2h/slide0_spatialex_plus_fixed10_native_log.csv"
+    },
+    {
+      "type": "file",
+      "oid": "33fd5eddd612fd19a47e850b9a77c0e036e1e7fe",
+      "size": 8453988,
+      "path": "other_models/imputation/spatialex_plus_uni2h/slide1_spatialex_plus_fixed10_native_log.csv"
+    },
+    {
+      "type": "file",
+      "oid": "b3c35d32356a612497dfaf5cc6f6023a741fa98b",
+      "size": 2216227,
+      "path": "other_models/imputation/spatialex_plus_uni2h/slide2_spatialex_plus_fixed10_native_log.csv"
+    },
+    {
+      "type": "file",
+      "oid": "915cda0f33d7a57971f0b3265a3e26782fa15820",
+      "size": 1901340,
+      "path": "other_models/imputation/spatialex_plus_uni2h/slide4_spatialex_plus_fixed10_native_log.csv"
+    },
+    {
+      "type": "file",
+      "oid": "5bead58f41880b42b8ee3e91c109ad51305aeda4",
+      "size": 5248812,
+      "path": "other_models/imputation/spatialex_plus_uni2h/slide5_spatialex_plus_fixed10_native_log.csv"
+    },
+    {
+      "type": "file",
+      "oid": "7312185f8094983bf97ab50f58d44e2d9f31dca0",
+      "size": 496204,
+      "path": "other_models/imputation/spatialex_single_breast2_uni2h/slide0_spatialex_single_breast2_uni2h_native_log.csv"
+    },
+    {
+      "type": "file",
+      "oid": "f4a5d10a88236fbf0a132d7cfabd16cc6b5816b2",
+      "size": 8104942,
+      "path": "other_models/imputation/spatialex_single_breast2_uni2h/slide1_spatialex_single_breast2_uni2h_native_log.csv"
+    },
+    {
+      "type": "file",
+      "oid": "567a04e7b1256a59688d27929d85bebf8166a2a6",
+      "size": 2351453,
+      "path": "other_models/imputation/spatialex_single_breast2_uni2h/slide2_spatialex_single_breast2_uni2h_native_log.csv"
+    },
+    {
+      "type": "file",
+      "oid": "ab7524db6f7cd523302988897639c35962908a53",
+      "size": 1228935,
+      "path": "other_models/imputation/spatialex_single_breast2_uni2h/slide4_spatialex_single_breast2_uni2h_native_log.csv"
+    },
+    {
+      "type": "file",
+      "oid": "0f8271890db78d38c14ff43e09da065b20a58985",
+      "size": 5563761,
+      "path": "other_models/imputation/spatialex_single_breast2_uni2h/slide5_spatialex_single_breast2_uni2h_native_log.csv"
+    },
+    {
+      "type": "file",
+      "oid": "30bef68f8b70b3762d476e277e809164b0f839d3",
+      "size": 34657338,
+      "lfs": {
+        "oid": "5dcf03267f2cbf0c622830de078dc2e5289b6e9f47774f14bc2567822ba136e4",
+        "size": 34657338,
+        "pointerSize": 133
+      },
+      "xetHash": "5498ff8859c908c5df5d78b4751dd878299a65290b3a5da56c3ddb043d0903aa",
+      "path": "other_models/within_slide/GHIST_pred_expr.csv"
+    },
+    {
+      "type": "file",
+      "oid": "9a4a24e2b676653278e09302966feaa89481f52f",
+      "size": 44343228,
+      "lfs": {
+        "oid": "c9ae359d138255949dd8c76174e8f612993317cb2c186865a0601745c1e6e732",
+        "size": 44343228,
+        "pointerSize": 133
+      },
+      "xetHash": "5461a8ad4d2f406f1a83a074bc793334b8a77fb4683263270f5325da125817fd",
+      "path": "other_models/within_slide/SpatialEx_UNI2H_pred_expr.csv"
+    },
+    {
+      "type": "file",
+      "oid": "8490a54787ed62fd60ceacd64ecd100aaac32592",
+      "size": 44345012,
+      "lfs": {
+        "oid": "fa2ec812242b8078566b180f564a6bd867a4d994130a8d138e413669861d643e",
+        "size": 44345012,
+        "pointerSize": 133
+      },
+      "xetHash": "986e9cf78775559c1b606cd143fa70ff7b3fd70ea0b2f91777961392cdd67a82",
+      "path": "other_models/within_slide/SpatialEx_pred_expr.csv"
+    }
+  ],
+  "downloads": [
+    {
+      "path": "GHIST_plus/models/imputation/holdout_genes_by_slide.json",
+      "bytes": 1044,
+      "sha256": "97866a3b68815b4779d120c2346b9c898a1a41db3911ed8bbf7930f5f4c1ea6d",
+      "source_verified": true
+    },
+    {
+      "path": "GHIST_plus/predictions/breast_multi/atera/test_slide9101_pred_expr_scaled.npz",
+      "bytes": 799684478,
+      "sha256": "f49f5c8a2d751d17892747c73dff81c6ad53d147424cac6516fd09af9d786282",
+      "source_verified": true
+    },
+    {
+      "path": "GHIST_plus/predictions/breast_multi/breast5k/test_slide6_pred_expr_scaled.npz",
+      "bytes": 2692921031,
+      "sha256": "5e1e3e4b13b1c01698678613a45ce4100908af679535cef6049d213631b739e7",
+      "source_verified": true
+    },
+    {
+      "path": "GHIST_plus/predictions/breast_multi/test_slide3_pred_expr_scaled.csv",
+      "bytes": 163015652,
+      "sha256": "2304e3585719f1f1c03c9fbbdd449e9a65e194357cf78e71380ead22d44fc473",
+      "source_verified": true
+    },
+    {
+      "path": "GHIST_plus/predictions/breast_single/trainval_slide3_pred_expr_scaled.csv",
+      "bytes": 18884189,
+      "sha256": "ded0d5f1006d95c19b6fcb6e0ebb6c038a82f21e575be189d8c3cf2154c508bf",
+      "source_verified": true
+    },
+    {
+      "path": "GHIST_plus/predictions/imputation/slide0_imputed10_scaled.csv",
+      "bytes": 501223,
+      "sha256": "d309c7800e808686817099702bbd9c8a93956f3eac6ecf7ecd8c02a20901bf60",
+      "source_verified": true
+    },
+    {
+      "path": "GHIST_plus/predictions/imputation/slide1_imputed10_scaled.csv",
+      "bytes": 7829402,
+      "sha256": "eec97df7818691126e8cd9b4ec4cc96bc2b0c065bf17e09f3e9eeabbfc0717d1",
+      "source_verified": true
+    },
+    {
+      "path": "GHIST_plus/predictions/imputation/slide2_imputed10_scaled.csv",
+      "bytes": 2077296,
+      "sha256": "f8cff170905741dfe1dc49a925dddbd02db8f0c5b238d8a2622a0d0daf7182ee",
+      "source_verified": true
+    },
+    {
+      "path": "GHIST_plus/predictions/imputation/slide4_imputed10_scaled.csv",
+      "bytes": 1786094,
+      "sha256": "2d7417bb7e9e91380ab7557c96eac4caf8744732e02d951893a55d4aafb9af4c",
+      "source_verified": true
+    },
+    {
+      "path": "GHIST_plus/predictions/imputation/slide5_imputed10_scaled.csv",
+      "bytes": 4858335,
+      "sha256": "b3b60e11a3a5c694b5f5cda378f5518da4c9627ace0f4d509bb1018272a66e71",
+      "source_verified": true
+    },
+    {
+      "path": "GHIST_plus/predictions/vq_off/randomized_vq_composition_trainval_slide3_pred_expr_scaled.csv",
+      "bytes": 18899787,
+      "sha256": "21fffd483019307474fc095020824e1451e7ef806a29f711a8059a6b45e7e4d7",
+      "source_verified": true
+    },
+    {
+      "path": "GHIST_plus/predictions/vq_off/vq_composition_off_trainval_slide3_pred_expr_scaled.csv",
+      "bytes": 18936436,
+      "sha256": "e16e3a9eccbd62f3005a4d7e1b11a90eb7ec50b9b8f5368c7c14c7184dab8966",
+      "source_verified": true
+    },
+    {
+      "path": "README.md",
+      "bytes": 3574,
+      "sha256": "8eba1688be5b63534997e759c9bfc356bb1bd5fbc5536ec32d57587af7f44032",
+      "source_verified": true
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 2203,
+      "sha256": "e9c1d595b399a5a8a2b912e7ae76c55ec48001450e268973b13fb6f954c61d44",
+      "source_verified": true
+    },
+    {
+      "path": "evaluation_data/atera/cell_coords.csv",
+      "bytes": 7182587,
+      "sha256": "575b98f0108fbd34c541bd6672a3ac8af28e9082eb0f62598e59125390d54159",
+      "source_verified": true
+    },
+    {
+      "path": "evaluation_data/atera/cell_gene_matrix_filtered.csv",
+      "bytes": 430845549,
+      "sha256": "67ec3b0a1bc236b13fff64fbe1a8e595fa8db5f9b8571209ad01c13e6049ef19",
+      "source_verified": true
+    },
+    {
+      "path": "evaluation_data/breast2/cell_coords.csv",
+      "bytes": 3692760,
+      "sha256": "19cac65bd276ab4950e4485fd011fe1f32bc0564ba0052f23d0afa8144db9480",
+      "source_verified": true
+    },
+    {
+      "path": "evaluation_data/breast2/cell_gene_matrix_filtered.csv",
+      "bytes": 49091912,
+      "sha256": "5f9d483f2fb6e4e7182628d93a3ef8bd9b843614dd7796fe3118f3aacd581682",
+      "source_verified": true
+    },
+    {
+      "path": "evaluation_data/breast2/cell_type_filtered.csv",
+      "bytes": 1143494,
+      "sha256": "032adbd5cfce2331be587d033e0fa1fafae8c6787c9e6554e21910539441b19b",
+      "source_verified": true
+    },
+    {
+      "path": "evaluation_data/breast5k/cell_coords_histology_filtered.csv",
+      "bytes": 22167009,
+      "sha256": "9c9ac9fd16842ee57e93235f3f1253dd631c4a46175ef73c06d4bdb3bebd2ee0",
+      "source_verified": true
+    },
+    {
+      "path": "evaluation_data/breast5k/cell_gene_matrix_filtered.csv",
+      "bytes": 5763004701,
+      "sha256": "c848da599333be5edbbc66d14fb2051b51af317d87a790761fa8d0972f5cfa57",
+      "source_verified": true
+    },
+    {
+      "path": "evaluation_data/imputation/figure3_coordinates.csv.gz",
+      "bytes": 2147784,
+      "sha256": "4686fbe33d9dc52e299e4812c0bd4f5915604413181da2542d18a906248c1253",
+      "source_verified": true
+    },
+    {
+      "path": "evaluation_data/imputation/figure3_ground_truth.csv.gz",
+      "bytes": 1322255,
+      "sha256": "e7287b8706f332b395637a2dda91b15ed0d4708789b5057076c1051009a07e02",
+      "source_verified": true
+    },
+    {
+      "path": "figure_data/figure5/coverage_summary.csv",
+      "bytes": 990,
+      "sha256": "9513bbb83083a04aa7ff58ab7ce1545b4722ae67a3df8f4c5d47f168447fc327",
+      "source_verified": true
+    },
+    {
+      "path": "figure_data/figure5/paired_gene_pcc.csv",
+      "bytes": 3313,
+      "sha256": "87d3ad44377dfa68e1dce88a7d7f2fc3d055707fdbe97aa3fe68a529ba325101",
+      "source_verified": true
+    },
+    {
+      "path": "other_models/across_slide/GHIST_pred_expr.csv",
+      "bytes": 200664029,
+      "sha256": "8bcdb88bb609b4ce78f9c8310b304f136e2b520c2b76f4da1a71c5ff1494d533",
+      "source_verified": true
+    },
+    {
+      "path": "other_models/across_slide/Phoenix_pred_expr.csv",
+      "bytes": 294253470,
+      "sha256": "ff3417c70c22fd0cf3ecd073e8b82d2afdd7cb1c705d3ea7a7f3503d9d4d8557",
+      "source_verified": true
+    },
+    {
+      "path": "other_models/across_slide/SpatialEx_UNI2H_pred_expr.csv",
+      "bytes": 279385517,
+      "sha256": "dd9c3e79f6778ea48ca3acaad1aee89f3cd1e63d04f793c4a9dd45c535b8e343",
+      "source_verified": true
+    },
+    {
+      "path": "other_models/imputation/pasta/slide_0_pasta_holdout_pred.csv",
+      "bytes": 670361,
+      "sha256": "c13a3877490922de112a9eac74200fa4efa69751f7c0a0634e55195644b1546e",
+      "source_verified": true
+    },
+    {
+      "path": "other_models/imputation/pasta/slide_1_pasta_holdout_pred.csv",
+      "bytes": 10738145,
+      "sha256": "69d9d09d5b5376952a319bcb350ecf40cf8cf0bbe867bdc12eda67a3a4c7a90a",
+      "source_verified": true
+    },
+    {
+      "path": "other_models/imputation/pasta/slide_2_pasta_holdout_pred.csv",
+      "bytes": 2846322,
+      "sha256": "5342629020cb020545990e4081c0b1e2f316b3bf039d8bc7945da931ffa2904e",
+      "source_verified": true
+    },
+    {
+      "path": "other_models/imputation/pasta/slide_4_pasta_holdout_pred.csv",
+      "bytes": 2429089,
+      "sha256": "b07d61c00069f5207533195da39109945534bd2acfeb6396baa362cb618d37ba",
+      "source_verified": true
+    },
+    {
+      "path": "other_models/imputation/pasta/slide_5_pasta_holdout_pred.csv",
+      "bytes": 6661815,
+      "sha256": "9a889aea20699766d0be5695a4fc2d3f3f50af2823146320063edac6ffadb437",
+      "source_verified": true
+    },
+    {
+      "path": "other_models/imputation/spatialex_plus_uni2h/slide0_spatialex_plus_fixed10_native_log.csv",
+      "bytes": 445572,
+      "sha256": "cfdf83850cef335db4b9bf6881d7a389a8625846cdb1166813c032df7254e68a",
+      "source_verified": true
+    },
+    {
+      "path": "other_models/imputation/spatialex_plus_uni2h/slide1_spatialex_plus_fixed10_native_log.csv",
+      "bytes": 8453988,
+      "sha256": "3f8bf1ecd588451ee77678a9f17952126894057c8d321db551704f0a87007491",
+      "source_verified": true
+    },
+    {
+      "path": "other_models/imputation/spatialex_plus_uni2h/slide2_spatialex_plus_fixed10_native_log.csv",
+      "bytes": 2216227,
+      "sha256": "15e5395c935efc98bc6abbf578145bf6715d33cd0a23aa07edf9739b75ca14d0",
+      "source_verified": true
+    },
+    {
+      "path": "other_models/imputation/spatialex_plus_uni2h/slide4_spatialex_plus_fixed10_native_log.csv",
+      "bytes": 1901340,
+      "sha256": "130aeeb108dd0dd0e9dc670be2c637b1fcf117204d248575544a353d42d45197",
+      "source_verified": true
+    },
+    {
+      "path": "other_models/imputation/spatialex_plus_uni2h/slide5_spatialex_plus_fixed10_native_log.csv",
+      "bytes": 5248812,
+      "sha256": "f365fd4078e4f0e71d68a41386f269bede81fee2b89d615d19f3644f7e8328f1",
+      "source_verified": true
+    },
+    {
+      "path": "other_models/imputation/spatialex_single_breast2_uni2h/slide0_spatialex_single_breast2_uni2h_native_log.csv",
+      "bytes": 496204,
+      "sha256": "e615b748b53ca3bba057b23b1baeceb49461f86ac773da1b28755c684149bcfb",
+      "source_verified": true
+    },
+    {
+      "path": "other_models/imputation/spatialex_single_breast2_uni2h/slide1_spatialex_single_breast2_uni2h_native_log.csv",
+      "bytes": 8104942,
+      "sha256": "4784b6de2f89d350d55e121ab3659324e55aff2ab17d4fa4388ae055ce092500",
+      "source_verified": true
+    },
+    {
+      "path": "other_models/imputation/spatialex_single_breast2_uni2h/slide2_spatialex_single_breast2_uni2h_native_log.csv",
+      "bytes": 2351453,
+      "sha256": "77f06d602261dfe0b5a22f82cb42003ab781f10d0cc5a0bbd39bbb2bbad25e91",
+      "source_verified": true
+    },
+    {
+      "path": "other_models/imputation/spatialex_single_breast2_uni2h/slide4_spatialex_single_breast2_uni2h_native_log.csv",
+      "bytes": 1228935,
+      "sha256": "dfeb40eb686e3050f9116af0afcacfcb9c480bd0e2fe8a323e2eb4d1c9c0504c",
+      "source_verified": true
+    },
+    {
+      "path": "other_models/imputation/spatialex_single_breast2_uni2h/slide5_spatialex_single_breast2_uni2h_native_log.csv",
+      "bytes": 5563761,
+      "sha256": "eedd8835c49af98becfe1b5e1eea70cf517d48d478e31c3c0cceeefd028ca4b8",
+      "source_verified": true
+    },
+    {
+      "path": "other_models/within_slide/GHIST_pred_expr.csv",
+      "bytes": 34657338,
+      "sha256": "5dcf03267f2cbf0c622830de078dc2e5289b6e9f47774f14bc2567822ba136e4",
+      "source_verified": true
+    },
+    {
+      "path": "other_models/within_slide/SpatialEx_UNI2H_pred_expr.csv",
+      "bytes": 44343228,
+      "sha256": "c9ae359d138255949dd8c76174e8f612993317cb2c186865a0601745c1e6e732",
+      "source_verified": true
+    }
+  ],
+  "scope": "all"
+}

@@ -1,0 +1,137 @@
+{
+  "config": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/configs/config_multi_breast.json",
+  "platform": "macOS-26.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "cuda_available": false,
+  "pytorch_installed": false,
+  "uni2_weights_supplied": false,
+  "present_input_fields": [],
+  "missing_input_fields": [
+    {
+      "field": "fp_norm_ref",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast2/he_image.tif"
+    },
+    {
+      "field": "fp_nuc_seg",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast/he_image_nuclei_seg.tif"
+    },
+    {
+      "field": "fp_hist",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/breast/aligned_he_image.tif"
+    },
+    {
+      "field": "fp_expr",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast/cell_gene_matrix_filtered.csv"
+    },
+    {
+      "field": "fp_cell_type",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast/cell_type_filtered.csv"
+    },
+    {
+      "field": "fp_nuc_sizes",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast/matched_nuclei_filtered.csv"
+    },
+    {
+      "field": "fp_nuc_seg",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast3/he_image_nuclei_seg.tif"
+    },
+    {
+      "field": "fp_hist",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/breast3/aligned_he_image.tif"
+    },
+    {
+      "field": "fp_expr",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast3/cell_gene_matrix_filtered.csv"
+    },
+    {
+      "field": "fp_cell_type",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast3/cell_type_filtered.csv"
+    },
+    {
+      "field": "fp_nuc_sizes",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast3/matched_nuclei_filtered.csv"
+    },
+    {
+      "field": "fp_nuc_seg",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast4/he_image_nuclei_seg.tif"
+    },
+    {
+      "field": "fp_hist",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/breast4/aligned_he_image.tif"
+    },
+    {
+      "field": "fp_expr",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast4/cell_gene_matrix_filtered.csv"
+    },
+    {
+      "field": "fp_cell_type",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast4/cell_type_filtered.csv"
+    },
+    {
+      "field": "fp_nuc_sizes",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast4/matched_nuclei_filtered.csv"
+    },
+    {
+      "field": "fp_nuc_seg",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast5/he_image_nuclei_seg.tif"
+    },
+    {
+      "field": "fp_hist",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/breast5/aligned_he_image.tif"
+    },
+    {
+      "field": "fp_expr",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast5/cell_gene_matrix_filtered.csv"
+    },
+    {
+      "field": "fp_cell_type",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast5/cell_type_filtered.csv"
+    },
+    {
+      "field": "fp_nuc_sizes",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast5/matched_nuclei_filtered.csv"
+    },
+    {
+      "field": "fp_nuc_seg",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast7/he_image_nuclei_seg.tif"
+    },
+    {
+      "field": "fp_hist",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/breast7/aligned_he_image.tif"
+    },
+    {
+      "field": "fp_expr",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast7/cell_gene_matrix_filtered.csv"
+    },
+    {
+      "field": "fp_cell_type",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast7/cell_type_filtered.csv"
+    },
+    {
+      "field": "fp_nuc_sizes",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast7/matched_nuclei_filtered.csv"
+    },
+    {
+      "field": "fp_nuc_seg",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast2/he_image_nuclei_seg.tif"
+    },
+    {
+      "field": "fp_hist",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast2/he_image.tif"
+    },
+    {
+      "field": "fp_expr",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast2/cell_gene_matrix_filtered.csv"
+    },
+    {
+      "field": "fp_cell_type",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast2/cell_type_filtered.csv"
+    },
+    {
+      "field": "fp_nuc_sizes",
+      "path": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/local_artifacts/training_data/data_processing/data_processing_breast2/matched_nuclei_filtered.csv"
+    }
+  ],
+  "ready_for_authors_cuda_model_run": false,
+  "note": "Figure analysis does not require model checkpoints or the UNI2-H encoder. Original image training/inference does. This check does not submit a gated-model access request or change the model."
+}

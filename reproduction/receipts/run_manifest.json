@@ -1,0 +1,54 @@
+[
+  {
+    "figure": 2,
+    "upstream_commit": "c5c895174c19903cc27d2661934b9b726bdb9306",
+    "source_notebook_sha256": "6470a4c44b4d099495cbdc5e0f1b9c17d6e6cdb87f1c182a82179b58fd150851",
+    "started_utc": "2026-10-14T22:20:57.797078+00:00",
+    "modifications": [
+      "Append output persistence cell; no model predictions, thresholds or metric functions changed."
+    ],
+    "model_training_performed": false,
+    "new_model_inference_performed": false,
+    "status": "passed",
+    "elapsed_seconds": 24.521
+  },
+  {
+    "figure": 4,
+    "upstream_commit": "c5c895174c19903cc27d2661934b9b726bdb9306",
+    "source_notebook_sha256": "29e182cd1ce2d70db0dd22a46911f2e36391bb0a90d8179f7f222e6517a36b12",
+    "started_utc": "2026-10-14T22:21:22.329427+00:00",
+    "modifications": [
+      "Append output persistence cell; no model predictions, thresholds or metric functions changed."
+    ],
+    "model_training_performed": false,
+    "new_model_inference_performed": false,
+    "status": "passed",
+    "elapsed_seconds": 27.48
+  },
+  {
+    "figure": 5,
+    "upstream_commit": "c5c895174c19903cc27d2661934b9b726bdb9306",
+    "source_notebook_sha256": "1a332ff65342f2e8ee5dd89ecce456ac7634d8f2d5c2c7809ccbbd630ebaf15d",
+    "started_utc": "2026-10-14T22:21:49.822776+00:00",
+    "modifications": [
+      "Append output persistence cell; no model predictions, thresholds or metric functions changed."
+    ],
+    "model_training_performed": false,
+    "new_model_inference_performed": false,
+    "status": "passed",
+    "elapsed_seconds": 1.256
+  },
+  {
+    "figure": 3,
+    "upstream_commit": "c5c895174c19903cc27d2661934b9b726bdb9306",
+    "source_notebook_sha256": "c7c0da4efb24c3b34e8ee9355aa21195f85eb462a8dc9e7d8b29cde255996e95",
+    "started_utc": "2026-10-14T22:21:51.089881+00:00",
+    "modifications": [
+      "Append output persistence cell; no model predictions, thresholds or metric functions changed."
+    ],
+    "model_training_performed": false,
+    "new_model_inference_performed": false,
+    "status": "passed",
+    "elapsed_seconds": 114.732
+  }
+]

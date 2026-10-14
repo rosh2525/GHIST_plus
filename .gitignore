@@ -27,3 +27,8 @@ GHIST fig actual.pdf
 *.hdf5
 *.parquet
 *.pkl
+
+# Local reproduction environment, downloads and generated outputs
+.venv/
+*.partial
+reproduction/__pycache__/

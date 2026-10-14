@@ -1,0 +1,8 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "platform": "macOS-26.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "executable": "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/../work/ghist_plus_reproduction/.venv/bin/python",
+  "upstream_commit": "c5c895174c19903cc27d2661934b9b726bdb9306",
+  "scope": "released prediction evaluation and published-summary replotting; no new image inference or training"
+}

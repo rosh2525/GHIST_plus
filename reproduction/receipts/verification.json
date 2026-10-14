@@ -1,0 +1,124 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "check": "Figure2 original code, execution counts and no errors",
+      "passed": true
+    },
+    {
+      "check": "Figure3 original code, execution counts and no errors",
+      "passed": true
+    },
+    {
+      "check": "Figure4 original code, execution counts and no errors",
+      "passed": true
+    },
+    {
+      "check": "Figure5 original code, execution counts and no errors",
+      "passed": true
+    },
+    {
+      "check": "Independent SciPy PCC on 76,779 matched cells, three SVG-ranked genes and four methods",
+      "passed": true
+    },
+    {
+      "check": "3h.csv: expected genes, defined PCCs and unique-cell cohort",
+      "passed": true
+    },
+    {
+      "check": "3i.csv: expected genes, defined PCCs and unique-cell cohort",
+      "passed": true
+    },
+    {
+      "check": "45 distinct held-out slide-gene pairs over five slides",
+      "passed": true
+    }
+  ],
+  "independent_pcc_checks": [
+    {
+      "method": "GHIST+",
+      "gene": "TACSTD2",
+      "recalculated_pcc": 0.7690155041583155,
+      "saved_pcc": 0.769015504158224,
+      "absolute_difference": 9.159339953157541e-14
+    },
+    {
+      "method": "GHIST+",
+      "gene": "MUC6",
+      "recalculated_pcc": 0.3802948260453385,
+      "saved_pcc": 0.3802948260452675,
+      "absolute_difference": 7.099876242477876e-14
+    },
+    {
+      "method": "GHIST+",
+      "gene": "HMGA1",
+      "recalculated_pcc": 0.43071255359576,
+      "saved_pcc": 0.4307125535958273,
+      "absolute_difference": 6.727951529228449e-14
+    },
+    {
+      "method": "GHIST",
+      "gene": "TACSTD2",
+      "recalculated_pcc": 0.3953058037895645,
+      "saved_pcc": 0.395305803789573,
+      "absolute_difference": 8.493206138382448e-15
+    },
+    {
+      "method": "GHIST",
+      "gene": "MUC6",
+      "recalculated_pcc": null,
+      "saved_pcc": null,
+      "absolute_difference": null
+    },
+    {
+      "method": "GHIST",
+      "gene": "HMGA1",
+      "recalculated_pcc": 0.2140913485297306,
+      "saved_pcc": 0.2140913485297817,
+      "absolute_difference": 5.109801470837283e-14
+    },
+    {
+      "method": "SpatialEx",
+      "gene": "TACSTD2",
+      "recalculated_pcc": 0.3461279869855346,
+      "saved_pcc": 0.3461279869855413,
+      "absolute_difference": 6.716849298982197e-15
+    },
+    {
+      "method": "SpatialEx",
+      "gene": "MUC6",
+      "recalculated_pcc": -0.05755015625271293,
+      "saved_pcc": -0.0575501562527066,
+      "absolute_difference": 6.3352101342672995e-15
+    },
+    {
+      "method": "SpatialEx",
+      "gene": "HMGA1",
+      "recalculated_pcc": 0.022395280426696335,
+      "saved_pcc": 0.0223952804267016,
+      "absolute_difference": 5.266620473065586e-15
+    },
+    {
+      "method": "Phoenix",
+      "gene": "TACSTD2",
+      "recalculated_pcc": 0.709883708519117,
+      "saved_pcc": 0.7098837085196514,
+      "absolute_difference": 5.344613640545504e-13
+    },
+    {
+      "method": "Phoenix",
+      "gene": "MUC6",
+      "recalculated_pcc": 0.4843487276704857,
+      "saved_pcc": 0.4843487276708362,
+      "absolute_difference": 3.504974088741619e-13
+    },
+    {
+      "method": "Phoenix",
+      "gene": "HMGA1",
+      "recalculated_pcc": 0.46602735246051746,
+      "saved_pcc": 0.4660273524604854,
+      "absolute_difference": 3.2085445411667024e-14
+    }
+  ],
+  "maximum_absolute_pcc_difference": 5.344613640545504e-13
+}
