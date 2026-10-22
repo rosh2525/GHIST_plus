@@ -1,0 +1,7 @@
+$ python reproduction/presentation_evidence.py checks
+Recorded source-verified downloads: 45 files, 10.923 GB
+Released notebook execution, 15 Oct 2026:
+  Figure2: PASSED     Figure3: PASSED
+  Figure4: PASSED     Figure5: PASSED
+Fresh provenance / cell-ID / PCC checks: PASSED
+Fresh model training: false   Fresh image inference: false

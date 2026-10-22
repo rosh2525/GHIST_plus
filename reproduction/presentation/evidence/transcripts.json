@@ -1,0 +1,38 @@
+[
+  {
+    "mode": "data",
+    "command": "python reproduction/presentation_evidence.py data",
+    "stdout": "BreastCancer2 input    86,344 cells   280 genes\nWithin-slide cohort   12,719 cells   280 shared genes\nAcross-slide cohort   76,779 cells   276 shared genes\nImputation cohort     5 slides       45 held-out slide-gene cases\nSource: official processed 10x Xenium data + released predictions\n",
+    "stderr": "",
+    "returncode": 0,
+    "captured_utc": "2026-10-22T09:51:35.472496+00:00",
+    "script_sha256": "614c6e1d70d5ad1ba1595d48876cce90f3c4530cd11ec03ac8fd2baaac2194f3"
+  },
+  {
+    "mode": "checks",
+    "command": "python reproduction/presentation_evidence.py checks",
+    "stdout": "Recorded source-verified downloads: 45 files, 10.923 GB\nReleased notebook execution, 15 Oct 2026:\n  Figure2: PASSED     Figure3: PASSED\n  Figure4: PASSED     Figure5: PASSED\nFresh provenance / cell-ID / PCC checks: PASSED\nFresh model training: false   Fresh image inference: false\n",
+    "stderr": "",
+    "returncode": 0,
+    "captured_utc": "2026-10-22T09:51:38.774450+00:00",
+    "script_sha256": "614c6e1d70d5ad1ba1595d48876cce90f3c4530cd11ec03ac8fd2baaac2194f3"
+  },
+  {
+    "mode": "compare",
+    "command": "python reproduction/presentation_evidence.py compare",
+    "stdout": "GHIST+       Paper PCC: 0.744   Local PCC: 0.7623\nGHIST        Paper PCC: 0.714   Local PCC: 0.7746\nSpatialEx    Paper PCC: 0.521   Local PCC: 0.6377\n",
+    "stderr": "",
+    "returncode": 0,
+    "captured_utc": "2026-10-22T09:51:39.043766+00:00",
+    "script_sha256": "614c6e1d70d5ad1ba1595d48876cce90f3c4530cd11ec03ac8fd2baaac2194f3"
+  },
+  {
+    "mode": "status",
+    "command": "python reproduction/presentation_evidence.py status",
+    "stdout": "CUDA available: False    UNI2-H weights supplied: False\nMissing aligned-data path fields: 31\nValidation divisions in release: 1    Folds in paper: 5\nPrepared: manuscript settings + experiment templates\nPending: original folds, model inputs, encoder, fresh runs\nExact manuscript match remains incomplete\n",
+    "stderr": "",
+    "returncode": 0,
+    "captured_utc": "2026-10-22T09:51:39.322367+00:00",
+    "script_sha256": "614c6e1d70d5ad1ba1595d48876cce90f3c4530cd11ec03ac8fd2baaac2194f3"
+  }
+]

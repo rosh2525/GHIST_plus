@@ -1,0 +1,7 @@
+$ python reproduction/presentation_evidence.py status
+CUDA available: False    UNI2-H weights supplied: False
+Missing aligned-data path fields: 31
+Validation divisions in release: 1    Folds in paper: 5
+Prepared: manuscript settings + experiment templates
+Pending: original folds, model inputs, encoder, fresh runs
+Exact manuscript match remains incomplete

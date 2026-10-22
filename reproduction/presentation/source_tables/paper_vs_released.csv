@@ -1,0 +1,4 @@
+Experiment,Method,Paper-reported PCC,Released-code PCC,Status
+"Within slide, top 20 SVGs",GHIST+,0.744,0.7623199106216736,Does not reproduce manuscript value
+"Within slide, top 20 SVGs",GHIST,0.714,0.7745567466037253,Does not reproduce manuscript value
+"Within slide, top 20 SVGs",SpatialEx,0.521,0.637727915893977,Does not reproduce manuscript value

@@ -1,0 +1,4 @@
+$ python reproduction/presentation_evidence.py compare
+GHIST+       Paper PCC: 0.744   Local PCC: 0.7623
+GHIST        Paper PCC: 0.714   Local PCC: 0.7746
+SpatialEx    Paper PCC: 0.521   Local PCC: 0.6377

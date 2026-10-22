@@ -1,0 +1,6 @@
+$ python reproduction/presentation_evidence.py data
+BreastCancer2 input    86,344 cells   280 genes
+Within-slide cohort   12,719 cells   280 shared genes
+Across-slide cohort   76,779 cells   276 shared genes
+Imputation cohort     5 slides       45 held-out slide-gene cases
+Source: official processed 10x Xenium data + released predictions

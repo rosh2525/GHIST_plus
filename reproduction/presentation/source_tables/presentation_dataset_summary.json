@@ -1,0 +1,37 @@
+{
+  "BreastCancer2_input_cells": 86344,
+  "BreastCancer2_genes": 280,
+  "within_cells": 12719,
+  "within_genes": 280,
+  "across_cells": 76779,
+  "across_genes": 276,
+  "imputation_slides": 5,
+  "imputation_slide_gene_cases": 45,
+  "imputation_per_slide": [
+    {
+      "Slide": 0,
+      "Cell count": 4229,
+      "Holdout gene count": 10
+    },
+    {
+      "Slide": 1,
+      "Cell count": 75232,
+      "Holdout gene count": 9
+    },
+    {
+      "Slide": 2,
+      "Cell count": 19883,
+      "Holdout gene count": 10
+    },
+    {
+      "Slide": 4,
+      "Cell count": 17151,
+      "Holdout gene count": 6
+    },
+    {
+      "Slide": 5,
+      "Cell count": 46493,
+      "Holdout gene count": 10
+    }
+  ]
+}
