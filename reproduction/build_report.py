@@ -166,8 +166,8 @@ Consequently, **new image predictions, released-checkpoint inference, fresh trai
 
 The original Figure4 ablation strip titles overlap slightly in the authors' plotting layout; its numerical data are intact. The separate summary figure above has a readable layout without altering the original notebook.
 '''
- (OUT/'REPRODUCTION_REPORT.md').write_text(report)
- (ROOT/'reproduction/REPORT.md').write_text(re.sub(r'\]\((?!https?://)([^)]+)\)', r'](../results/reproduction/\1)',report))
+ (OUT/'RELEASED_NOTEBOOK_REVIEW.md').write_text(report)
+ (ROOT/'reproduction/archive/released_notebook_review_regenerated.md').write_text(re.sub(r'\]\((?!https?://)([^)]+)\)', r'](../../results/reproduction/\1)',report))
  shutil.copy2(OUT/'across_slide_summary.png',RECEIPTS/'across_slide_summary.png')
  for name in ['expression_summary.csv','expression_common_defined_summary.csv','external_summary.csv','imputation_summary.csv','verification.json','run_manifest.json','environment.json','model_readiness.json','pip_freeze.txt']:
   shutil.copy2(OUT/name,RECEIPTS/name)
@@ -176,6 +176,6 @@ The original Figure4 ablation strip titles overlap slightly in the authors' plot
  artifact_hashes={str(p.relative_to(OUT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in OUT.rglob('*') if p.is_file() and not any(part.startswith('.') for part in p.relative_to(OUT).parts) and p.name!='artifact_checksums.json'}
  (OUT/'artifact_checksums.json').write_text(json.dumps(artifact_hashes,indent=2)+'\n')
  shutil.copy2(OUT/'artifact_checksums.json',RECEIPTS/'artifact_checksums.json')
- print('Report and compact receipts saved:',OUT/'REPRODUCTION_REPORT.md')
+ print('Report and compact receipts saved:',OUT/'RELEASED_NOTEBOOK_REVIEW.md')
 
 if __name__=='__main__': main()

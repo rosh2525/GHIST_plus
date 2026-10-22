@@ -1,0 +1,160 @@
+[
+  {
+    "template": "within_slide.json",
+    "source": "configs/breast2_ablation9/full.json",
+    "optimizer_before": {
+      "batch_size": 64,
+      "total_epochs": 30,
+      "learning_rate": 0.00115,
+      "beta1": 0.9,
+      "beta2": 0.999,
+      "weight_decay": 1e-05,
+      "eps": 1e-08,
+      "stain_aug": true,
+      "uniform_sampler": true,
+      "immune_sampler_boost": 1.0,
+      "panel_completion_loss_weight": 0.0,
+      "panel_hide_frac": 0.0,
+      "panel_use_natural_missing": false,
+      "pearson_loss_weight": 0.0,
+      "expr_var_penalty_weight": 0.0,
+      "use_expr_baseline": false,
+      "holdout_n_genes": 0,
+      "batch_sampler_seed": 20260419,
+      "seed": 20260807
+    },
+    "manuscript_override": {
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "total_epochs": 30,
+      "batch_size": 64,
+      "beta1": 0.9,
+      "beta2": 0.999
+    },
+    "validation_divisions_preserved": [
+      [
+        0.0,
+        0.2
+      ]
+    ],
+    "original_five_fold_assignment_available": false,
+    "status": "configuration template only; not an exact archived manuscript configuration"
+  },
+  {
+    "template": "breast_transfer.json",
+    "source": "configs/config_multi_breast.json",
+    "optimizer_before": {
+      "batch_size": 64,
+      "total_epochs": 30,
+      "learning_rate": 0.00115,
+      "beta1": 0.9,
+      "beta2": 0.999,
+      "weight_decay": 1e-05,
+      "eps": 1e-08,
+      "stain_aug": true,
+      "uniform_sampler": true,
+      "immune_sampler_boost": 1.0,
+      "pearson_loss_weight": 0.0,
+      "expr_var_penalty_weight": 0.0,
+      "use_expr_baseline": false,
+      "holdout_n_genes": 0,
+      "batch_sampler_seed": 20260419,
+      "seed": 20260807
+    },
+    "manuscript_override": {
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "total_epochs": 30,
+      "batch_size": 64,
+      "beta1": 0.9,
+      "beta2": 0.999
+    },
+    "validation_divisions_preserved": [
+      [
+        0.0,
+        0.2
+      ]
+    ],
+    "original_five_fold_assignment_available": false,
+    "status": "configuration template only; not an exact archived manuscript configuration"
+  },
+  {
+    "template": "imputation.json",
+    "source": "configs/config_gene_mask_imputer.json",
+    "optimizer_before": {
+      "batch_size": 64,
+      "total_epochs": 30,
+      "learning_rate": 0.00115,
+      "beta1": 0.9,
+      "beta2": 0.999,
+      "weight_decay": 1e-05,
+      "eps": 1e-08,
+      "stain_aug": true,
+      "uniform_sampler": true,
+      "immune_sampler_boost": 1.0,
+      "pearson_loss_weight": 0.0,
+      "expr_var_penalty_weight": 0.0,
+      "use_expr_baseline": false,
+      "holdout_n_genes": 0,
+      "batch_sampler_seed": 20260419,
+      "seed": 20260807
+    },
+    "manuscript_override": {
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "total_epochs": 30,
+      "batch_size": 64,
+      "beta1": 0.9,
+      "beta2": 0.999
+    },
+    "validation_divisions_preserved": [
+      [
+        0.0,
+        0.2
+      ]
+    ],
+    "original_five_fold_assignment_available": false,
+    "status": "configuration template only; not an exact archived manuscript configuration"
+  },
+  {
+    "template": "pancancer.json",
+    "source": "configs/config_pancancer.json",
+    "optimizer_before": {
+      "batch_size": 64,
+      "total_epochs": 30,
+      "learning_rate": 0.00115,
+      "beta1": 0.9,
+      "beta2": 0.999,
+      "weight_decay": 1e-05,
+      "eps": 1e-08,
+      "stain_aug": true,
+      "uniform_sampler": true,
+      "immune_sampler_boost": 1.0,
+      "panel_completion_loss_weight": 0.0,
+      "panel_hide_frac": 0.0,
+      "panel_use_natural_missing": false,
+      "pearson_loss_weight": 0.0,
+      "expr_var_penalty_weight": 0.0,
+      "use_expr_baseline": false,
+      "holdout_n_genes": 0,
+      "batch_sampler_seed": 20260419,
+      "seed": 20260807
+    },
+    "manuscript_override": {
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "total_epochs": 30,
+      "batch_size": 64,
+      "beta1": 0.9,
+      "beta2": 0.999
+    },
+    "validation_divisions_preserved": [
+      [
+        0.0,
+        0.2
+      ]
+    ],
+    "original_five_fold_assignment_available": false,
+    "status": "configuration template only; not an exact archived manuscript configuration"
+  }
+]

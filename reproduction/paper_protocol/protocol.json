@@ -1,0 +1,50 @@
+{
+  "paper": {
+    "title": "Generalisable tissue-wide molecular reconstruction from histology",
+    "model": "GHIST+",
+    "doi": "10.64898/2026.06.09.731252",
+    "version": 1,
+    "posted": "2026-06-12",
+    "pdf_url": "https://www.biorxiv.org/content/10.64898/2026.06.09.731252v1.full.pdf",
+    "pdf_sha256": "e67d6d6db08144737c75a553d96ec875269e98224e0c157eb1c1681839abc938",
+    "local_pdf": "local_artifacts/paper/GHIST_plus_2026_06_09_731252v1.pdf"
+  },
+  "source_code_commit": "c5c895174c19903cc27d2661934b9b726bdb9306",
+  "metrics": [
+    {"name":"PCC","paper_pages":[22],"equation":13,"direction":"higher","unit":"one gene across matched cells"},
+    {"name":"Spearman correlation","paper_pages":[22,24],"equation":14,"direction":"higher","unit":"gene across cells, or pathway across spatial regions"},
+    {"name":"RMSE","paper_pages":[22],"equation":15,"direction":"lower","unit":"one gene across matched cells; manuscript size-factor log normalization"},
+    {"name":"SSIM","paper_pages":[23],"equation":16,"direction":"higher","unit":"binned/smoothed spatial expression map for one gene"},
+    {"name":"CMD","paper_pages":[23],"equation":17,"direction":"lower","unit":"predicted versus observed gene-gene correlation matrices"},
+    {"name":"TISSUE score","paper_pages":[23],"equations":[18,19],"direction":"lower predictive error score in the paper's reported comparison","unit":"local-variability-normalized cell-gene error; signed definition and displayed aggregation must be resolved"},
+    {"name":"AUROC","paper_pages":[23],"equation":20,"direction":"higher","unit":"one cell type versus the remaining cell types using pyUCell signatures"},
+    {"name":"Recall","paper_pages":[23,24],"equation":21,"direction":"higher","unit":"class-average recall; defined in Methods, no exact main-text result transcribed"},
+    {"name":"Spatial IoU","paper_pages":[24],"equation":22,"direction":"higher","unit":"per-cell-type spatial density maps; 150 micrometre bins and sigma 1.2 bins"}
+  ],
+  "training": {
+    "paper_page":21,
+    "epochs":30,"batch_size":64,"learning_rate":0.001,"beta1":0.9,"beta2":0.999,"weight_decay":0.0001,
+    "patch_size":[224,224],"train_overlap_pixels":0,"validation_inference_overlap_pixels":30,
+    "within_slide_folds":5,"train_fraction":0.8,"validation_fraction":0.2,
+    "frozen_uni2h":true,"within_patch_graph_k":12,"cross_patch_graph_k":8,"vq_codes":64,
+    "preprocessing":["H&E-Xenium registration","HoVerNet nuclei segmentation","cell/RNA matching","scClassify annotation","Macenko stain normalization","RGB standardization"],
+    "augmentation":["horizontal and vertical flips","90/180/270 degree rotations","HED colour perturbation"],
+    "unresolved":["Original five-fold cell/tile manifests are not in the local release; one released division must not be reused as five folds.","Model implementation contains later changes; paper-commit equivalence has not been established."]
+  },
+  "experiments":[
+    {"id":"within_slide","paper_figures":["3a","3b"],"train":["BreastCancer2 (80% spatial region per fold)"],"evaluate":["remaining 20%, all five folds"],"methods":["GHIST+","GHIST","SpatialEx"],"metrics":["PCC","SSIM"]},
+    {"id":"breast_transfer","paper_figures":["3c","3d","3e","3f","3g"],"train":["BreastCancer1","BreastCancerIDC","BreastCancerIDC2","BreastCancerILC","BreastCancerIDC3"],"evaluate":["BreastCancer2"],"methods":["GHIST+","GHIST","SpatialEx"],"metrics":["PCC","CMD","AUROC","Spatial IoU"]},
+    {"id":"core_to_wsi","paper_figures":["2"],"evaluate":["spatially held-out BreastCancer2 tissue, zero-shot and measured ROI anchors from 0.5 to 3.5 mm^2"],"metrics":["PCC","Spearman correlation"]},
+    {"id":"imputation","paper_figures":["4a","4b","4d"],"evaluate":["five Xenium breast slides; top ten Giotto-ranked measured genes masked from inputs and loss"],"methods_main_figure":["GHIST+","PASTA","SpatialEx"],"methods_additional_text":["SpaGE","SpaIM","stImpute","Tangram"],"metrics":["PCC","SSIM","RMSE","CMD","TISSUE score"]},
+    {"id":"vq_ablation","paper_figures":["4c"],"variants":["full model","no VQ","random prototypes"],"metrics":["PCC"],"unresolved":"Later release uses a frozen-checkpoint VQ/composition intervention. It is not established as the same control as the manuscript's no-VQ variant."},
+    {"id":"pancreas_transfer","paper_figures":["5a"],"train":["PancreasADC only","PancreasADC2 only","pan-cancer slides excluding PancreasADC3"],"evaluate":["PancreasADC3"],"metrics":["PCC"]},
+    {"id":"gtex_application","paper_figures":["5b","5c","5d","5e","5f"],"evaluate":["77 normal female GTEx breast samples"],"analyses":["OASIS compartments","HBCA/scClassify labels","BANKSY niches","sample-level age regression"],"note":"Downstream composition, ECM scores and regression P-values; not measured single-cell RNA accuracy."}
+  ],
+  "excluded_from_paper_only_report":["Phoenix benchmark","ATERA and Breast5K external benchmarks","SpatialEx+ comparison arm","extra common-finite-gene benchmark","all-panel PCC presented as a paper headline","new architectures or improvement experiments"],
+  "known_paper_ambiguities":[
+    "Figure3b plot shows HVGs while its caption says non-SVGs.",
+    "Figure4c plot shows non-SVGs while its caption says HVGs.",
+    "The prose lists two imputation PCC and two RMSE values without assigning both to fully specified protocols in that sentence.",
+    "TISSUE is defined as a signed normalized error, while the released notebook takes an absolute error median. Do not assume numerical equivalence."
+  ]
+}

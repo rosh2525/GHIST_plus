@@ -1,0 +1,53 @@
+{
+  "paper": {
+    "title": "Generalisable tissue-wide molecular reconstruction from histology",
+    "model": "GHIST+",
+    "doi": "10.64898/2026.06.09.731252",
+    "version": 1,
+    "posted": "2026-06-12",
+    "pdf_url": "https://www.biorxiv.org/content/10.64898/2026.06.09.731252v1.full.pdf",
+    "pdf_sha256": "e67d6d6db08144737c75a553d96ec875269e98224e0c157eb1c1681839abc938",
+    "local_pdf": "local_artifacts/paper/GHIST_plus_2026_06_09_731252v1.pdf"
+  },
+  "scope": "manuscript-only",
+  "paper_value_rows": 35,
+  "allowed_metrics": [
+    "AUROC",
+    "CMD",
+    "PCC",
+    "RMSE",
+    "Recall",
+    "SSIM",
+    "Spatial IoU",
+    "Spearman correlation",
+    "TISSUE score"
+  ],
+  "fresh_training_run": false,
+  "fresh_image_inference_run": false,
+  "exact_paper_reproduction_achieved": false,
+  "notebook_evaluation_completed_previously": true,
+  "current_sources": {
+    "results/reproduction/Figure3/3a.csv": "348426f1164562cad5c3a5e6b6177e147cfa5c46a0e0aee6151b365350b72c9f",
+    "results/reproduction/Figure3/3c.csv": "3d601171db1a18a3a162df67669f2f260b1c22cee50d72b5b4225ce131ad0809",
+    "results/reproduction/Figure3/3f.csv": "509367af0593fbc14da6dbc33135b4a9c8257b5c473590b2bdd98905878506db",
+    "results/reproduction/Figure3/3d.csv": "41156b0eb0a4e92374be14ad77268bd5a244262818406a9c4134dc1645978fbd",
+    "results/reproduction/Figure3/3e.csv": "d15ebb6c103347025f2076fa88f57a9632207151353f41a4208341abae258679"
+  },
+  "outputs_sha256": {
+    "Figure3_released_execution.json": "0d3f48c91437273a677c34388644ab5b9a3b382c5b17d5faa0c99ba85f9f48a1",
+    "Figure3b_SSIM_per_gene.csv": "3bac018611e1845640a3c8346164195cdeca784eaca7f5929af5f932746cc725",
+    "REPORT.md": "911eac23f9e38fa50d0ee2d556c5385427d67ecb666ad1f74d07c3a7ba29805b",
+    "Figure4_released_execution.json": "ac11bf65f0e973c428e114b966cb66d4cef9d5f0a8caed86cce89d213efa1b9d",
+    "Figure3c_PCC_per_gene.csv": "729cd81d5b08d41437a828065cb99ad08c360cf9b530d646abedcf0dbf9adba5",
+    "released_code_paper_metric_results.csv": "5f2865b9127a5452ec5e28fe512ce306e8da716fe2939871597164909ea54707",
+    "figure_mapping.csv": "d5d0bb29dacc935fa2a206befb344f655f8fac06cec56505d6aad44b09d509c7",
+    "normalization_audit.json": "33d1c0e67764c32ef5b0c3006656c44b22f9c39a636b4c0d549ec018baeb2234",
+    "paper_vs_released.csv": "08509dd29e44c3ca104db05aed1fba6ce7ee04dffcb68fba133e95720524d7ba",
+    "Figure2_released_execution.json": "5ad2acb4ca01c24b0569d956c5a1a30dd881481079bf6c27b66ecd85e971ec0b",
+    "paper_reported_values.csv": "c50298805cb5826784f16134cd2f5442d8e4e03e5bbaf393c9529c23ee5cfb2b",
+    "Figure3d_CMD.csv": "e97a6f435f5f920223938d50a02f905eec3ef808c4cd4febd2974dd065bfd6df",
+    "Figure3e_AUROC.csv": "5d2791e1e94f9e1803b426e184a8be89ad95f091f94d19afd9339533393fb511",
+    "Figure3f_Spatial_IoU.csv": "0c258166c2d0632d90777b8661f8ebf2c463884ca050148f348f4ac3ad6590bd",
+    "Figure3a_PCC_per_gene.csv": "888dbcfe7f5c49d2ce1f9c36b8fbaf3eea1482425e93fc2a4532b725b781ee3b"
+  }
+}

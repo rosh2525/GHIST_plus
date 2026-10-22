@@ -1,0 +1,36 @@
+id,experiment,method,metric,cohort,value,pdf_page,paper_figure,note
+within_ghistplus,Within slide,GHIST+,PCC,Top 20 SVGs,0.744,5,3a,Paper-reported median; not our measured result
+within_ghist,Within slide,GHIST,PCC,Top 20 SVGs,0.714,5,3a,Paper-reported median; not our measured result
+within_spatialex,Within slide,SpatialEx,PCC,Top 20 SVGs,0.521,5,3a,Paper-reported median; not our measured result
+across_ghistplus,Across slide,GHIST+,PCC,Independent slide headline,0.653,5,3c,Text gives this median without restating a complete cohort definition
+imputation_pcc_1,Imputation,GHIST+,PCC,Held-out genes result 1,0.743,5,4a/S7,Two results reported together; second protocol assignment is unspecified in that sentence
+imputation_pcc_2,Imputation,GHIST+,PCC,Held-out genes result 2,0.747,5,4a/S7,Two results reported together; second protocol assignment is unspecified in that sentence
+imputation_rmse_1,Imputation,GHIST+,RMSE,Held-out genes result 1,2.904,5,4a/S7,Paper scale must be retained
+imputation_rmse_2,Imputation,GHIST+,RMSE,Held-out genes result 2,3.01,5,4a/S7,Paper scale must be retained
+imputation_tissue,Imputation,GHIST+,TISSUE score,Held-out genes,0.343,6,4a,Paper-reported predictive error score
+path_early_zero,ROI broadcasting,GHIST+,PCC,Early estrogen response zero-shot,0.644,5,2f,Paper-reported pathway correlation
+path_early_anchor,ROI broadcasting,GHIST+,PCC,Early estrogen response 1.5 mm^2 anchor,0.691,5,2f,Paper-reported pathway correlation
+path_late_zero,ROI broadcasting,GHIST+,PCC,Late estrogen response zero-shot,0.435,5,2f,Paper-reported pathway correlation
+path_late_anchor,ROI broadcasting,GHIST+,PCC,Late estrogen response 1 mm^2 anchor,0.522,5,2f,Paper-reported pathway correlation
+pancreas2_single20,PancreasADC2 to PancreasADC3,Single slide,PCC,Top 20 SVGs,0.003,6,5a,Paper-reported median
+pancreas2_multi20,PancreasADC2 to PancreasADC3,Pan-cancer assisted,PCC,Top 20 SVGs,0.102,6,5a,Paper-reported median
+pancreas2_single50,PancreasADC2 to PancreasADC3,Single slide,PCC,Top 50 SVGs,0.003,6,5a,Paper-reported median
+pancreas2_multi50,PancreasADC2 to PancreasADC3,Pan-cancer assisted,PCC,Top 50 SVGs,0.172,6,5a,Paper-reported median
+pancreas1_single20,PancreasADC to PancreasADC3,Single slide,PCC,Top 20 SVGs,-0.001,6,5a,Paper-reported median
+pancreas1_multi20,PancreasADC to PancreasADC3,Pan-cancer assisted,PCC,Top 20 SVGs,0.236,6,5a,Paper-reported median
+figure3e_0,Across-slide cell-type recovery,GHIST+,AUROC,T,0.89,30,3e,Rounded label printed on the paper figure; not an unrounded machine result
+figure3e_1,Across-slide cell-type recovery,GHIST+,AUROC,Macrophage,0.73,30,3e,Rounded label printed on the paper figure; not an unrounded machine result
+figure3e_2,Across-slide cell-type recovery,GHIST+,AUROC,Malignant,0.95,30,3e,Rounded label printed on the paper figure; not an unrounded machine result
+figure3e_3,Across-slide cell-type recovery,GHIST+,AUROC,Stromal,0.85,30,3e,Rounded label printed on the paper figure; not an unrounded machine result
+figure3e_4,Across-slide cell-type recovery,GHIST+,AUROC,Epithelial,0.93,30,3e,Rounded label printed on the paper figure; not an unrounded machine result
+figure3e_5,Across-slide cell-type recovery,GHIST+,AUROC,Myeloid excluding macrophage,0.77,30,3e,Rounded label printed on the paper figure; not an unrounded machine result
+figure3e_6,Across-slide cell-type recovery,GHIST+,AUROC,Plasma,0.87,30,3e,Rounded label printed on the paper figure; not an unrounded machine result
+figure3e_7,Across-slide cell-type recovery,GHIST+,AUROC,B,0.7,30,3e,Rounded label printed on the paper figure; not an unrounded machine result
+figure3f_0,Across-slide cell-type recovery,GHIST+,Spatial IoU,T,0.8,30,3f,Rounded label printed on the paper figure; not an unrounded machine result
+figure3f_1,Across-slide cell-type recovery,GHIST+,Spatial IoU,Macrophage,0.54,30,3f,Rounded label printed on the paper figure; not an unrounded machine result
+figure3f_2,Across-slide cell-type recovery,GHIST+,Spatial IoU,Malignant,0.65,30,3f,Rounded label printed on the paper figure; not an unrounded machine result
+figure3f_3,Across-slide cell-type recovery,GHIST+,Spatial IoU,Stromal,0.52,30,3f,Rounded label printed on the paper figure; not an unrounded machine result
+figure3f_4,Across-slide cell-type recovery,GHIST+,Spatial IoU,Epithelial,0.71,30,3f,Rounded label printed on the paper figure; not an unrounded machine result
+figure3f_5,Across-slide cell-type recovery,GHIST+,Spatial IoU,Myeloid excluding macrophage,0.34,30,3f,Rounded label printed on the paper figure; not an unrounded machine result
+figure3f_6,Across-slide cell-type recovery,GHIST+,Spatial IoU,Plasma,0.44,30,3f,Rounded label printed on the paper figure; not an unrounded machine result
+figure3f_7,Across-slide cell-type recovery,GHIST+,Spatial IoU,B,0.25,30,3f,Rounded label printed on the paper figure; not an unrounded machine result

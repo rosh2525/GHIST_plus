@@ -1,128 +1,101 @@
-# GHIST+ reproduction report
+# GHIST+ manuscript-only reproduction
 
-Run completed **15 October 2026 (Asia/Kolkata)** in this workspace.
+Scope updated **22 October 2026**. Source: *Generalisable tissue-wide molecular reconstruction from histology*, bioRxiv v1, posted 12 June 2026, DOI 10.64898/2026.06.09.731252.
 
-**Status: all four released figure notebooks executed successfully. This is a reproduction of evaluation from released predictions and summary tables. Fresh H&E-to-RNA inference and training have not been performed.**
+**Exact numerical reproduction of the manuscript has not been achieved.** The completed local run reproduces the authors' later released notebooks. Those notebooks differ from the manuscript in reported values, panel numbering, normalization and configuration. A successful notebook run does not establish a successful paper reproduction.
 
-## What was run
+## Metrics defined in this paper
 
-| Notebook | Scope reproduced | Evidence level |
+| Metric | Paper page | Meaning |
 | --- | --- | --- |
-| Figure2 | Panels b–f: ROI/pathway maps and correlations | Replotting authors' released CSV summaries; original input checksums passed |
-| Figure3 | Panels a–i, including ATERA and Breast5K | Recomputed metrics/maps from released cell-level predictions and measured RNA |
-| Figure4 | Panels a, b, c, e and f provided by notebook | Recomputed imputation/structure metrics and VQ/composition ablation from released predictions |
-| Figure5 | Three transfer directions | Replotting authors' paired per-gene PCC table; coverage checked; raw transfer predictions not rerun |
+| PCC | 22 | one gene across matched cells |
+| Spearman correlation | 22,24 | gene across cells, or pathway across spatial regions |
+| RMSE | 22 | one gene across matched cells; manuscript size-factor log normalization |
+| SSIM | 23 | binned/smoothed spatial expression map for one gene |
+| CMD | 23 | predicted versus observed gene-gene correlation matrices |
+| TISSUE score | 23 | local-variability-normalized cell-gene error; signed definition and displayed aggregation must be resolved |
+| AUROC | 23 | one cell type versus the remaining cell types using pyUCell signatures |
+| Recall | 23,24 | class-average recall; defined in Methods, no exact main-text result transcribed |
+| Spatial IoU | 24 | per-cell-type spatial density maps; 150 micrometre bins and sigma 1.2 bins |
 
-The original code cells were executed unchanged. One final cell per notebook preserves temporary plots and tables. No synthetic cells, RNA profiles or images were generated. The published randomized VQ control is an existing released ablation on real cells, not newly generated synthetic data.
+SSIM and AUROC should not be called percent accuracy. TISSUE is an error/variability score, not confidence-interval coverage. The paper also presents downstream cell proportions, ECM scores, regression slopes and P-values for GTEx; these are not single-cell RNA prediction accuracy.
 
-## Source and environment
+## Values actually reported by the paper
 
-- Official source: https://github.com/SydneyBioX/GHIST_plus
-- Source commit: `c5c895174c19903cc27d2661934b9b726bdb9306`.
-- Official data: https://huggingface.co/datasets/SydneyBioX/GHIST-Plus-bundle
-- Dataset revision: `37a937677c5a8ebe5c7b8fbd486fbc5bb50ce1de`.
-- 45 downloaded files; 10.923 GB. Every file was checked against the source LFS SHA-256 or Git blob hash.
-- Apple Silicon macOS, 16 GiB RAM; analysis environment uses Python 3.12.14. This differs from the authors' Python 3.10/CUDA training environment.
-- Main numeric package versions follow the authors' tested versions. Matplotlib inline backend pinned to 0.1.7 for compatibility with Matplotlib 3.8.2.
-- Full package versions: [pip_freeze.txt](../results/reproduction/pip_freeze.txt). Training seeds/configs remain in the unchanged upstream files.
+The following are manuscript targets, **not new measurements from our machine**. Values come from the Results text on PDF pages 5–6. The full transcription, including pathway results, is in `paper_reported_values.csv`.
 
-## Expression prediction results
-
-PCC measures correlation, **not percentage accuracy**. SVGs are genes ranked as spatially variable in measured target RNA. These selected genes do not represent the full gene panel.
-
-| Scope | Gene set | Method | Median PCC | Defined genes | Requested genes |
+| experiment | method | metric | cohort | value | pdf_page |
 | --- | --- | --- | --- | --- | --- |
-| Within slide | Top 50 SVGs | GHIST+ | 0.6410 | 50 | 50 |
-| Within slide | Top 50 SVGs | GHIST | 0.6346 | 50 | 50 |
-| Within slide | Top 50 SVGs | SpatialEx | 0.4957 | 50 | 50 |
-| Across slide | Top 50 SVGs | GHIST+ | 0.5508 | 50 | 50 |
-| Across slide | Top 50 SVGs | GHIST | 0.2759 | 42 | 50 |
-| Across slide | Top 50 SVGs | SpatialEx | 0.1101 | 50 | 50 |
-| Across slide | Top 50 SVGs | Phoenix | 0.4804 | 50 | 50 |
+| Within slide | GHIST+ | PCC | Top 20 SVGs | 0.7440 | 5 |
+| Within slide | GHIST | PCC | Top 20 SVGs | 0.7140 | 5 |
+| Within slide | SpatialEx | PCC | Top 20 SVGs | 0.5210 | 5 |
+| Across slide | GHIST+ | PCC | Independent slide headline | 0.6530 | 5 |
+| Imputation | GHIST+ | PCC | Held-out genes result 1 | 0.7430 | 5 |
+| Imputation | GHIST+ | PCC | Held-out genes result 2 | 0.7470 | 5 |
+| Imputation | GHIST+ | RMSE | Held-out genes result 1 | 2.9040 | 5 |
+| Imputation | GHIST+ | RMSE | Held-out genes result 2 | 3.0100 | 5 |
+| Imputation | GHIST+ | TISSUE score | Held-out genes | 0.3430 | 6 |
+| PancreasADC2 to PancreasADC3 | Single slide | PCC | Top 20 SVGs | 0.0030 | 6 |
+| PancreasADC2 to PancreasADC3 | Pan-cancer assisted | PCC | Top 20 SVGs | 0.1020 | 6 |
+| PancreasADC2 to PancreasADC3 | Single slide | PCC | Top 50 SVGs | 0.0030 | 6 |
+| PancreasADC2 to PancreasADC3 | Pan-cancer assisted | PCC | Top 50 SVGs | 0.1720 | 6 |
+| PancreasADC to PancreasADC3 | Single slide | PCC | Top 20 SVGs | -0.0010 | 6 |
+| PancreasADC to PancreasADC3 | Pan-cancer assisted | PCC | Top 20 SVGs | 0.2360 | 6 |
 
-The within-slide cohort contains 12,719 matched cells and 280 shared genes. The across-slide cohort contains 76,779 cells and 276 shared genes. The numbers above reproduce the notebook's per-method median, excluding undefined correlations. In the across-slide top-50 comparison, GHIST has only 42 defined correlations; GHIST+, SpatialEx and Phoenix each have 50.
+The manuscript lists two PCC and two RMSE imputation values together. Their complete protocol assignments are not specified in that sentence; they are retained as separate reported results rather than assigning an invented average or cohort. SSIM, CMD, AUROC, recall and IoU are included in the metric specification; no precise scalar was invented for a boxplot without a reported numerical value.
 
-For a separate comparison on **exactly the same genes with finite PCC for every method**, the across-slide top-50 results are:
+## Cell-type values printed on the paper figure
 
-| Gene set | Method | Median PCC | Common defined genes | Requested genes |
+These GHIST+ values are rounded labels from Figure3e/f (PDF page30), not results obtained by training here. The corresponding file retains their figure provenance.
+
+| Cell type | AUROC | Spatial IoU |
+| --- | --- | --- |
+| B | 0.7000 | 0.2500 |
+| Epithelial | 0.9300 | 0.7100 |
+| Macrophage | 0.7300 | 0.5400 |
+| Malignant | 0.9500 | 0.6500 |
+| Myeloid excluding macrophage | 0.7700 | 0.3400 |
+| Plasma | 0.8700 | 0.4400 |
+| Stromal | 0.8500 | 0.5200 |
+| T | 0.8900 | 0.8000 |
+
+## Current released-code results differ
+
+| Experiment | Method | Paper-reported PCC | Released-code PCC | Status |
 | --- | --- | --- | --- | --- |
-| Top 50 SVGs | GHIST+ | 0.5659 | 42 | 50 |
-| Top 50 SVGs | GHIST | 0.2759 | 42 | 50 |
-| Top 50 SVGs | SpatialEx | 0.1058 | 42 | 50 |
-| Top 50 SVGs | Phoenix | 0.4859 | 42 | 50 |
+| Within slide, top 20 SVGs | GHIST+ | 0.7440 | 0.7623 | Does not reproduce manuscript value |
+| Within slide, top 20 SVGs | GHIST | 0.7140 | 0.7746 | Does not reproduce manuscript value |
+| Within slide, top 20 SVGs | SpatialEx | 0.5210 | 0.6377 | Does not reproduce manuscript value |
 
-This additional coverage diagnostic does not replace or modify the official notebook results. The all-shared-gene across-slide median for GHIST+ is **0.2031** (276/276 defined), well below its selected top-50 median of 0.5508. In the within-slide top-20 SVG group, original GHIST slightly exceeds GHIST+ (0.7746 vs 0.7623). Phoenix also has lower/better correlation-matrix distance in the released across-slide comparison. These results do not support a claim that GHIST+ wins every task.
+The current released within-slide cohort has 12,719 matched cells. The paper describes five 80/20 spatial folds, while the checked-in config supplies only one 0–20% validation division. These differences have not been reconciled, so the released values cannot be labelled as matched manuscript results. We do not tune or replace observed results just to obtain a target number.
 
-![Across-slide released-prediction evaluation](../results/reproduction/across_slide_summary.png)
+## Figure correspondence
 
-## External datasets
+| Paper panels | Current counterpart | Status |
+| --- | --- | --- |
+| 2b-f | Figure2.ipynb | Paper-relevant plots exist; numerical mismatch prevents an exact reproduction claim. |
+| 3a,b,c | Figure3 tables a,b,c | Current released cohort; three paper methods retained; five-fold paper result not reconstructed. |
+| 3d,e,f | Figure3 tables f,d,e respectively | CMD/AUROC/IoU remapped to manuscript numbering; results remain released-code results. |
+| 4a,b,d | Figure4.ipynb | Available partial outputs; paper normalization, eligibility and complete baselines unresolved. |
+| 4c | Later Figure4 table f | Current frozen-checkpoint intervention has not been established as the manuscript no-VQ experiment. |
+| 5a | Current Figure5.ipynb is different | Paper-specific PancreasADC and PancreasADC2 transfer has not been reproduced. |
+| 5b-f | Figure5_new.Rmd | GTEx sample objects, compartments and molecular predictions are missing; analyses not run. |
 
-| Dataset | Gene set | Median PCC | Defined genes | Requested genes | Matched cells |
-| --- | --- | --- | --- | --- | --- |
-| ATERA | Top 20 SVGs | 0.4707 | 20 | 20 | 168335 |
-| ATERA | Top 50 SVGs | 0.3949 | 50 | 50 | 168335 |
-| ATERA | All shared genes | 0.1085 | 403 | 413 | 168335 |
-| Breast5K | Top 20 SVGs | 0.3826 | 20 | 20 | 564723 |
-| Breast5K | Top 50 SVGs | 0.2434 | 50 | 50 | 564723 |
-| Breast5K | All shared genes | 0.0704 | 258 | 258 | 564723 |
+The main paper compares GHIST+, GHIST and SpatialEx for expression prediction. Phoenix, ATERA/Breast5K external benchmarks, the extra common-finite-gene analysis and the SpatialEx+ arm are excluded from this manuscript-only report. No new architecture or improvement experiment is introduced. Earlier broader output is archived separately.
 
-ATERA has 168,335 unique matched cells and 413 shared genes; 403 genes have defined PCC. Breast5K has 564,723 matched cells and 258 shared genes, all with defined PCC. These are the released breast multi-slide model's external evaluations, not the Figure5 PanCancer comparisons. Counts refer to cells, not independent patients.
+## Specific issues preventing a full match
 
-## Gene imputation and ablation
+1. **Normalization.** Manuscript RMSE uses library-size-normalized log expression (Eq.15). The released imputation notebook uses log1p of raw counts. Its previous RMSE is therefore excluded from the manuscript result table.
+2. **Folds and settings.** Paper: five folds, learning rate 0.001, weight decay 0.0001. Released config: one division, learning rate 0.00115, weight decay 0.00001. Templates restore the two stated optimizer settings; they do not invent the missing original fold assignments.
+3. **Panel selection.** The imputation release evaluates 45 common slide–gene cases; the paper describes masking the top ten genes on each of five slides. Original exclusions and complete measured panels are needed before claiming the same cohort.
+4. **Variants.** The later VQ/composition intervention and manuscript ablation are not established as the same experiment. Baseline outputs for SpaGE, SpaIM, stImpute and Tangram described in the text are also absent locally.
+5. **Figure5.** The manuscript includes pancreas transfer and 77-sample normal-breast/age analyses. The current Python notebook's three transfer directions do not reproduce that full figure. The R script refers to unavailable author-side objects.
+6. **Model execution.** Aligned H&E/masks/matched inputs, approved UNI2-H weights and a suitable model environment are still needed. No fresh model training or image inference has run.
 
-Median metrics over **45 shared held-out slide–gene cases across five real slides**:
+The paper itself has caption inconsistencies: Figure3b plots HVGs but its caption says non-SVGs; Figure4c plots non-SVGs but its caption says HVGs. These are recorded rather than silently equating HVGs with non-SVGs. The Methods define a signed TISSUE error while the released notebook aggregates absolute errors; that convention also needs reconciliation.
 
-| Method | PCC | RMSE | SSIM |
-| --- | --- | --- | --- |
-| GHIST+ | 0.7371 | 0.7848 | 0.7085 |
-| PASTA | 0.5387 | 1.4730 | 0.3178 |
-| SpatialEx | 0.0901 | 5.0790 | 0.2938 |
-| SpatialEx+ | 0.4662 | 0.8568 | 0.6274 |
+## Workflow
 
-Higher PCC/SSIM is better; lower RMSE is better. These use the authors' saved prediction transforms and evaluation protocol. The 45 cases include different genes on different slides; they are not 45 independent patients.
+Read [WORKFLOW.md](WORKFLOW.md) for the exact data → preprocessing → model → experiments → metrics sequence and commands. The original PDF is preserved unmodified at `local_artifacts/paper/GHIST_plus_2026_06_09_731252v1.pdf` with SHA-256 `e67d6d6db08144737c75a553d96ec875269e98224e0c157eb1c1681839abc938`.
 
-The VQ/composition ablation used 13,621 cells and 280 genes. The full-model top-20 median PCC was 0.7586, versus 0.5730 when the VQ/composition pathway was off and 0.5810 for the published randomized control. Top-50 medians were 0.6425, 0.5183 and 0.5122. This evaluates saved frozen-checkpoint interventions; no control was retrained here.
-
-The Figure3 within-slide cohort has 12,719 cells, while this Figure4 ablation uses 13,621. Their scores must not be treated as identical evaluation cohorts.
-
-## PanCancer transfer: coverage matters
-
-Figure5 is generated from a released per-gene summary table. Its paired comparisons have only **5/13** genes for pancreas top-20/top-50, **5/9** for breast, and **2/4** for lung. The union target panels are larger. Plotted pair counts should not be described as 20 or 50 jointly evaluable genes in every direction. Raw per-cell PanCancer predictions for these case studies were not independently re-evaluated by this notebook run.
-
-| Direction | Gene_set | target_n | paired_n | single_median_paired | pancancer_median_paired |
-| --- | --- | --- | --- | --- | --- |
-| Pancreas 1 → Pancreas 3 | Top 20 | 20 | 5 | 0.2716 | 0.4321 |
-| Pancreas 1 → Pancreas 3 | Top 50 | 50 | 13 | 0.1841 | 0.3750 |
-| Breast 1 → Breast 5k | Top 20 | 20 | 5 | 0.3341 | 0.4919 |
-| Breast 1 → Breast 5k | Top 50 | 50 | 9 | 0.3156 | 0.4729 |
-| Lung 1 → Lung 5k | Top 20 | 20 | 2 | 0.5092 | 0.8026 |
-| Lung 1 → Lung 5k | Top 50 | 50 | 4 | 0.6146 | 0.7365 |
-
-## Verification
-
-- Every original source code cell matches the executed notebook exactly.
-- All four notebooks completed with no execution errors; 16 displayed plot outputs were saved.
-- The notebooks' cohort, gene-coverage and input assertions passed.
-- Independent SciPy PCC checks recomputed three SVG-ranked genes across four methods from the real count/prediction files on 76,779 matched cells. Maximum difference from saved notebook PCC: 5.34e-13.
-- External cohort checks passed for ATERA and Breast5K; the five-slide imputation check passed.
-- [verification.json](../results/reproduction/verification.json) contains the check receipts; [run_manifest.json](../results/reproduction/run_manifest.json) contains timings and source hashes. This verifies execution/numeric consistency, not independent model training or exact correspondence to every value in a manuscript version.
-
-## Remaining requirements for a full model reproduction
-
-The official figure bundle does not contain the aligned training H&E images, nuclei masks and matched-nuclei files required by the training configuration. Preflight found 31 missing path fields for `config_multi_breast.json` (some fields are related inputs for the same slide).
-
-UNI2-H is a gated encoder. The GHIST+ released checkpoints exclude its tensors; its official weights require an approved Hugging Face account and institutional-email access: https://huggingface.co/MahmoodLab/UNI2-h . No encoder weights were substituted and no access application was submitted. The current analysis environment has no PyTorch/CUDA installation; this Mac has no NVIDIA CUDA GPU. The authors' tested training setup uses Linux/CUDA.
-
-Consequently, **new image predictions, released-checkpoint inference, fresh training, baseline retraining, and patient-level replication remain unfinished**. The original training/inference code and configurations are cloned locally, and the readiness check names each missing input. A full rerun must retain the published slide splits and settings; a reduced Mac run would be a different experiment.
-
-## Open the results
-
-- [Figure2 executed notebook](../results/reproduction/Figure2/Figure2.executed.ipynb)
-- [Figure3 executed notebook](../results/reproduction/Figure3/Figure3.executed.ipynb)
-- [Figure4 executed notebook](../results/reproduction/Figure4/Figure4.executed.ipynb)
-- [Figure5 executed notebook](../results/reproduction/Figure5/Figure5.executed.ipynb)
-- [Figure3 across-slide plot](../results/reproduction/Figure3/3c.png)
-- [Figure4 ablation plot](../results/reproduction/Figure4/figure4f_vq_ablation.png)
-- [Figure5 transfer plot](../results/reproduction/Figure5/Figure5.png)
-
-The original Figure4 ablation strip titles overlap slightly in the authors' plotting layout; its numerical data are intact. The separate summary figure above has a readable layout without altering the original notebook.
+Execution receipts and source hashes are in `paper_scope_receipt.json`. All exported numeric rows use metrics mentioned in this manuscript; every source is labelled as manuscript text or later released-code evaluation.
