@@ -1,0 +1,25 @@
+{
+  "description": "Frozen settings for the Breast5K residual-adapter experiment. Fixed before any test-set metric was computed.",
+  "dataset": "Breast5K (10x Xenium Prime FFPE human breast cancer, one donor) from SydneyBioX/GHIST-Plus-bundle",
+  "split": {
+    "seeds": [0, 1, 2],
+    "block_um": 400.0,
+    "min_cells_per_block": 600,
+    "buffer_blocks": 1,
+    "n_train": 5000,
+    "n_val": 5000,
+    "n_test": 20000,
+    "note": "Blocks are chosen from coordinates only. Train, validation and test blocks never touch (Chebyshev block distance >= 2). Cells are subsampled to exact counts inside the chosen blocks. 'rest' = every cell in a block at distance >= 2 from all train/validation blocks (secondary evaluation)."
+  },
+  "adapter": {
+    "alphas": [0.1, 1, 10, 100, 1000, 3000, 10000, 30000, 100000],
+    "selection_metric": "validation median per-gene PCC (tie-break: validation mean RMSE)",
+    "inputs": "all 258 GHIST+ predicted genes, standardised with training-cell mean/std",
+    "target": "log1p(measured counts) - GHIST+ prediction",
+    "output_clip_min": 0.0
+  },
+  "map_genes": {
+    "note": "Chosen from canonical breast-tissue markers by name only; the first six present in the shared panel are plotted.",
+    "candidates": ["ERBB2", "EPCAM", "KRT5", "CD3E", "ACTA2", "MKI67", "PTPRC", "CD68", "PECAM1", "KRT14"]
+  }
+}

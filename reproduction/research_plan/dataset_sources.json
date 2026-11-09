@@ -1,0 +1,133 @@
+{
+  "status": "planning registry; not a downloaded or validated model-input manifest",
+  "checked_on": "2026-10-30",
+  "primary_source": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE311609",
+  "notes": [
+    "Study totals: 27 donors / 41 sections. Not every section has verified usable H&E.",
+    "All sections and assay panels from the same donor must share a split.",
+    "Proposed splits remain contingent on same-section pairing and registration QC; freeze before inspecting expression-model outcomes.",
+    "H&E scanner files contain multiple donor regions; region extraction and coordinate transforms must be recorded.",
+    "Two reserved lung test donors support preliminary case-level evidence; seeds do not increase donor count.",
+    "SPLIT-derived profiles are estimates and nuclear counts measure a different compartment; neither is uncontaminated whole-cell ground truth.",
+    "Verify IHC marker and section linkage before choosing independent evaluation outcomes.",
+    "Official GHIST+ release already includes Breast5K evaluation; this is not a new untouched benchmark."
+  ],
+  "samples": [
+    {
+      "donor": "L1",
+      "accession": "GSM9509134",
+      "tissue": "NSCLC",
+      "panel": "Prime5K",
+      "proposed_role": "train/development",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM9509134"
+    },
+    {
+      "donor": "L3",
+      "accession": "GSM9509135",
+      "tissue": "NSCLC",
+      "panel": "Prime5K",
+      "proposed_role": "train/development",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM9509135"
+    },
+    {
+      "donor": "L5",
+      "accession": "GSM9509136",
+      "tissue": "NSCLC",
+      "panel": "Prime5K",
+      "proposed_role": "train/development",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM9509136"
+    },
+    {
+      "donor": "L6",
+      "accession": "GSM9509137",
+      "tissue": "NSCLC",
+      "panel": "Prime5K",
+      "proposed_role": "validation",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM9509137"
+    },
+    {
+      "donor": "L7",
+      "accession": "GSM9509138",
+      "tissue": "NSCLC",
+      "panel": "Prime5K",
+      "proposed_role": "reserved test",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM9509138"
+    },
+    {
+      "donor": "L8",
+      "accession": "GSM9509139",
+      "tissue": "NSCLC",
+      "panel": "Prime5K",
+      "proposed_role": "reserved test",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM9509139"
+    },
+    {
+      "donor": "B10",
+      "accession": "GSM9509164",
+      "tissue": "breast",
+      "panel": "Human Breast targeted",
+      "proposed_role": "candidate development audit",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM9509164"
+    },
+    {
+      "donor": "B12",
+      "accession": "GSM9509162",
+      "tissue": "breast",
+      "panel": "Human Breast targeted",
+      "proposed_role": "candidate development audit",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM9509162"
+    },
+    {
+      "donor": "B14",
+      "accession": "GSM9509159",
+      "tissue": "breast",
+      "panel": "Human Breast targeted",
+      "proposed_role": "candidate development audit",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM9509159"
+    },
+    {
+      "donor": "B8",
+      "accession": "GSM9509167",
+      "tissue": "breast",
+      "panel": "Human Breast targeted",
+      "proposed_role": "candidate development audit; verify individual raw files",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM9509167"
+    }
+  ],
+  "other_sources": [
+    {
+      "name": "Official GHIST+ bundle",
+      "role": "sanity/released metric comparison",
+      "url": "https://huggingface.co/datasets/SydneyBioX/GHIST-Plus-bundle"
+    },
+    {
+      "name": "10x pre-designed breast",
+      "role": "raw image-coordinate smoke test",
+      "url": "https://www.10xgenomics.com/datasets/ffpe-human-breast-with-pre-designed-panel-1-standard"
+    },
+    {
+      "name": "10x Prime breast",
+      "role": "shared public stress test / fallback panel pilot, one donor",
+      "url": "https://www.10xgenomics.com/datasets/xenium-prime-ffpe-human-breast-cancer"
+    },
+    {
+      "name": "10x lung technical note",
+      "role": "optional external case, one donor",
+      "url": "https://www.10xgenomics.com/datasets/xenium-human-lung-cancer-post-xenium-technote"
+    },
+    {
+      "name": "HEST",
+      "role": "optional subset after overlap/donor audit and access acceptance",
+      "url": "https://huggingface.co/datasets/MahmoodLab/hest"
+    },
+    {
+      "name": "CELLO",
+      "role": "optional benchmark, overlap audit required",
+      "url": "https://huggingface.co/datasets/gaozijun/cello_data"
+    }
+  ],
+  "plan_reviewed_on": "2026-10-31",
+  "source_listing_verification_note": "Existing accession/source checks retained from 2026-10-30; no new downloads or registration QC completed.",
+  "primary_research_direction": "supervision_audit_then_conditional_interval_hurdle_training",
+  "split_status": "provisional_until_image_QC_then_freeze_before_model_outcomes"
+}

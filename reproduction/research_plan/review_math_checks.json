@@ -1,0 +1,38 @@
+{
+  "kind": "analytic_distribution_checks_not_biological_data",
+  "occurrence_cases": [
+    {
+      "q": 0.99,
+      "mu": 1.0,
+      "u": 2.0,
+      "sigma": 0.2,
+      "conditional_tail": 2.866516540483417e-07,
+      "d_loss_d_occurrence_logit": 2.837852180418857e-09
+    },
+    {
+      "q": 0.99,
+      "mu": 1.0,
+      "u": 2.0,
+      "sigma": 2.0,
+      "conditional_tail": 0.44621010684731816,
+      "d_loss_d_occurrence_logit": 0.007913057371073971
+    }
+  ],
+  "width_normalization_gradient_checks": [
+    {
+      "width": 0.2,
+      "mu_gradient_difference": 0.0,
+      "sigma_gradient_difference": 0.0
+    },
+    {
+      "width": 0.02,
+      "mu_gradient_difference": 0.0,
+      "sigma_gradient_difference": 0.0
+    },
+    {
+      "width": 0.002,
+      "mu_gradient_difference": 0.0,
+      "sigma_gradient_difference": 0.0
+    }
+  ]
+}

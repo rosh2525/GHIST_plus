@@ -22,3 +22,7 @@ The earlier broad notebook review is [archived](archive/2026-10-15_released_note
 The official code and notebook cells are unchanged. The new templates apply settings explicitly stated in the manuscript and flag missing original fold assignments. They are not represented as archived paper configs. Fresh training requires prepared real images/RNA, approved UNI2-H access and a suitable model environment.
 
 Source code remains pinned at `c5c895174c19903cc27d2661934b9b726bdb9306`; data revision `37a937677c5a8ebe5c7b8fbd486fbc5bb50ce1de`. The local branch is `reproduction/ghist-plus-local`; no changes are pushed upstream. See the original README and third-party notices for applicable code/data/encoder terms.
+
+- [Research implementation plan](research_plan/GHIST_PLUS_IMPLEMENTATION_PLAN.md): separate proposed study, audit gates and HPC schedule; no new model results.
+
+- [Residual adapter experiment](residual_adapter/README.md): 48-hour Breast5K within-slide adaptation on frozen GHIST+ predictions; validation gate failed, negative result reported.

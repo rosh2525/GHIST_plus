@@ -1,0 +1,237 @@
+{
+  "plan_version": 3,
+  "date": "2026-10-31",
+  "status": "planning_only_no_new_training_or_inference",
+  "primary_question": "Can ambiguity-aware supervision improve beyond registration, label correction, target purification and simple masking?",
+  "primary_candidate": {
+    "name": "selective_interval_supervision",
+    "status": "conditional_unimplemented_novelty_unverified",
+    "gate": "G1",
+    "prediction_inputs": [
+      "H&E",
+      "H&E_derived_nucleus_masks_or_coordinates",
+      "fixed_training_reference_and_gene_vocabulary"
+    ],
+    "test_rna_in_forward": false,
+    "occurrence_policy": "joint_upper_bound_tested_separately_from_positive_magnitude; E_mag_pilot_retains_D_point_occurrence_targets",
+    "unjustified_q_caps_or_tail_detachment": false
+  },
+  "official_code_pin": "c5c895174c19903cc27d2661934b9b726bdb9306",
+  "resources": {
+    "main_gpu_count": 1,
+    "expected_gpu_vram_gb": 48,
+    "exact_gpu_model": null,
+    "host_ram_gb": null,
+    "host_ram_request_for_cropped_pilot_gb": [
+      128,
+      256
+    ],
+    "request_is_verified_minimum": false,
+    "scratch_request_tb": 0.5,
+    "scratch_sufficiency": "inventory_and_profile_required",
+    "optional_dgx": true,
+    "scheduler": null
+  },
+  "budget": {
+    "initial_pilot_cap_gpu_hours": 12,
+    "cap_is_runtime_prediction": false,
+    "full_core_variants": [
+      "B",
+      "D",
+      "E",
+      "M"
+    ],
+    "core_seeds": 3,
+    "core_run_count": 12,
+    "full_run_gpu_hours": null,
+    "formula": "12*t + pilots + preprocessing + evaluation",
+    "illustrative_t_hours": 72,
+    "illustrative_core_gpu_hours": 864,
+    "illustrative_continuous_gpu_days": 36,
+    "weeks_5_to_7_single_gpu_max_hours": 504,
+    "allocation_gate": "At G2 compare measured budget plus overhead with actual allocated hours; extend through week10, reduce shared scope or use independent DGX jobs if weeks5-7 cannot fit.",
+    "additional_pilot_variants": [
+      "E_mag_if_occurrence_disputes_present"
+    ],
+    "additional_pilot_within_cap": true
+  },
+  "gates": [
+    {
+      "id": "G1",
+      "due": "end_week_2",
+      "requirements": [
+        "same_section_pairing_and_audit",
+        "independent_support_for_disputed_targets",
+        "baseline_execution_correct",
+        "resource_profile_fits_allocation"
+      ],
+      "failure": "correspondence_branch_or_panel_transfer_or_audit_only"
+    },
+    {
+      "id": "G2",
+      "due": "end_week_4",
+      "requirements": [
+        "E_adds_value_over_D_and_M_on_development",
+        "positive_marker_sensitivity_and_rare_cell_coverage_preserved",
+        "benefit_not_only_SPLIT_agreement",
+        "final_protocol_and_budget_frozen",
+        "measured_total_gpu_hours_and_overhead_fit_actual_allocation_and_selected_calendar"
+      ],
+      "failure": "use_simpler_successful_method_no_novel_loss_claim"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "P0",
+      "week": "1",
+      "depends_on": [],
+      "deliverables": [
+        "versions.json",
+        "download_manifest",
+        "sample_manifest",
+        "proposed_split_registry"
+      ]
+    },
+    {
+      "id": "P1",
+      "week": "1-2",
+      "depends_on": [
+        "P0"
+      ],
+      "deliverables": [
+        "reviewed_correspondence",
+        "coordinate_qc",
+        "registration_comparison"
+      ]
+    },
+    {
+      "id": "P2",
+      "week": "1-2",
+      "depends_on": [
+        "P1"
+      ],
+      "deliverables": [
+        "observed_nuclear_alternative_targets",
+        "marker_evidence_audit",
+        "reference_sensitivity"
+      ]
+    },
+    {
+      "id": "P3",
+      "week": "1-2",
+      "depends_on": [
+        "P0"
+      ],
+      "deliverables": [
+        "checkpoint_preflight",
+        "train_resume_check",
+        "no_target_inference_check",
+        "resource_profile"
+      ]
+    },
+    {
+      "id": "P4",
+      "week": "2",
+      "depends_on": [
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "deliverables": [
+        "G1_decision"
+      ]
+    },
+    {
+      "id": "P5",
+      "week": "3",
+      "depends_on": [
+        "P4"
+      ],
+      "deliverables": [
+        "supervision_loader",
+        "unreduced_hurdle",
+        "stable_interval_loss",
+        "correctness_checks"
+      ],
+      "requires_gate": "G1"
+    },
+    {
+      "id": "P6",
+      "week": "4",
+      "depends_on": [
+        "P5"
+      ],
+      "deliverables": [
+        "controlled_pilots",
+        "G2_decision",
+        "frozen_final_protocol"
+      ]
+    },
+    {
+      "id": "P7",
+      "week": "5-7 if measured budget fits; otherwise 5-10",
+      "depends_on": [
+        "P6"
+      ],
+      "deliverables": [
+        "converged_finalists",
+        "seeded_runs"
+      ],
+      "requires_gate": "G2"
+    },
+    {
+      "id": "P8",
+      "week": "8-10 on faster path; otherwise 11-12",
+      "depends_on": [
+        "P7"
+      ],
+      "deliverables": [
+        "per_donor_metrics",
+        "coverage_and_failure_analysis",
+        "evidence_limited_report"
+      ]
+    },
+    {
+      "id": "P9",
+      "week": "11-12 only if main study completed on faster path",
+      "depends_on": [
+        "P8"
+      ],
+      "deliverables": [
+        "optional_additional_donors_or_second_tissue"
+      ],
+      "optional": true
+    }
+  ],
+  "files_planned_not_created": [
+    "tools/audit_supervision.py",
+    "tools/prepare_supervision.py",
+    "dataio/supervision.py",
+    "tools/evaluate_supervision.py",
+    "configs/research/",
+    "jobs/"
+  ],
+  "fallbacks": [
+    "geometry_only_correspondence_uncertainty_if_supported",
+    "separately_defined_panel_transfer",
+    "validated_supervision_audit_without_new_method_claim"
+  ],
+  "review_amended_on": "2026-10-31",
+  "composition_policy": "same_fully_trusted_tiles_for_predictions_targets_counts_statistics; disable_aggregate_aux_if_insufficient",
+  "secondary_split": {
+    "name": "scanner_image_group_sensitivity",
+    "train": [
+      "L1",
+      "L3",
+      "L6"
+    ],
+    "validation": [
+      "L5"
+    ],
+    "test": [
+      "L7",
+      "L8"
+    ],
+    "claim_limit": "different_image_groups_between_train_and_eval; not_unseen_scanner_hardware_or_site"
+  }
+}

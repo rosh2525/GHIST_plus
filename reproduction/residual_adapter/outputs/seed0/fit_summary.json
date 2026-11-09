@@ -1,0 +1,30 @@
+{
+  "seed": 0,
+  "n_train": 5000,
+  "n_val": 5000,
+  "selected_alpha": 100000,
+  "selected_on_alpha_grid_edge": true,
+  "validation": {
+    "GHIST+": {
+      "median_pcc": 0.06462846782060565,
+      "mean_pcc": 0.09473681695118202,
+      "mean_rmse": 0.3306915813764397,
+      "median_rmse": 0.2761133796095876
+    },
+    "calibration": {
+      "median_pcc": 0.062028848416153665,
+      "mean_pcc": 0.08947510664478207,
+      "mean_rmse": 0.09888682042943699,
+      "median_rmse": 0.07525024659521377
+    },
+    "adapter": {
+      "median_pcc": 0.05739787005916738,
+      "mean_pcc": 0.08681963688542724,
+      "mean_rmse": 0.20585681127723016,
+      "median_rmse": 0.1964550911930182,
+      "alpha": 100000
+    }
+  },
+  "adapter_beats_calibration_on_validation": false,
+  "n_calibration_negative_slopes": 46
+}

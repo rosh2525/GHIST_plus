@@ -1,0 +1,13 @@
+{
+  "n_cells": 564723,
+  "n_genes": 258,
+  "author_scale": 0.5,
+  "median_pcc_full_slide": 0.07038629173852112,
+  "reference_3i_genes_matched": 258,
+  "max_abs_pcc_diff_vs_3i": 1.0111298076598274e-08,
+  "mean_log1p_measured": 0.0188102126121521,
+  "mean_pred_scale_0.5": 0.14981943368911743,
+  "median_rmse_scale_0.5_random50k": 0.29579517040993286,
+  "mean_pred_scale_1.0": 0.29963886737823486,
+  "median_rmse_scale_1.0_random50k": 0.5771577000995334
+}
