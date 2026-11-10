@@ -1,0 +1,20 @@
+<section id="fix1" data-transition="fade" style="background:#F7F6F1;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#1F7A6D;font-weight:600">Fix 1 · no RNA needed</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:60px;font-weight:600;line-height:1.1;color:#14213D">Recovering the signal GHIST+ throws away</h2>
+</div>
+<div style="display:flex;gap:56px">
+<div style="flex:1;display:flex;flex-direction:column;gap:24px">
+<p style="font-size:28px;line-height:1.4;color:#3B4556">GHIST+ already predicts, for every cell and gene, P(expressed) and an amount. Its export keeps only the top-K cells per gene and zeroes the rest.</p>
+<p style="font-size:28px;line-height:1.4;color:#3B4556">Using P(expressed) × amount for every cell keeps that information. Example genes: CCND1 0.44 → 0.53, GATA3 0.47 → 0.56 (Breast5K).</p>
+<p style="font-size:26px;line-height:1.4;color:#8A4317"><b>Trade-off:</b> alone it blurs spatial maps (SSIM 0.376 → 0.279) and gene–gene structure. Use it for per-gene ranking, or as the input to Fix 2.</p>
+</div>
+<div style="width:620px;display:flex;flex-direction:column;gap:16px">
+<div style="background:#FFFFFF;border:1px solid #D9DED8;border-radius:16px;padding:20px 28px;display:flex;flex-direction:column;gap:4px"><p style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:600;line-height:1.05;color:#1F7A6D">+25%</p><p style="font-size:24px;line-height:1.35;color:#3B4556">Breast5K median gene PCC 0.070 → 0.088 (development)</p></div>
+<div style="background:#FFFFFF;border:1px solid #D9DED8;border-radius:16px;padding:20px 28px;display:flex;flex-direction:column;gap:4px"><p style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:600;line-height:1.05;color:#1F7A6D">+35%</p><p style="font-size:24px;line-height:1.35;color:#3B4556">ATERA median gene PCC 0.109 → 0.146 (untouched slide)</p></div>
+<div style="background:#FFFFFF;border:1px solid #D9DED8;border-radius:16px;padding:20px 28px;display:flex;flex-direction:column;gap:4px"><p style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:600;line-height:1.05;color:#1F7A6D">+31%</p><p style="font-size:24px;line-height:1.35;color:#3B4556">second GHIST+ model (pan-cancer) 0.054 → 0.071; better in 27 / 27 runs</p></div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#5B6676">All cells per slide; GHIST+ export vs q·ReLU(μ) from the released hurdle outputs. Protocol frozen in config_v4.json before ATERA was touched.</p>
+<aside>This needs no extra data at all. GHIST+ releases both its on-probability and its amount; we just stop throwing the probability away. It improves 216 of 258 genes on Breast5K and 358 of 413 on ATERA. The honest trade-off: by itself it smooths spatial maps, so for maps we use it inside Fix 2.</aside>
+</section>

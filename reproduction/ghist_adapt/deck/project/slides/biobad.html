@@ -1,0 +1,18 @@
+<section id="biobad" data-transition="fade" style="background:#F7F6F1;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#8A4317;font-weight:600">Biology · limits</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:60px;font-weight:600;line-height:1.1;color:#14213D">Where it does not help, or makes things worse</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px">
+<div style="background:#FBFBF8;border:1px solid #D9DED8;border-top:6px solid #B5541C;border-radius:16px;padding:22px 24px;display:flex;flex-direction:column;gap:8px"><h3 style="font-size:30px;font-weight:600">Rare signalling: invisible</h3><p style="font-size:26px;line-height:1.35;color:#3B4556">Chemokines CCL20 and CCL8 (under 1% of cells) stay near PCC 0.02: transient states leave little mark on morphology.</p></div>
+<div style="background:#FBFBF8;border:1px solid #D9DED8;border-top:6px solid #B5541C;border-radius:16px;padding:22px 24px;display:flex;flex-direction:column;gap:8px"><h3 style="font-size:30px;font-weight:600">Myeloid cells barely move</h3><p style="font-size:26px;line-height:1.35;color:#3B4556">Myeloid programme gains only +0.004 to +0.006 on both slides.</p></div>
+<div style="background:#FBFBF8;border:1px solid #D9DED8;border-top:6px solid #B5541C;border-radius:16px;padding:22px 24px;display:flex;flex-direction:column;gap:8px"><h3 style="font-size:30px;font-weight:600">A few genes get worse</h3><p style="font-size:26px;line-height:1.35;color:#3B4556">CD36, TSPAN8, ITGB1: GHIST+’s on/off signal is near noise for them, so trusting it more hurts.</p></div>
+<div style="background:#FBFBF8;border:1px solid #D9DED8;border-top:6px solid #B5541C;border-radius:16px;padding:22px 24px;display:flex;flex-direction:column;gap:8px"><h3 style="font-size:30px;font-weight:600">Maps and co-expression</h3><p style="font-size:26px;line-height:1.35;color:#3B4556">Fix 1 alone blurs maps; on ATERA, HAC’s gene–gene structure is worse than the authors’ (CMD 0.319 vs 0.264).</p></div>
+<div style="background:#FBFBF8;border:1px solid #D9DED8;border-top:6px solid #B5541C;border-radius:16px;padding:22px 24px;display:flex;flex-direction:column;gap:8px"><h3 style="font-size:30px;font-weight:600">Amount in expressing cells</h3><p style="font-size:26px;line-height:1.35;color:#3B4556">All core corrections, the authors’ included, err more there than GHIST+ on Breast5K (0.71 vs 0.66).</p></div>
+<div style="background:#FBFBF8;border:1px solid #D9DED8;border-top:6px solid #B5541C;border-radius:16px;padding:22px 24px;display:flex;flex-direction:column;gap:8px"><h3 style="font-size:30px;font-weight:600">Badly placed cores</h3><p style="font-size:26px;line-height:1.35;color:#3B4556">A gate to protect tissue the cores missed failed its test; B-cell markers on Breast5K sit slightly below RRC.</p></div>
+</div>
+<div style="background:#14213D;border-radius:16px;padding:20px 32px">
+<p style="font-size:26px;line-height:1.4;color:#E6ECF2"><b>Use it for:</b> tumour, epithelial, stromal and immune-cell localisation. <b>Be careful with:</b> absolute expression levels, rare signalling genes and gene–gene networks.</p>
+</div>
+<aside>These are the honest failure modes. Rare signalling genes such as chemokines are expressed in very few cells and transiently, so no H&amp;E method can be expected to recover them well. The support-aware gate (P2 in our plan) failed its pre-declared test and was dropped. All core corrections, including the authors', compress expression magnitudes.</aside>
+</section>

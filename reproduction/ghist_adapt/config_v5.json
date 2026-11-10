@@ -1,0 +1,38 @@
+{
+  "name": "v5 / P2: support-aware (trust-gated) hurdle-aware correction",
+  "frozen": "2026-11-09, before any P2 computation on any slide",
+  "question": "When the measured cores miss some tissue states, does a correction learned from them harm cells unlike the cores, and does gating the correction by support distance prevent that?",
+  "base": "HAC from config_v4.json (unchanged); zero-shot fallback S = q * relu(mu) (GHIST+-Soft)",
+  "trust_gate": {
+    "output": "S_i + lambda_i * (HAC_i - S_i)",
+    "state_space": "10 principal components of the soft score S standardised over all slide cells (PCA fitted on 50,000 random cells, seed 0); RNA-free",
+    "support_distance": "d_i = mean Euclidean distance to the 10 nearest core cells in that space",
+    "reference": "d_ref = 95th percentile of leave-one-core-out distances (each core's cells to the cells of the other cores; a single core uses its 4 angular sectors)",
+    "lambda": "1 if d_i <= d_ref else (d_ref / d_i)^2",
+    "tuned_parameters": "none (k = 10, 95th percentile, exponent 2 fixed in advance)"
+  },
+  "amendment_1": {
+    "date": "2026-11-09, after one Breast5K smoke run (tumour_biased, seed 0), before any full P2 run and before any ATERA computation",
+    "reason": "The frozen gate mixed two outputs on different scales (calibrated HAC vs uncalibrated S). With only 3% of cells gated, the all-cell median PCC fell from 0.089 to 0.075, because splicing differently-scaled values breaks each gene's ranking. That is a design bug, not a tuning issue.",
+    "change": "The gate now acts only on HAC's multigene occurrence correction, which is the extrapolating part: q_trust = q + lambda * (q_hat - q); output = q_trust * m_hat, where m_hat is HAC's per-gene magnitude map. lambda, d_ref, k, the percentile and the exponent are unchanged. The fallback at lambda = 0 is GHIST+'s own occurrence with the core-calibrated per-gene magnitude ('GHIST+-q-mag', also reported)."
+  },
+  "amendment_2": {
+    "date": "2026-11-09, after a second Breast5K smoke run (tumour_biased, seed 0); still before any full P2 run or any ATERA computation. FINAL: no further changes; the full results are reported whatever they show.",
+    "reason": "HAC's occurrence correction has two parts: q_hat = q + c + (X - xm) W. c is a per-gene intercept, a global recalibration that corrects GHIST+'s inflated occurrence probabilities everywhere, and it is not extrapolation. (X - xm) W is the multigene, cell-specific part. Gating both sent gated cells back to the inflated raw q (all-cell median PCC 0.089 -> 0.081 with 3% of cells gated).",
+    "change": "q_trust = q + c + lambda * (X - xm) W, clipped to [0.001, 0.999]; output = q_trust * m_hat. The fallback at lambda = 0 ('GHIST+-q-mag') is now q + c with the core-calibrated magnitude."
+  },
+  "settings": {
+    "unbiased": "4 x 1 mm2 diverse cores (identical to the v3/P1 primary config)",
+    "tumour_biased": "4 x 1 mm2 cores drawn at random (seeded) from the 25% of 400 candidate disks with the highest mean GHIST+-predicted Malignant+Epithelial probability; RNA-free",
+    "stroma_biased": "same, from the 25% of candidates with the lowest mean Malignant+Epithelial probability"
+  },
+  "repeats": [0, 1, 2],
+  "slides": {"breast5k": "development", "atera": "confirmation"},
+  "methods": ["GHIST+", "GHIST+-Soft", "RRC-authors", "HAC", "HAC-trust"],
+  "evaluation": {
+    "cells": "v3 rule: every cell > 200 um from all core edges",
+    "subsets": ["all", "out_of_support (lambda < 1)", "in_support (lambda = 1)", "tumour-type cells (GHIST+ call Malignant/Epithelial)", "other cells"],
+    "metrics": "median per-gene PCC (all genes) and mean RMSE per subset; block-bootstrap (400 um blocks, 500 resamples) 95% CI of HAC-trust minus HAC median PCC, on out-of-support cells and on all cells"
+  },
+  "decision_rule": "P2 is useful if, in the biased settings on both slides, (i) HAC is worse than GHIST+-Soft on out-of-support cells in the mean over repeats (the problem exists), and (ii) HAC-trust beats HAC on out-of-support cells with the CI excluding 0 in >= 2 of 3 repeats; and in the unbiased setting HAC-trust's all-cell median PCC is within 0.002 of HAC. If (i) fails, P2 is reported as unnecessary on these slides. Everything is reported either way."
+}

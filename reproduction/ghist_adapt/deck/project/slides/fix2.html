@@ -1,0 +1,15 @@
+<section id="fix2" data-transition="fade" style="background:#F7F6F1;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#1F7A6D;font-weight:600">Fix 2 · four measured 1 mm² cores</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:60px;font-weight:600;line-height:1.1;color:#14213D">Correcting the soft output beats the authors’ own correction</h2>
+</div>
+<table style="font-family:'IBM Plex Sans', Arial, sans-serif;font-size:26px;color:#14213D">
+<tr><th style="width:31%;text-align:left">Median gene PCC (9 runs each)</th><th style="width:14%;text-align:right">GHIST+</th><th style="width:15%;text-align:right">Authors’ RRC</th><th style="width:15%;text-align:right;color:#1F7A6D">RRC on soft</th><th style="width:12%;text-align:right">HAC</th><th style="width:13%;text-align:right;color:#1F7A6D">Soft wins</th></tr>
+<tr><td>Breast5K · multi-breast (dev)</td><td style="text-align:right">0.071</td><td style="text-align:right">0.100</td><td style="text-align:right;color:#1F7A6D">0.112</td><td style="text-align:right">0.105</td><td style="text-align:right;color:#1F7A6D">9 / 9</td></tr>
+<tr><td>ATERA · multi-breast</td><td style="text-align:right">0.109</td><td style="text-align:right">0.166</td><td style="text-align:right;color:#1F7A6D">0.186</td><td style="text-align:right">0.190</td><td style="text-align:right;color:#1F7A6D">9 / 9</td></tr>
+<tr><td>Breast5K · pan-cancer model</td><td style="text-align:right">0.054</td><td style="text-align:right">0.072</td><td style="text-align:right;color:#1F7A6D">0.082</td><td style="text-align:right">0.074</td><td style="text-align:right;color:#1F7A6D">9 / 9</td></tr>
+</table>
+<p style="font-size:28px;line-height:1.4;color:#3B4556"><b>The authors’ own correction, applied to the soft output instead of the gated export, wins 27 of 27 runs (+12–15%, every 95% CI above 0).</b> Our hurdle-aware HAC wins 20 of 27; it gives the best spatial maps on two of three combinations, but fails our pre-declared test on the pan-cancer model.</p>
+<p style="font-size:24px;line-height:1.4;color:#5B6676">RRC-on-soft was a pre-listed ablation, promoted after the results. Its trade-off: co-expression structure (CMD) slightly worse than the authors’ default.</p>
+<aside>Four 1 mm² cores, about 13 to 31 thousand measured cells, evaluated on the rest of the slide with a 200 micrometre buffer. The pan-cancer row is a second released GHIST+ checkpoint, run on free Kaggle compute. The key message: what matters is which GHIST+ output you correct, not the correction model. HAC was our pre-declared primary method and passed on two of three combinations; we report its failure on the third.</aside>
+</section>

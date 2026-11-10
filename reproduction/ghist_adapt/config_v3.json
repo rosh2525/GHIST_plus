@@ -1,0 +1,61 @@
+{
+  "name": "GHIST+-Adapt v3",
+  "frozen": "2026-11-09, before any v3 fit or metric on any slide",
+  "question": "Given measured RNA from a few TMA-like tissue cores of a slide, does a lightweight post-hoc adapter on frozen GHIST+ predictions improve GHIST+ on the rest of that slide, across the paper's own metrics?",
+  "slides": {
+    "breast5k": "development (adapter ideas from v1/v2 were developed on this slide)",
+    "atera": "confirmation: no adapter has been fitted or evaluated on it before this protocol was frozen",
+    "breast2": "confirmation (BreastCancer2, the paper's independent across-slide test slide): same as above"
+  },
+  "prediction_scales": "as in the authors' Figure3.ipynb: external slides (breast5k, atera) x0.5, BreastCancer2 across-slide export x1.0; measured target = log1p(raw counts)",
+  "anchors": {
+    "shape": "disk-shaped cores (TMA-like)",
+    "core_area_mm2": [0.5, 1.0, 2.0, 3.5],
+    "n_cores": [1, 4, 16],
+    "placement": {
+      "random": "core centres drawn from random cells",
+      "diverse": "RNA-free: 400 random candidate cores, each described by the mean of its cells' GHIST+ predictions in a 20-PC space (PCA on 50k random cells' predictions); k-means (k = n_cores) on candidates, pick the non-overlapping candidate nearest each centroid"
+    },
+    "repeats": [0, 1, 2],
+    "candidate_acceptance": "a core is accepted only if it holds >= 50% of the median cell count of 200 random cores of the same size (avoids empty edge cores); cores never overlap",
+    "max_total_area_fraction": 0.2,
+    "max_total_area_note": "configs whose total core area exceeds 20% of the slide's occupied tissue (100 um grid) are skipped and recorded",
+    "evaluation_buffer_um": 200,
+    "evaluation_cells": "every cell farther than 200 um from all core edges (the withheld rest of the slide)"
+  },
+  "methods": {
+    "GHIST+": "frozen released predictions",
+    "calibration": "per-gene OLS y = a + b*p on core cells, clipped at 0",
+    "ridge": "multigene ridge residual: clip(p + c + z(p) @ W, 0); inputs = all genes' standardised GHIST+ predictions; alpha chosen by grouped CV over cores",
+    "Adapt": "PRIMARY. Per gene, use the ridge output if its out-of-fold PCC on core cells beats GHIST+'s PCC on core cells; otherwise use tie-free rescaled GHIST+ (s_g * p, least squares through the origin on core cells). Falls back toward GHIST+ when cores are uninformative",
+    "Adapt-DM": "Adapt with per-gene spread matched to the core cells' measured SD (ridge-branch genes: expand around the out-of-fold mean; rescale-branch genes: scale-only), clipped at 0"
+  },
+  "cv": {
+    "groups": "one group per core; a single core is split into 4 angular sectors",
+    "alphas": [1, 10, 100, 1000, 10000, 100000],
+    "selection": "out-of-fold median per-gene PCC pooled over core cells"
+  },
+  "uncertainty": {
+    "method": "split-conformal per gene from out-of-fold absolute residuals on core cells, alpha = 0.1 (target 90% coverage); interval [max(0, q_hat - r), q_hat + r]",
+    "baseline": "the same conformal procedure applied to raw GHIST+ predictions",
+    "reported": "coverage on evaluation cells (median over genes) and mean interval width"
+  },
+  "metrics": {
+    "gene_groups": "Giotto SVG score (authors' giotto_scores, k = 8) computed once per slide on measured RNA of all cells, as in the paper: top-20 SVG, top-50 SVG, top-50 non-SVG (smallest |score|), all genes",
+    "per_gene": ["PCC", "Spearman (on up to 100,000 random evaluation cells)", "RMSE log1p", "RMSE on measured-positive cells", "predicted/measured SD ratio"],
+    "spatial": "SSIM with the authors' grid (width 400 bins, Gaussian sigma 1, 7x7 window) on evaluation cells, for the top-50 SVG and top-50 non-SVG genes",
+    "structure": "CMD (paper Eq. 17) on all genes and on the top-50 SVGs",
+    "uncertainty_of_gains": "spatial block bootstrap (400 um blocks, 500 resamples) of the median-PCC difference vs GHIST+ over all genes and top-20 SVGs; 95% percentile interval",
+    "rmse_note": "RMSE is in log1p units as in the authors' released evaluation; the paper's library-size-normalised RMSE (Eq. 15) needs predicted library sizes and is not computed"
+  },
+  "headline_configs": {
+    "primary": "4 cores x 1.0 mm2, diverse placement (a typical TMA budget: 4 mm2 total)",
+    "paper_matched": "1 core x 3.5 mm2 (the largest single core in the paper's Fig. 2d)"
+  },
+  "biology_amendment": {
+    "added": "2026-11-09, after the smoke-test run started but before any v3 metric was read; secondary analyses only, primary metrics unchanged",
+    "cell_type_programmes": "per-cell signature score = mean log1p expression of the authors' Figure3.ipynb marker sets (D_MARKERS: T, B, Plasma, Macrophage, Myeloid, Stromal, Epithelial, Malignant) present in the slide panel (>= 2 markers required); PCC between predicted and measured signature scores over evaluation cells, per programme. Mean-expression scoring is used instead of pyUCell for speed",
+    "adapter_interpretation": "for the headline config (4 x 1 mm2, diverse, seed 0) save the ridge weights; for each corrected gene, report its top input genes by |weight| (inputs standardised) and the share of |weight| that comes from genes in the same marker programme vs other programmes"
+  },
+  "decision_rule": "A metric counts as improved for a slide only if the headline-config mean over the 3 repeats beats GHIST+ and, for median PCC, the block-bootstrap 95% interval of the difference excludes 0 in every repeat. Results are reported for every config, method and slide regardless of outcome."
+}

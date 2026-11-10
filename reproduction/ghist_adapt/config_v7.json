@@ -1,0 +1,28 @@
+{
+  "name": "v7 / P3: conformal prediction intervals around core-corrected GHIST+ predictions",
+  "frozen": "2026-11-09, before any P3 computation",
+  "prior_art": "TISSUE (Sun et al., Nat Methods 2024) calibrates uncertainty for spatial imputation; this is an adaptation to the H&E core-to-WSI setting, not a new uncertainty method",
+  "settings": {"unbiased": "4 x 1 mm2 diverse cores (P1 primary)", "tumour_biased": "4 x 1 mm2 tumour-biased cores as in config_v5.json (stress test)"},
+  "repeats": [0, 1, 2],
+  "slides": {"breast5k": "development", "atera": "confirmation"},
+  "target_coverage": 0.9,
+  "methods_wrapped": {
+    "GHIST+": "export; residuals on core cells (no fitting)",
+    "GHIST+-Soft": "q * relu(mu); residuals on core cells (no fitting)",
+    "RRC-authors": "leave-one-core-out out-of-fold residuals with its chosen alpha/blend",
+    "HAC": "leave-one-core-out out-of-fold residuals at the chosen alpha",
+    "HAC-mondrian": "HAC with radii per gene x GHIST+-predicted cell type (9 classes); classes with < 50 core cells fall back to the per-gene radius"
+  },
+  "interval": "[max(0, y_hat - r), y_hat + r]; r = per-gene empirical quantile of |y - y_hat_oof| over core cells at level min(1, ceil((n+1)*0.9)/n)",
+  "metrics": "on evaluation cells: coverage (median over genes) for all entries and for expressing entries (y > 0); mean interval width; coverage for tumour-type vs other cells; coverage for out-of-support cells (P2 support rule)",
+  "amendment_1": {
+    "date": "2026-11-09, after one Breast5K smoke run (unbiased, seed 0), before any full P3 run or ATERA computation",
+    "reason": "Per-gene marginal intervals are degenerate on zero-inflated data. Smoke run: HAC coverage 0.92 with width 0.11, but coverage of expressing entries 0.000, because the 90% residual quantile is set by the zeros.",
+    "added_primary": {
+      "occurrence_calibration": "reliability of the predicted P(expressed) against 1[y > 0] on evaluation cells: expected calibration error (10 equal-width bins, pooled over cells x genes) and median per-gene Brier score, for raw GHIST+ q, intercept-recalibrated q + c, and HAC's q_hat",
+      "conditional_magnitude_interval": "per gene, radius = conformal quantile (90%) of |y - m_hat| over expressing core cells (genes with >= 20); interval [max(0, m_hat - r), m_hat + r]; coverage and width on expressing evaluation entries. Baseline: the same with uncalibrated relu(mu)"
+    },
+    "decision_rule_added": "Hurdle-aware uncertainty is useful if, in the unbiased setting on both slides, HAC's q_hat has lower ECE and lower median Brier than raw GHIST+ q, and the conditional magnitude interval reaches coverage in [0.85, 0.95] on expressing evaluation entries. The original marginal rule below is still evaluated and reported."
+  },
+  "decision_rule": "P3 delivers calibrated intervals if, in the unbiased setting on both slides, HAC or HAC-mondrian reaches median all-entry coverage in [0.87, 0.93] with a mean width smaller than the same procedure applied to the GHIST+ export and to RRC-authors. Expressing-entry coverage and the biased-core coverage drop are reported as limitations, whatever they show."
+}

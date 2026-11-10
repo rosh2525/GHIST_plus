@@ -1,0 +1,27 @@
+<section id="approach" data-transition="fade" style="background:#F7F6F1;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#1F7A6D;font-weight:600">Our fixes · laptop only, no retraining</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:60px;font-weight:600;line-height:1.1;color:#14213D">Our three fixes, and why they work</h2>
+</div>
+<div style="display:flex;gap:24px">
+<div style="flex:1;background:#FFFFFF;border:1px solid #D9DED8;border-top:6px solid #1F7A6D;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:30px;font-weight:600;color:#14213D">1 · Soft hurdle output</h3>
+<p style="font-size:26px;line-height:1.35;color:#3B4556">Use P(expressed) × amount for every cell instead of the top-K on/off export. No RNA needed.</p>
+<p style="font-size:26px;line-height:1.35;color:#1F7A6D"><b>Biology:</b> cell states are graded and Xenium misses transcripts; a probability keeps gradients a yes/no cut erases.</p>
+</div>
+<div style="flex:1;background:#FFFFFF;border:1px solid #D9DED8;border-top:6px solid #1F7A6D;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:30px;font-weight:600;color:#14213D">2 · Core-guided correction</h3>
+<p style="font-size:26px;line-height:1.35;color:#3B4556">With four measured 1 mm² cores, correct the soft output rather than the gated export (authors’ ridge or our hurdle-aware HAC).</p>
+<p style="font-size:26px;line-height:1.35;color:#1F7A6D"><b>Biology:</b> every tumour runs its own programmes (receptor status, immune infiltration); co-expressed genes in the cores reveal them.</p>
+</div>
+<div style="flex:1;background:#FFFFFF;border:1px solid #D9DED8;border-top:6px solid #1F7A6D;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-size:30px;font-weight:600;color:#14213D">3 · Calibrated uncertainty</h3>
+<p style="font-size:26px;line-height:1.35;color:#3B4556">A trustworthy probability that a gene is on, plus a 90% range for its amount where it is on.</p>
+<p style="font-size:26px;line-height:1.35;color:#1F7A6D"><b>Biology:</b> it answers the question asked of a marker: how likely is it on in this cell, and how strongly?</p>
+</div>
+</div>
+<div style="background:#14213D;border-radius:16px;padding:22px 32px">
+<p style="font-size:24px;line-height:1.4;color:#E6ECF2"><b>Kept honest:</b> protocol frozen before every run · Breast5K for development, ATERA untouched for confirmation · compared with the authors’ own correction · cores chosen without looking at RNA · 3 repeats, 95% bootstrap CIs</p>
+</div>
+<aside>Each fix maps to a biological reason. Fix 1: GHIST+'s exporter makes a hard yes-or-no call, but expression in tissue is graded, and Xenium detection is probabilistic, so a probability is the biologically correct output. Fix 2: a model trained on other patients cannot know this tumour's programmes, such as hormone-receptor status or how infiltrated it is; a few measured cores reveal which genes go together here. Fix 3: biologists ask whether a marker is on and how strongly, so we give a calibrated probability and a range.</aside>
+</section>

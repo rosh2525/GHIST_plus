@@ -1,0 +1,24 @@
+<section id="fix3" data-transition="fade" style="background:#F7F6F1;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#1F7A6D;font-weight:600">Fix 3 · uncertainty</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:60px;font-weight:600;line-height:1.1;color:#14213D">Uncertainty that holds where a gene is expressed</h2>
+</div>
+<div style="background:#FBF3EC;border:1px solid #E8D3C2;border-left:8px solid #B5541C;border-radius:16px;padding:22px 32px;display:flex;flex-direction:column;gap:8px">
+<h3 style="font-size:30px;font-weight:600;color:#8A4317">A trap we found first</h3>
+<p style="font-size:26px;line-height:1.35;color:#3B4556">Standard per-gene 90% intervals report about 91% coverage, yet cover 0% of the cells that actually express the gene: most measured values are zero, so the intervals learn to cover zeros.</p>
+</div>
+<div style="display:flex;gap:24px">
+<div style="flex:1;background:#FFFFFF;border:1px solid #D9DED8;border-radius:16px;padding:24px 28px;display:flex;flex-direction:column;gap:8px">
+<h3 style="font-size:30px;font-weight:600;color:#14213D">Is the gene on in this cell?</h3>
+<p style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:600;line-height:1.05;color:#1F7A6D">0.120 → 0.005</p>
+<p style="font-size:24px;line-height:1.35;color:#3B4556">Calibration error of P(expressed) on Breast5K (ATERA 0.058 → 0.003). A predicted 30% now comes true about 30% of the time.</p>
+</div>
+<div style="flex:1;background:#FFFFFF;border:1px solid #D9DED8;border-radius:16px;padding:24px 28px;display:flex;flex-direction:column;gap:8px">
+<h3 style="font-size:30px;font-weight:600;color:#14213D">How much, if it is on?</h3>
+<p style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:600;line-height:1.05;color:#1F7A6D">90% range</p>
+<p style="font-size:24px;line-height:1.35;color:#3B4556">Coverage on expressing cells 90.4% (Breast5K) and 89.9% (ATERA); 48% and 20% narrower than around GHIST+’s raw amount.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#5B6676">Protocol config_v7.json, amended after one development-slide smoke run, before any confirmation run. With tumour-only cores, coverage stays 0.89–0.91.</p>
+<aside>We report uncertainty the way the hurdle model thinks: first the probability that a gene is on, then a range for how much if it is on. GHIST+'s raw probabilities are miscalibrated; after correction with the cores, they match observed frequencies. The ERBB2 sentence is an example of the kind of question, not a separate measured result.</aside>
+</section>

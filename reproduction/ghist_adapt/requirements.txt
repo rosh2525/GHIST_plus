@@ -1,0 +1,6 @@
+# GHIST+-Adapt v3 (tested on macOS arm64 / Python 3.12). torch is only needed for the reproduction/residual_adapter v2 MLP.
+numpy==1.26.4
+pandas==2.3.2
+scipy
+matplotlib
+tabulate

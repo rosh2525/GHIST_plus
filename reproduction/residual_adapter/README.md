@@ -2,7 +2,9 @@
 
 **Question.** Can a small amount of measured RNA from a few tissue regions train a lightweight model that improves frozen GHIST+ predictions in other regions of the same slide?
 
-**Answer on this run: no.** The multigene residual ridge adapter failed the pre-specified validation gate on all three spatial splits, so it was not developed further. On the locked test regions it *lowered* median per-gene PCC from 0.071 to 0.066 and reduced PCC for about 106 of 258 genes. Per-gene calibration cut RMSE by about 3×, but mostly by shrinking predictions toward zero (predicted/measured SD ratio 0.065). That is the near-zero artefact the plan said to check for, not a real improvement. This is a negative result for one donor and one slide.
+**Short answer.** Yes, if the adapter gets enough local RNA spread across the slide. A ridge residual adapter trained on 50,000 measured cells raises median per-gene PCC on the locked test regions from 0.071 to 0.113 (+59%), improving 214 genes and lowering 20. With 150,000 cells it reaches 0.126, improving 238 genes and lowering 8. With only 5,000 cells from a few blocks (v1, below) it does worse than GHIST+. An MLP trained on Apple Metal did not beat GHIST+ at any size. See **v2** below; v1 is kept unchanged as the first, negative experiment.
+
+**v1 answer: no.** The multigene residual ridge adapter failed the pre-specified validation gate on all three spatial splits, so it was not developed further. On the locked test regions it *lowered* median per-gene PCC from 0.071 to 0.066 and reduced PCC for about 106 of 258 genes. Per-gene calibration cut RMSE by about 3×, but mostly by shrinking predictions toward zero (predicted/measured SD ratio 0.065). That is the near-zero artefact the plan said to check for, not a real improvement. This is a negative result for one donor and one slide.
 
 This is supervised adaptation with extra local RNA, not GHIST+ retraining. GHIST+ itself was not re-run: the authors' released predictions (`test_slide6_pred_expr_scaled.npz`) are used unchanged.
 
@@ -52,7 +54,48 @@ Validation gate: **failed for all seeds**. On validation, median PCC for GHIST+ 
 
 These are within-slide results for one donor, not evidence about other patients. The gate failure was decided on validation alone; test numbers were computed once with the frozen config. Train-only fitting was used (validation cells were not refitted in).
 
+## v2: how much local RNA is needed? (learning curve; ridge vs MLP on Apple Metal)
+
+**Why v2.** After v1, a probe that used validation cells only (the v1 test cells were not used) showed that adapter quality depended mainly on how many training cells there were and how widely they were spread. Spatially smoothing GHIST+ predictions without RNA made things worse. The v2 protocol (`config_v2.json`) was written and frozen after that probe and before any v2 training or test metric.
+
+**Setup.** The validation and test cells are exactly the same as in v1. Training cells are drawn from a pool made of every block at least one buffer block away from all validation and test blocks (about 377k cells). Nested subsets of 5k, 20k, 50k and 150k cells are used (`splits_v2/`). Inputs are frozen GHIST+ outputs only: the 258 predictions, 258 occurrence probabilities and 9 cell-type probabilities. Methods are per-gene calibration, ridge (alpha chosen on validation), and a 2×512 MLP trained with PyTorch on the M3 GPU (MPS backend), checkpointed on validation median PCC. The test set is the 20,000 test cells only, because the v1 `rest` set overlaps the v2 training pool.
+
+**Locked test results** (mean ± SD over 3 spatial splits; full table in `outputs_v2/summary.md`):
+
+| local training cells | method | median PCC | mean PCC | mean RMSE | RMSE, measured>0 | SD ratio | genes PCC ↑/↓ vs GHIST+ |
+|---|---|---|---|---|---|---|---|
+| – | GHIST+ frozen | 0.0712 ± 0.0010 | 0.108 | 0.324 | **0.667** | 2.75 | – |
+| 5,000 | ridge adapter | 0.0617 ± 0.0026 | 0.108 | 0.132 | 0.691 | 0.70 | 77 / 122 |
+| 20,000 | ridge adapter | 0.0956 ± 0.0022 | 0.147 | 0.104 | 0.712 | 0.17 | 182 / 47 |
+| 50,000 | ridge adapter | 0.1134 ± 0.0024 | 0.160 | 0.103 | 0.712 | 0.15 | 214 / 20 |
+| 150,000 | ridge adapter | **0.1262 ± 0.0039** | **0.171** | **0.103** | 0.713 | 0.14 | 238 / 8 |
+| 150,000 | MLP adapter (MPS) | 0.0638 ± 0.0078 | 0.122 | 0.111 | 0.697 | 0.49 | 102 / 104 |
+| 150,000 | per-gene calibration | 0.0712 ± 0.0010 | 0.108 | 0.106 | 0.726 | 0.06 | 12 / 3 |
+
+Figures: `outputs_v2/figures/learning_curve.png`, `pcc_scatter_seed0_n50000.png` and `spatial_maps_seed0_n50000.png`. The 50k figure size was fixed in the config before testing.
+
+**What this does and does not show.**
+
+- **Ranking really improves.** PCC does not depend on scale, so a calibration-style rescale cannot raise it. The gain comes from combining information across genes and from GHIST+'s own occurrence and cell-type outputs. It holds on every split and for most genes. MKI67 goes from −0.01 to 0.10 in the mapped block.
+- **Magnitude is a trade-off.** The adapter shrinks predictions (SD ratio about 0.15), and error on measured-positive cells is worse than GHIST+ (0.712 vs 0.667). Present it as better per-gene correlation and lower overall RMSE, not as better on every metric.
+- **The comparison is not equal.** The adapter uses measured RNA from 9–27% of the same slide's cells; GHIST+ uses none. This is within-slide supervised adaptation for one donor, not a better image model and not cross-patient generalisation. It is closest to the paper's idea of using measured tissue cores. The contribution is a cheap post-hoc adapter (seconds on CPU) plus a learning curve showing how much local RNA it needs.
+- **The MLP failed for an identifiable reason.** Validation PCC fell within the first 100 steps: the squared-error loss on mostly-zero targets pushes many predictions below zero, and clipping them to 0 creates ties that erase ranking. Fixing this (for example with a positive output layer or a ranking-aware loss) would be a new protocol and has not been tried.
+- The test cells were evaluated before, in v1. v2 choices were made on validation only, and the test was run once with the frozen v2 config.
+
 ## Reproduce
+
+v2 needs PyTorch. A separate environment is used so the reproduction environment stays unchanged:
+
+```sh
+python3 -m venv ../work/adapter_mps_venv && ../work/adapter_mps_venv/bin/pip install numpy==1.26.4 pandas==2.3.2 scipy matplotlib torch
+cd reproduction/residual_adapter
+../../../work/adapter_mps_venv/bin/python train_v2.py      # about 7 min on an M3 (MPS); needs prepare_data.py first
+../../../work/adapter_mps_venv/bin/python evaluate_v2.py
+```
+
+MLP weights go to `local_artifacts/adapter_v2_models/` (`*.pt` is git-ignored). MPS training is not bit-for-bit deterministic.
+
+v1:
 
 Local (measured on a 16 GB, 8-core Mac with the bundle already present: about 45 s for prepare, 4 s for train, 16 s for evaluate; writes a 1.2 GB cache to `local_artifacts/adapter_cache/`):
 

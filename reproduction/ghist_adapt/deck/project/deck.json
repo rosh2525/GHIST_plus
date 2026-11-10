@@ -1,0 +1,20 @@
+{
+  "v": 4,
+  "createdOnFiles": {"v": 1, "at": "2026-11-09T12:00:00Z"},
+  "lists": "css",
+  "title": "GHIST+ Improvements Without DGX",
+  "order": ["cover", "ghist", "ghistplus", "limits", "approach", "fix1", "fix2", "fix3", "biogood", "biobad", "confidence", "thanks"],
+  "sections": {
+    "s1": {"description": "Background: GHIST and its successor GHIST+", "start": "cover"},
+    "s2": {"description": "Limitations of GHIST+ measured on its released predictions", "start": "limits"},
+    "s3": {"description": "Our three fixes and how we kept the tests honest", "start": "approach"},
+    "s4": {"description": "Results of each fix against GHIST+ and the authors' own correction", "start": "fix1"},
+    "s5": {"description": "Biology: where the fixes help and where they do not", "start": "biogood"},
+    "s6": {"description": "Confidence, next steps on the DGX, and close", "start": "confidence"}
+  },
+  "faces": {
+    "source-serif-4": {"family": "Source Serif 4", "href": "https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400..700&display=swap"},
+    "ibm-plex-sans": {"family": "IBM Plex Sans", "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap"}
+  },
+  "designSystems": []
+}

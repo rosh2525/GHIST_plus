@@ -1,0 +1,31 @@
+<section id="biogood" data-transition="fade" style="background:#EEF1EC;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#1F7A6D;font-weight:600">Biology · where it helps</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:60px;font-weight:600;line-height:1.1;color:#14213D">Largest gains in tumour, epithelial and plasma cells</h2>
+</div>
+<div style="display:flex;gap:48px">
+<div style="flex:1">
+<table style="font-family:'IBM Plex Sans', Arial, sans-serif;font-size:24px;color:#14213D">
+<tr><th style="width:52%;text-align:left">Programme score (PCC gain, Fix 1)</th><th style="width:24%;text-align:right">Breast5K</th><th style="width:24%;text-align:right">ATERA</th></tr>
+<tr><td>Malignant</td><td style="text-align:right">+0.081</td><td style="text-align:right">+0.009</td></tr>
+<tr><td>Epithelial</td><td style="text-align:right">+0.041</td><td style="text-align:right">+0.017</td></tr>
+<tr><td>Plasma</td><td style="text-align:right">+0.039</td><td style="text-align:right">+0.042</td></tr>
+<tr><td>Macrophage</td><td style="text-align:right">+0.033</td><td style="text-align:right">+0.032</td></tr>
+<tr><td>B cell</td><td style="text-align:right">+0.030</td><td style="text-align:right">+0.011</td></tr>
+<tr><td>Stromal</td><td style="text-align:right">+0.023</td><td style="text-align:right">+0.007</td></tr>
+<tr><td>T cell</td><td style="text-align:right">+0.016</td><td style="text-align:right">+0.018</td></tr>
+<tr><td>Myeloid</td><td style="text-align:right">+0.006</td><td style="text-align:right">+0.004</td></tr>
+</table>
+</div>
+<div style="width:780px;display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<div style="background:#FBFBF8;border:1px solid #D2D8D0;border-top:6px solid #1F7A6D;border-radius:14px;padding:18px 22px;display:flex;flex-direction:column;gap:6px"><h3 style="font-size:28px;font-weight:600">Luminal / ER genes</h3><p style="font-size:24px;line-height:1.35;color:#3B4556">CCND1 0.44 → 0.53<br>GATA3 0.47 → 0.56<br>(Breast5K)</p></div>
+<div style="background:#FBFBF8;border:1px solid #D2D8D0;border-top:6px solid #1F7A6D;border-radius:14px;padding:18px 22px;display:flex;flex-direction:column;gap:6px"><h3 style="font-size:28px;font-weight:600">Epithelial identity</h3><p style="font-size:24px;line-height:1.35;color:#3B4556">CDH1 0.41 → 0.59<br>AGR3 0.43 → 0.59<br>(ATERA)</p></div>
+<div style="background:#FBFBF8;border:1px solid #D2D8D0;border-top:6px solid #1F7A6D;border-radius:14px;padding:18px 22px;display:flex;flex-direction:column;gap:6px"><h3 style="font-size:28px;font-weight:600">T / lymphoid genes</h3><p style="font-size:24px;line-height:1.35;color:#3B4556">TRBC1 0.17 → 0.26 (B5K)<br>RORC 0.16 → 0.33<br>RHOH 0.27 → 0.40 (ATERA)</p></div>
+<div style="background:#FBFBF8;border:1px solid #D2D8D0;border-top:6px solid #1F7A6D;border-radius:14px;padding:18px 22px;display:flex;flex-direction:column;gap:6px"><h3 style="font-size:28px;font-weight:600">Vessel / smooth muscle</h3><p style="font-size:24px;line-height:1.35;color:#3B4556">MYH11 0.32 → 0.43<br>AQP1 0.36 → 0.47<br>(Breast5K)</p></div>
+</div>
+</div>
+<div style="background:#14213D;border-radius:16px;padding:20px 32px">
+<p style="font-size:26px;line-height:1.4;color:#E6ECF2"><b>Fix 2 adds most for scattered immune cells</b> (vs the authors’ RRC, ATERA): plasma +0.022, myeloid +0.018, B +0.017, macrophage +0.017, T +0.015. Getting ‘is it on?’ right matters most for rare, dispersed cells.</p>
+</div>
+<aside>Programme score = mean expression of the authors' own marker sets for each cell type; we report how much better it correlates with measured RNA. All eight programmes improve on both slides. Gene numbers are per-gene PCC with measured RNA, before and after Fix 1. These are correlations, not causal biology.</aside>
+</section>

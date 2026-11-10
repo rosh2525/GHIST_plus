@@ -1,0 +1,31 @@
+{
+  "seed": 0,
+  "n_train": 20000,
+  "ridge_alpha": 100,
+  "mlp_best_step": 1700,
+  "mlp_steps_run": 2700,
+  "device": "mps",
+  "validation": {
+    "GHIST+": {
+      "median_pcc": 0.06462846782063862,
+      "mean_pcc": 0.0947368169511685,
+      "mean_rmse": 0.3306915813764397
+    },
+    "calibration": {
+      "median_pcc": 0.06291549025820642,
+      "mean_pcc": 0.09397867476519013,
+      "mean_rmse": 0.09687793499490803
+    },
+    "ridge": {
+      "median_pcc": 0.0785203343258391,
+      "mean_pcc": 0.13634059374459848,
+      "mean_rmse": 0.09466247587600954
+    },
+    "mlp": {
+      "median_pcc": 0.055008403112592974,
+      "mean_pcc": 0.10405423846699983,
+      "mean_rmse": 0.10599361327172493
+    }
+  },
+  "seconds": 28.6
+}

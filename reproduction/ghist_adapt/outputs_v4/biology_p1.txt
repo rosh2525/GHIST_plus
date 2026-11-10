@@ -1,0 +1,40 @@
+
+=== breast5k: zero-shot soft vs export, per gene ===
+Spearman(fraction expressing, ΔPCC) = +0.64 (p=1.7e-31)  [negative = rarer genes gain more]
+                 genes  median_frac  export_zero  pcc_export  pcc_soft  median_gain  genes_up  genes_down
+bin                                                                                                      
+rarest 25%          65        0.002        0.975       0.015     0.026        0.006        37           3
+2nd                 64        0.007        0.926       0.051     0.071        0.014        55           3
+3rd                 64        0.017        0.866       0.091     0.111        0.022        61           0
+most common 25%     65        0.061        0.727       0.193     0.235        0.044        63           2
+--- programme score PCC (all cells): export -> soft; plus per-gene ΔPCC of HAC vs authors' RRC (primary config) ---
+T           n= 4 median expressing=0.026  programme PCC export 0.288 -> soft 0.304 (+0.016) | per-gene ΔPCC HAC vs GHIST+ +0.031, vs RRC +0.007
+B           n= 5 median expressing=0.014  programme PCC export 0.212 -> soft 0.242 (+0.030) | per-gene ΔPCC HAC vs GHIST+ +0.009, vs RRC -0.006
+Plasma      n= 4 median expressing=0.007  programme PCC export 0.149 -> soft 0.188 (+0.039) | per-gene ΔPCC HAC vs GHIST+ +0.022, vs RRC +0.005
+Macrophage  n= 5 median expressing=0.017  programme PCC export 0.104 -> soft 0.137 (+0.033) | per-gene ΔPCC HAC vs GHIST+ +0.055, vs RRC +0.013
+Myeloid     n= 7 median expressing=0.013  programme PCC export 0.155 -> soft 0.162 (+0.006) | per-gene ΔPCC HAC vs GHIST+ +0.028, vs RRC +0.007
+Stromal     n= 8 median expressing=0.018  programme PCC export 0.281 -> soft 0.303 (+0.023) | per-gene ΔPCC HAC vs GHIST+ +0.045, vs RRC +0.005
+Epithelial  n= 5 median expressing=0.064  programme PCC export 0.639 -> soft 0.680 (+0.041) | per-gene ΔPCC HAC vs GHIST+ +0.095, vs RRC +0.010
+Malignant   n= 5 median expressing=0.022  programme PCC export 0.516 -> soft 0.597 (+0.081) | per-gene ΔPCC HAC vs GHIST+ +0.116, vs RRC +0.016
+largest zero-shot gains: CACNG4 (0.12->0.27, expr 5.8%), AQP1 (0.36->0.47, expr 3.3%), MYH11 (0.32->0.43, expr 1.8%), CCND1 (0.44->0.53, expr 14.2%), TRBC1 (0.17->0.26, expr 7.4%), GATA3 (0.47->0.56, expr 12.6%), PDZK1 (0.39->0.47, expr 8.6%), MDM2 (0.24->0.32, expr 7.4%)
+largest zero-shot losses: C11orf96 (-0.00->-0.05, expr 6.1%), CD36 (-0.00->-0.01, expr 1.1%), FGFR1 (0.22->0.21, expr 6.3%), CCL8 (0.03->0.02, expr 0.5%), CCL20 (-0.00->-0.01, expr 0.2%)
+
+=== atera: zero-shot soft vs export, per gene ===
+Spearman(fraction expressing, ΔPCC) = +0.40 (p=5.2e-17)  [negative = rarer genes gain more]
+                 genes  median_frac  export_zero  pcc_export  pcc_soft  median_gain  genes_up  genes_down
+bin                                                                                                      
+rarest 25%         104        0.013        0.971       0.026     0.047        0.015        75           3
+2nd                103        0.034        0.957       0.089     0.110        0.024        93           5
+3rd                103        0.070        0.909       0.158     0.198        0.036        96           3
+most common 25%    103        0.201        0.748       0.238     0.281        0.041        94           5
+--- programme score PCC (all cells): export -> soft; plus per-gene ΔPCC of HAC vs authors' RRC (primary config) ---
+T           n= 4 median expressing=0.050  programme PCC export 0.546 -> soft 0.564 (+0.018) | per-gene ΔPCC HAC vs GHIST+ +0.059, vs RRC +0.015
+B           n= 5 median expressing=0.020  programme PCC export 0.148 -> soft 0.159 (+0.011) | per-gene ΔPCC HAC vs GHIST+ +0.037, vs RRC +0.017
+Plasma      n= 4 median expressing=0.051  programme PCC export 0.276 -> soft 0.318 (+0.042) | per-gene ΔPCC HAC vs GHIST+ +0.082, vs RRC +0.022
+Macrophage  n= 7 median expressing=0.060  programme PCC export 0.246 -> soft 0.277 (+0.032) | per-gene ΔPCC HAC vs GHIST+ +0.050, vs RRC +0.017
+Myeloid     n= 8 median expressing=0.035  programme PCC export 0.234 -> soft 0.237 (+0.004) | per-gene ΔPCC HAC vs GHIST+ +0.043, vs RRC +0.018
+Stromal     n=10 median expressing=0.076  programme PCC export 0.520 -> soft 0.527 (+0.007) | per-gene ΔPCC HAC vs GHIST+ +0.049, vs RRC +0.007
+Epithelial  n=10 median expressing=0.317  programme PCC export 0.804 -> soft 0.821 (+0.017) | per-gene ΔPCC HAC vs GHIST+ +0.096, vs RRC -0.007
+Malignant   n= 8 median expressing=0.070  programme PCC export 0.761 -> soft 0.770 (+0.009) | per-gene ΔPCC HAC vs GHIST+ +0.059, vs RRC +0.006
+largest zero-shot gains: C15orf48 (0.07->0.25, expr 24.3%), CDH1 (0.41->0.59, expr 51.0%), RORC (0.16->0.33, expr 15.6%), AGR3 (0.43->0.59, expr 48.2%), SDC4 (0.33->0.48, expr 39.3%), ARSG (0.21->0.35, expr 15.8%), RHOH (0.27->0.40, expr 39.9%), TFAP2A (0.27->0.41, expr 25.8%)
+largest zero-shot losses: TSPAN8 (-0.02->-0.10, expr 16.8%), CD36 (-0.00->-0.07, expr 8.1%), ITGB1 (0.09->0.05, expr 51.0%), REXO4 (-0.02->-0.04, expr 3.4%), C11orf96 (0.00->-0.02, expr 2.4%)

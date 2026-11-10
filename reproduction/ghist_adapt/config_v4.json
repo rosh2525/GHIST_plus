@@ -1,0 +1,22 @@
+{
+  "name": "v4 / P0+P1: soft hurdle expectation and hurdle-aware core correction",
+  "frozen": "2026-11-09, after a zero-shot comparison of 4 candidate scores on Breast5K (development) only; before any v4 computation on ATERA",
+  "development_finding": "Breast5K, all cells, no RNA used by the model: GHIST+ export (top-K gated) median PCC 0.0704; q only 0.0858; q*relu(mu) 0.0882; q*softplus(mu) 0.0873; relu(mu) 0.0646. Chosen: q*relu(mu).",
+  "zero_shot": {
+    "GHIST+-Soft": "S = q * relu(mu), where q = released occurrence_probability and mu = released signed_mu_scaled * export scale. It replaces the export's hard top-K gate (model/hurdle_distribution.py::deterministic_hurdle_prediction) with the soft expectation. Uses no RNA",
+    "evaluation": "all cells of each slide, plus the v3 evaluation cells of the headline configs",
+    "confirmation_slide": "ATERA (the BreastCancer2 export has no hurdle outputs; it is re-generated in P4 if the checkpoint can be run)"
+  },
+  "core_methods": {
+    "GHIST+": "released export",
+    "GHIST+-Soft": "zero-shot soft expectation",
+    "RRC-authors": "tools/one_shot_rrc.py functions, default config, applied to the export (features = export standardised over all slide cells)",
+    "RRC-soft": "the same authors' RRC procedure, applied to the soft score S (features and base prediction = S)",
+    "HAC": "PRIMARY. Hurdle-aware correction from core cells: (1) occurrence: multi-output ridge on X = standardised [S, logit q] (all genes) predicting 1[y>0] - q, so q_hat = clip(q + correction, 0.001, 0.999); (2) magnitude: per gene, least squares y ~ a + b*relu(mu) on core cells with y > 0 (>= 20 positive cells, else a = mean positive y, b = 0), m_hat = max(a + b*relu(mu), 0.01); output q_hat * m_hat. Ridge alpha chosen by leave-one-core-out CV on core cells (median per-gene PCC of the output)"
+  },
+  "cores_and_evaluation": "identical to v3 (config_v3.json): headline configs only (4 x 1 mm2 diverse = primary, 1 x 3.5 mm2 diverse, 4 x 1 mm2 random), seeds 0-2, 200 um buffer, evaluation on the withheld rest of the slide",
+  "slides": {"breast5k": "development", "atera": "confirmation"},
+  "metrics": "as v3 (median PCC all/top-20/top-50 SVG, mean PCC, Spearman on up to 100k evaluation cells, mean RMSE, RMSE on expressing cells, SD ratio, SSIM top-50 SVG, CMD all genes), plus block-bootstrap 95% CI of the median-PCC difference vs RRC-authors and vs GHIST+",
+  "p0_diagnostic": "for RRC-authors, record its own hyperparameter-selection score (random 20% of core cells) and the leave-one-core-out score with the chosen hyperparameters, next to its evaluation score, to measure the optimism of random-cell selection",
+  "decision_rule": "GHIST+-Soft counts as a zero-shot improvement if its median PCC (all genes) beats the export on ATERA all cells and on the evaluation cells of all 9 ATERA headline runs. HAC counts as improving on the authors' method if, on both slides, its headline-config mean median PCC beats RRC-authors with the bootstrap CI excluding 0 in at least 2 of 3 repeats, and RMSE / RMSE-on-expressing-cells / SSIM are not worse than RRC-authors by more than 2%. Everything is reported either way."
+}

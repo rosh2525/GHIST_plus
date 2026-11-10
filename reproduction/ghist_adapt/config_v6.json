@@ -1,0 +1,26 @@
+{
+  "name": "v6 / P4b: image-aware hurdle correction (HAC-img) with an open pathology encoder",
+  "frozen": "2026-11-10T12:20 local, after the alignment QA (qa.json: inverted 10x matrix, contrast +28.8 grey levels, 100% of cells inside) and before any P4 metric",
+  "freeze_instructions": "Fill 'frozen' with the date/time BEFORE running dgx/p4_run.py on any slide and after the extract_uni2h.py QA overlay was checked. Do not change anything below after the first P4 metric.",
+  "question": "Do H&E image features from an independent pathology foundation model add information beyond GHIST+'s own outputs when correcting with measured cores?",
+  "image_features": {
+    "encoder": "owkin/phikon (ViT-B/16, pathology-pretrained, open download, Owkin non-commercial licence). UNI2-h is gated (MahmoodLab terms need the user's own account) and is the encoder GHIST+ already uses internally; an independent encoder can add complementary information",
+    "crop": "224 x 224 px at 0.5 um/px (112 um field of view, Phikon's training magnification), centred on each cell; cell um -> Xenium px (/0.2125) -> H&E px via the inverted 10x alignment matrix (chosen by qa: haematoxylin contrast at centroids)",
+    "embedding": "[CLS token, mean of patch tokens] = 1,536 dims, float16",
+    "n_pc": 64,
+    "pca": "fitted on 50,000 random cells of the slide, seed 0; RNA-free",
+    "compute": "Apple M3 GPU (Metal/MPS), fp16, all 564,723 Breast5K cells"
+  },
+  "methods": {
+    "HAC": "P1 primary, unchanged",
+    "HAC-img": "HAC whose occurrence ridge also receives the 64 standardised image PCs; magnitude model unchanged; alpha by leave-one-core-out as in HAC",
+    "baselines": [
+      "GHIST+",
+      "GHIST+-Soft",
+      "RRC-authors"
+    ]
+  },
+  "cores_and_evaluation": "identical to config_v4.json (headline configs, 3 repeats, 200 um buffer)",
+  "slides": "breast5k (the only slide with both hurdle outputs and a public H&E); a confirmation slide with hurdle outputs and H&E is not available, so this result is development-slide evidence only",
+  "decision_rule": "HAC-img adds value if, on each evaluated slide, its headline-config mean median PCC beats HAC with the block-bootstrap CI of (HAC-img - HAC) excluding 0 in >= 2 of 3 repeats, and RMSE is not more than 2% worse. Reported either way."
+}

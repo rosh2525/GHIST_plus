@@ -25,4 +25,6 @@ Source code remains pinned at `c5c895174c19903cc27d2661934b9b726bdb9306`; data r
 
 - [Research implementation plan](research_plan/GHIST_PLUS_IMPLEMENTATION_PLAN.md): separate proposed study, audit gates and HPC schedule; no new model results.
 
-- [Residual adapter experiment](residual_adapter/README.md): 48-hour Breast5K within-slide adaptation on frozen GHIST+ predictions; validation gate failed, negative result reported.
+- [Residual adapter experiment](residual_adapter/README.md): Breast5K within-slide adaptation on frozen GHIST+ predictions: v1 (5k cells) negative; v2 ridge with 50k–150k local cells raises test median PCC 0.071 → 0.113–0.126.
+
+- [GHIST+ core correction and zero-shot fix](ghist_adapt/README.md): soft hurdle expectation (no RNA) +25–35% median PCC; hurdle-aware core correction beats the authors' own RRC on 2 slides; earlier v3 adapter retired (lost to RRC 18/18).

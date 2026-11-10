@@ -1,0 +1,22 @@
+{
+  "GHIST+": {
+    "median_pcc_all": 0.05435763033444377,
+    "median_pcc_svg20": 0.39611741666844835,
+    "median_pcc_svg50": 0.3141846883125685,
+    "median_pcc_nonsvg50": 0.0063772402466043985,
+    "mean_pcc_all": 0.08487665093208627,
+    "mean_rmse": 0.2991623051872604,
+    "median_rmse_pos": 0.664088506733808,
+    "median_sd_ratio": 3.1322629391873327
+  },
+  "GHIST+-Soft": {
+    "median_pcc_all": 0.0714228832907006,
+    "median_pcc_svg20": 0.44748276036085766,
+    "median_pcc_svg50": 0.3631363976800227,
+    "median_pcc_nonsvg50": 0.012976668441844561,
+    "mean_pcc_all": 0.10498251093428124,
+    "mean_rmse": 0.17162761986117597,
+    "median_rmse_pos": 0.6406184574626299,
+    "median_sd_ratio": 0.8740933798584023
+  }
+}

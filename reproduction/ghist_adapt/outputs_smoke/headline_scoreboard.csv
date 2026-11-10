@@ -1,0 +1,13 @@
+config,slide,metric,GHIST+,Adapt,Adapt-DM,Adapt_better,Adapt-DM_better
+primary,breast5k,median_pcc_all,0.06977,0.09642,0.09448,True,True
+primary,breast5k,median_pcc_svg20,0.37956,0.47613,0.47977,True,True
+primary,breast5k,median_pcc_svg50,0.24390,0.36202,0.36692,True,True
+primary,breast5k,median_spearman_all,0.06927,0.07661,0.07914,True,True
+primary,breast5k,mean_rmse,0.33399,0.09763,0.12435,True,True
+primary,breast5k,median_rmse_pos,0.66485,0.71536,0.66982,False,False
+primary,breast5k,median_sd_ratio,3.08994,0.16130,0.90995,False,True
+primary,breast5k,median_ssim_svg50,0.37662,0.68064,0.66617,True,True
+primary,breast5k,median_ssim_nonsvg50,0.53834,0.70424,0.34062,True,False
+primary,breast5k,cmd_all,0.44561,0.40016,0.39536,True,True
+primary,breast5k,cmd_svg50,0.15067,0.15009,0.14216,True,True
+primary,breast5k,median_programme_pcc,0.24610,0.27144,0.27052,True,True
