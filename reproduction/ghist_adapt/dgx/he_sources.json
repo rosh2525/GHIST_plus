@@ -1,0 +1,17 @@
+{
+  "_note": "Links copied from the 10x dataset pages (2026-11-10) after the user completed 10x's form. Alignment direction is verified by the QA overlay in extract_uni2h.py.",
+  "breast5k": {
+    "page": "https://www.10xgenomics.com/datasets/xenium-prime-ffpe-human-breast-cancer",
+    "he_ome_tif_url": "https://cf.10xgenomics.com/samples/xenium/3.0.0/Xenium_Prime_Breast_Cancer_FFPE/Xenium_Prime_Breast_Cancer_FFPE_he_image.ome.tif",
+    "alignment_csv_url": "https://cf.10xgenomics.com/samples/xenium/3.0.0/Xenium_Prime_Breast_Cancer_FFPE/Xenium_Prime_Breast_Cancer_FFPE_he_imagealignment.csv",
+    "alignment_direction": "he_to_xenium",
+    "size_gb": 5.95
+  },
+  "breast2": {
+    "page": "https://www.10xgenomics.com/products/xenium-in-situ/preview-dataset-human-breast",
+    "replicate": "In Situ Sample 2 (Rep 2)",
+    "he_ome_tif_url": "https://cf.10xgenomics.com/samples/xenium/1.0.1/Xenium_FFPE_Human_Breast_Cancer_Rep2/Xenium_FFPE_Human_Breast_Cancer_Rep2_he_image.ome.tif",
+    "alignment_csv_url": "https://cf.10xgenomics.com/samples/xenium/1.0.1/Xenium_FFPE_Human_Breast_Cancer_Rep2/Xenium_FFPE_Human_Breast_Cancer_Rep2_he_imagealignment.csv",
+    "alignment_direction": "he_to_xenium"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "description": "v2 protocol, frozen before any v2 training or test metric. Motivated by a validation-only probe (v1 test cells untouched by the probe): adapter quality depended mainly on the amount and spatial spread of local training RNA.",
+  "validation_and_test": "identical to v1 (splits/split_seed{s}.csv.gz: 5,000 val cells, 20,000 test cells in buffered blocks)",
+  "train_pool": "every cell in a 400 um block whose Chebyshev block distance to every val and test block is >= 2 (i.e. at least one full buffer block)",
+  "train_sizes": [5000, 20000, 50000, 150000],
+  "train_subset_rule": "nested: a fixed random permutation of the pool per split seed (numpy default_rng(1000 + seed)); size N = first N cells",
+  "features": "GHIST+ frozen outputs only: pred_expr_scaled*0.5 (258), occurrence_probability (258), ct_probs (9); standardised with training mean/std",
+  "methods": {
+    "calibration": "per-gene OLS y = a + b*p on the training cells, clipped at 0",
+    "ridge": {"alphas": [1, 10, 100, 1000, 10000, 100000], "target": "y - p", "output": "clip(p + correction, 0)"},
+    "mlp": {
+      "device": "mps (Apple Metal) when available, else cpu",
+      "hidden": [512, 512], "activation": "GELU", "dropout": 0.1,
+      "last_layer_init": "zeros (starts exactly at GHIST+)",
+      "target": "y - p (MSE on log1p)", "output": "clip(p + correction, 0)",
+      "optimizer": "AdamW", "lr": 0.001, "weight_decay": 0.0001, "batch_size": 2048,
+      "max_steps": 8000, "eval_every_steps": 100, "early_stopping_patience_evals": 10,
+      "torch_seed": "1000 + split seed"
+    }
+  },
+  "selection_metric": "validation median per-gene PCC (alpha for ridge; checkpoint for MLP)",
+  "test_metrics": "same as v1, on the 20,000 test cells only. The v1 'rest' set overlaps the v2 train pool and is not used.",
+  "figure_train_size": 50000,
+  "map_genes": ["ERBB2", "EPCAM", "CD3E", "MKI67", "CD68", "PECAM1"]
+}
