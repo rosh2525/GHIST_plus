@@ -1,5 +1,5 @@
 """DEV-ONLY probe on Breast5K: cell-type-aware magnitude and occurrence for HAC."""
-import sys; sys.path.insert(0, "/Users/roshank/Documents/Codex/2026-10-02/we-x20/GHIST_plus/reproduction/ghist_adapt")
+import sys; from pathlib import Path; sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import numpy as np
 from scipy.spatial import cKDTree
 from slides import load; from hurdle import load_hurdle
