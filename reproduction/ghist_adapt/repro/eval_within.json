@@ -1,0 +1,46 @@
+{
+ "cohort_cells": 12719,
+ "cohort_genes": 280,
+ "top20_svg": [
+  "ABCC11",
+  "KRT7",
+  "SERHL2",
+  "TACSTD2",
+  "FOXA1",
+  "CDH1",
+  "MYBPC1",
+  "EPCAM",
+  "ERBB2",
+  "KRT14",
+  "MYH11",
+  "ANKRD30A",
+  "MLPH",
+  "POSTN",
+  "DSP",
+  "CD9",
+  "FASN",
+  "LYPD3",
+  "TFAP2A",
+  "KRT5"
+ ],
+ "methods": {
+  "GHIST+": {
+   "median_pcc_top20_svg": 0.7623199106217146,
+   "median_pcc_all": 0.311695165822371,
+   "paper_top20": 0.744,
+   "cells": 12719
+  },
+  "GHIST": {
+   "median_pcc_top20_svg": 0.7745567466037384,
+   "median_pcc_all": 0.3084400725047026,
+   "paper_top20": 0.714,
+   "cells": 12719
+  },
+  "SpatialEx": {
+   "median_pcc_top20_svg": 0.6377279158939768,
+   "median_pcc_all": 0.15254630749344372,
+   "paper_top20": 0.521,
+   "cells": 12719
+  }
+ }
+}

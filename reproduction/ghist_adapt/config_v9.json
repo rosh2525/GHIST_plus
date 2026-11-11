@@ -1,0 +1,17 @@
+{
+ "name": "v9: BioHAN, biology-aware hurdle adapter network trained on core cells",
+ "frozen": "2026-11-11, before any BioHAN run on any slide (the Breast5K smoke run only checks the code runs)",
+ "motivation": "v2's MLP failed because squared error on zero-inflated targets plus clipping at 0 created ties. BioHAN uses a two-part (occurrence x positive magnitude) output, so predictions stay strictly positive, and adds biology: a gene-programme bottleneck (64 shared factors), niche inputs (same-type neighbour mean within 30 um; cell-type composition within 50 um) and rare-cell-type up-weighting (1/sqrt frequency).",
+ "architecture": "MLP 512-512-64 (GELU, dropout 0.1) -> occurrence head added to logit q; magnitude head: 0.01 + softplus(c_g + w_g relu(mu) + head). Heads zero-initialised.",
+ "training": "AdamW lr 1e-3, wd 1e-4, batch 512, BCE on 1[y>0] + MSE on expressing entries. Epochs chosen on one held-out core group (early stopping, patience 8, max 60, mean per-gene PCC); then refit on all core cells for that number of epochs. Seeded per repeat.",
+ "ablation": "BioHAN-noniche: identical, without the two niche inputs",
+ "references": ["RRC-soft (current best)", "HAC", "GHIST+-Soft"],
+ "slides": {"development": "breast5k", "confirmation": ["atera", "breast5k_pan"]},
+ "cores": "same as config_v4/v8 (3 core layouts x 3 seeds, 200 um buffer)",
+ "decision_rules": {
+  "BioHAN vs RRC-soft": "improvement if median per-gene PCC (all genes) beats RRC-soft with block-bootstrap 95% CI excluding 0 in the majority of runs on >= 2 of 3 combinations, without lowering median SSIM (top-50 SVG) or raising mean RMSE by > 2%",
+  "biology contribution": "niche inputs count as helping if BioHAN beats BioHAN-noniche with CI excluding 0 in the majority of runs on >= 2 of 3 combinations",
+  "ablations (biohan_ablate.py, added 2026-11-11 before any ablation or full BioHAN result)": "on breast5k and atera, primary (4 x 1 mm2) and paper-matched (1 x 3.5 mm2) layouts, seeds 0-2: a component counts as contributing if removing it lowers median PCC (all genes) with CI excluding 0 in the majority of runs on both slides. Components: programme bottleneck (BioHAN-nobottleneck), rare-cell weighting (BioHAN-noweight), niche inputs (BioHAN-noniche)",
+  "reporting": "every result reported either way"
+ }
+}

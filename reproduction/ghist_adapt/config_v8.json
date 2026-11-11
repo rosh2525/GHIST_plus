@@ -1,0 +1,19 @@
+{
+ "name": "v8: biology-driven extensions (niche coherence, gene programmes) on top of RRC-soft",
+ "frozen": "2026-11-11, before any v8 computation on any slide (smoke run on Breast5K only checks the code runs)",
+ "preceding_test": "Fix 1 (transcript spillover, spillover/spill_test.py) on Breast5K: contamination confirmed in measured RNA (epithelial-marker detection in immune cells 6.1x higher when touching tumour) but modelling it did not improve prediction (contact +0.0013 vs far control +0.0019). Dropped as a method; reported as an evaluation caveat.",
+ "methods": {
+  "Niche-Soft": "S_n = (1-lam) S + lam * mean of S over same-predicted-type neighbours within r um; lam in {0,.25,.5,.75}, r in {15,30} chosen by mean per-gene PCC on core cells only",
+  "Niche-RRC": "authors' RRC (default config) applied to S_n",
+  "Prog-RRC": "RRC-soft prediction projected onto top-k PCs of standardised measured core RNA; k in {8,16,32,64,none} chosen by leave-one-core-out mean PCC on core cells",
+  "Niche-Prog-RRC": "Niche-RRC followed by the programme projection"
+ },
+ "references": ["GHIST+-Soft (zero-shot)", "RRC-soft (current best with cores)"],
+ "slides": {"development": "breast5k", "confirmation": ["atera", "breast5k_pan"]},
+ "cores": "same as config_v4: (1.0 mm2 x 4 diverse), (3.5 mm2 x 1 diverse), (1.0 mm2 x 4 random), 3 seeds each; 200 um buffer",
+ "decision_rules": {
+  "Niche (fix 2)": "Niche-RRC counts as an improvement if it beats RRC-soft on median per-gene PCC (all genes) with block-bootstrap 95% CI excluding 0 in the majority of runs on >= 2 of 3 model/slide combinations, without lowering median SSIM (top-50 SVG) or raising RMSE by > 2%. Niche-Soft is reported against GHIST+-Soft the same way.",
+  "Programme (fix 3)": "Prog-RRC counts as an improvement if CMD (gene-gene correlation distance, lower is better) falls by >= 5% vs RRC-soft on >= 2 of 3 combinations while median PCC (all genes) falls by < 0.002.",
+  "reporting": "every result is reported either way"
+ }
+}
